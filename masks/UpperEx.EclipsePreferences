@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!-- was: no XML declaration present -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EclipsePreferences>
+  <Column TYPE="Name" NAME="Name" WIDTH="98" MUTUALLYEXCLUSIVE="False"></Column>
+  <Column TYPE="Files" NAME="Files" WIDTH="80" MUTUALLYEXCLUSIVE="False"></Column>
+  <Column TYPE="Created" NAME="Created" WIDTH="100" MUTUALLYEXCLUSIVE="False"></Column>
+  <Column TYPE="Modified" NAME="Modified" WIDTH="100" MUTUALLYEXCLUSIVE="False"></Column>
+  <!-- Trial in Trial Type geändert, so wie bei Workstation -->
+  <Column TYPE="TYPE" NAME="Trial Type" WIDTH="100" MUTUALLYEXCLUSIVE="False"></Column>
+  <!-- Description in Class geändert, so wie bei Workstation -->
+  <Column TYPE="CLASS" NAME="Class" WIDTH="100" MUTUALLYEXCLUSIVE="False">
+    <ColumnValue VALUE="Undef" COLOUR="-16777216" />
+    <ColumnValue VALUE="Static" COLOUR="-16777216" />
+    <ColumnValue VALUE="Static_Cal" COLOUR="-16777216" />
+    <ColumnValue VALUE="Pointer" COLOUR="-16777216" />
+    <ColumnValue VALUE="Dynamic" COLOUR="-16777216" />
+    <!--ColumnValue VALUE="Dynamic+Kinetics" COLOUR="-16777216" /-->
+    <!--ColumnValue VALUE="Joint" COLOUR="-16777216" /-->
+    <ColumnValue VALUE="ElbowFlex/Ext" COLOUR="-16777216" />
+    <ColumnValue VALUE="ShoulderAbd/Add" COLOUR="-16777216" />
+    <ColumnValue VALUE="ShoulderAnte/Retro" COLOUR="-16777216" />
+    <ColumnValue VALUE="ShoulderTransAbd" COLOUR="-16777216" />
+    <ColumnValue VALUE="ShoulderCircle" COLOUR="-16777216" />
+    <ColumnValue VALUE="HipAbd/Add" COLOUR="-16777216" />
+    <ColumnValue VALUE="HipFlex/Ext" COLOUR="-16777216" />
+    <ColumnValue VALUE="HipCircle" COLOUR="-16777216" />
+    <ColumnValue VALUE="KneeFlex/Ext" COLOUR="-16777216" />
+    <ColumnValue VALUE="AnklePro/Supi" COLOUR="-16777216" />
+    <ColumnValue VALUE="AnkleDors/Plant" COLOUR="-16777216" />
+    <ColumnValue VALUE="AnkleCircle" COLOUR="-16777216" />
+    <ColumnValue VALUE="Not For Use" COLOUR="-16777216" />
+  </Column>
+  
+  <Column TYPE="POSITION" NAME="Position" WIDTH="100" MUTUALLYEXCLUSIVE="False">
+    <ColumnValue VALUE="Undef" COLOUR="-16777216" />
+    <ColumnValue VALUE="Thorax T8" COLOUR="-16777216" />
+    <ColumnValue VALUE="Thorax IJ" COLOUR="-16777216" />
+    <ColumnValue VALUE="Thorax PX" COLOUR="-16777216" />
+    <ColumnValue VALUE="Clavicle SC" COLOUR="-16777216" />
+    <ColumnValue VALUE="Clavicle AC" COLOUR="-16777216" />
+    <ColumnValue VALUE="Scapula TS" COLOUR="-16777216" />
+    <ColumnValue VALUE="Scapula AI" COLOUR="-16777216" />
+    <ColumnValue VALUE="Scapula AA" COLOUR="-16777216" />
+    <ColumnValue VALUE="Scapula PC" COLOUR="-16777216" />
+    <ColumnValue VALUE="Humerus EL" COLOUR="-16777216" />
+    <ColumnValue VALUE="Humerus EM" COLOUR="-16777216" />
+    <ColumnValue VALUE="Forearm RS" COLOUR="-16777216" />
+    <ColumnValue VALUE="Forearm US" COLOUR="-16777216" />
+    <ColumnValue VALUE="Not For Use" COLOUR="-16777216" />
+  </Column>
+  <!-- Side nach SIDE wie bei Workstation -->
+  <Column TYPE="SIDE" NAME="Side" WIDTH="100" MUTUALLYEXCLUSIVE="False">
+    <ColumnValue VALUE="Side R" COLOUR="-16777216" />
+    <ColumnValue VALUE="Side L" COLOUR="-16777216" />
+    <ColumnValue VALUE="Both" COLOUR="-16777216" />
+  </Column>
+  
+  <Column TYPE="MOVEMENT" NAME="Movement" WIDTH="100" MUTUALLYEXCLUSIVE="False">
+    <ColumnValue VALUE="-" COLOUR="-16777216" />
+    <ColumnValue VALUE="Ante-/Retro" COLOUR="-16777216" />
+    <ColumnValue VALUE="Abduk" COLOUR="-16777216" />
+    <ColumnValue VALUE="ARO/IRO" COLOUR="-16777216" />
+    <ColumnValue VALUE="ARO/IRO-90Abduk" COLOUR="-16777216" />
+    <ColumnValue VALUE="ARO/IRO-90Ante" COLOUR="-16777216" />
+    <ColumnValue VALUE="ARO/IRO-0" COLOUR="-16777216" />
+    <ColumnValue VALUE="ARO/IRO-30Abd" COLOUR="-16777216" />
+    
+    <ColumnValue VALUE="EXT/FLEX-EBG" COLOUR="-16777216" />
+    <ColumnValue VALUE="Pro-/Supi" COLOUR="-16777216" />
+    <ColumnValue VALUE="Kämmen" COLOUR="-16777216" />
+    <ColumnValue VALUE="Schürzengriff" COLOUR="-16777216" />
+    <!--ColumnValue VALUE="Hemdleiste" COLOUR="-16777216" /-->
+    
+    <!--ColumnValue VALUE="Schuhbinden" COLOUR="-16777216" /-->
+    <ColumnValue VALUE="Wassereingießen" COLOUR="-16777216" /> <ColumnValue VALUE="Hemdleiste" COLOUR="-16777216" />
+    <ColumnValue VALUE="Trinken" COLOUR="-16777216" />
+    <ColumnValue VALUE="Essen" COLOUR="-16777216" />
+    <ColumnValue VALUE="Telefonieren" COLOUR="-16777216" />
+
+    <!--ColumnValue VALUE="Zeichnen" COLOUR="-16777216" /-->
+    <!--ColumnValue VALUE="Tippen" COLOUR="-16777216" /-->
+    <ColumnValue VALUE="Umblättern" COLOUR="-16777216" />
+    <ColumnValue VALUE="Türschloß" COLOUR="-16777216" />
+    <ColumnValue VALUE="Buch" COLOUR="-16777216" />
+    <ColumnValue VALUE="WaschenAchsel" COLOUR="-16777216" />
+  </Column>
+  
+  <Column TYPE="Notes" NAME="Notes" WIDTH="100" MUTUALLYEXCLUSIVE="False"></Column>
+  
+  <NodeType STEREOTYPE="ECLIPSEDATABASE" TYPESTRINGS="Eclipse Database" />
+  <NodeType STEREOTYPE="PATIENT_CLASSIFICATION" TYPESTRINGS="Patient Classification,Top level" />
+  <NodeType STEREOTYPE="SUBJECT" TYPESTRINGS="Patient,Subject" />
+  <NodeType STEREOTYPE="SESSION" TYPESTRINGS="Session" />
+  <NodeType STEREOTYPE="REPORT" TYPESTRINGS="Report" />
+  <NodeType STEREOTYPE="TRIAL" TYPESTRINGS="Trial,Take" />
+  <NodeType STEREOTYPE="SUBJECTFILE" TYPESTRINGS="Subject" />
+  <NodeType STEREOTYPE="MARKERFILE" TYPESTRINGS="Marker File" />
+  <NodeType STEREOTYPE="UNKNOWN" TYPESTRINGS="Unknown Node Type" />
+  <C3DVersionStrings Version1="Labelled" Version2="Gap Filled" Version3="Filtered" Version4="Modelled" />
+</EclipsePreferences>

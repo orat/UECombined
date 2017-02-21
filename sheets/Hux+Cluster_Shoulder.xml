@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<Sheet name="Shoulder Angles">
+
+  <Pages>
+      
+    <Page name="Shoulder angles"  rows="4" columns="3">
+         <Diagram name="ScapProRetraction" 
+                   column="0"
+                   row="0"
+                   xunit="%"
+                   yunit="deg" 
+                   diagramDescriptionDown="retrac" 
+                   diagramDescriptionUp="pro" 
+                   plane="s" 
+                   diagramType="xt" 
+                   diagramTitle="Scapula pro/retrac">
+               <Label name="RScapProRetraction"
+                    component="0"
+                    side="right"/>
+               <Label name="LScapProRetraction"
+                    component="0"
+                    side="left"/>
+        </Diagram>
+        <Diagram name="ScapRotation" 
+                   column="1"
+                   row="0"
+                   xunit="%"
+                   yunit="deg" 
+                   diagramDescriptionDown="med" 
+                   diagramDescriptionUp="lat" 
+                   plane="f" 
+                   diagramType="xt" 
+                   diagramTitle="Scapula med/lat rotation">
+               <Label name="RScapRotation"
+                    component="0"
+                    side="right"/>
+               <Label name="LScapRotation"
+                    component="0"
+                    side="left"/>
+        </Diagram>
+        <Diagram name="ScapRotation" 
+                   column="2"
+                   row="0"
+                   xunit="%"
+                   yunit="deg" 
+                   diagramDescriptionDown="ant" 
+                   diagramDescriptionUp="post" 
+                   plane="t" 
+                   diagramType="xt" 
+                   diagramTitle="Scapula Tilting">
+               <Label name="RScapTilting"
+                    component="0"
+                    side="right"/>
+               <Label name="LScapTilting"
+                    component="0"
+                    side="left"/>
+        </Diagram>
+        
+        <!-- clavicula -->
+        <Diagram name="ClavProRetraction" 
+                   column="0"
+                   row="1"
+                   xunit="%"
+                   yunit="deg" 
+                   diagramDescriptionDown="retrac" 
+                   diagramDescriptionUp="pro" 
+                   plane="s" 
+                   diagramType="xt" 
+                   diagramTitle="Clavicle pro/retrac">
+               <Label name="RClavProRetraction"
+                    component="0"
+                    side="right"/>
+               <!--Label name="RShoulderGirdleProRetracHDCalProjAngle"
+                    component="0"
+                    side="right"/-->
+               <Label name="LClavProRetraction"
+                    component="0"
+                    side="left"/>
+               <!--Label name="LShoulderGirdleProRetracHDCalProjAngle"
+                    component="0"
+                    side="left"/-->
+        </Diagram>
+        <Diagram name="ClavEleDep" 
+                   column="1"
+                   row="1"
+                   xunit="%"
+                   yunit="deg" 
+                   diagramDescriptionDown="dep" 
+                   diagramDescriptionUp="ele" 
+                   plane="f" 
+                   diagramType="xt" 
+                   diagramTitle="Clavicle ele/dep">
+               <Label name="RClavDepressionElevation"
+                    component="0"
+                    side="right"/>
+               <!-- HUX -->
+               <!--Label name="RShoulderGirdleEleDepHDCalAngle"
+                    component="0"
+                    side="right"/-->
+               <Label name="LClavDepressionElevation"
+                    component="0"
+                    side="left"/>
+               <!--Label name="LShoulderGirdleEleDepHDCalAngle"
+                  component="0" 
+                  side="left"/-->
+        </Diagram>
+        <Diagram name="ElbowFlex" 
+           column="2"
+           row="1"
+           xunit="%"
+           yunit="deg"  
+           diagramDescriptionDown="ext" 
+           diagramDescriptionUp="flex" 
+           plane="" 
+           diagramType="xt" 
+           diagramTitle="Ellenbogen flexion">
+           <Label name="RElbowFlexExtAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LElbowFlexExtAngle"
+                  component="0" 
+                  side="left"/>
+         </Diagram>
+         
+         <Diagram name="ScapulaProRetraction" 
+           column="0"
+           row="2"
+           xunit="deg"
+           yunit="deg" 
+           diagramDescriptionDown="retrac"
+           diagramDescriptionUp="pro"
+           plane="" 
+           diagramType="xy" 
+           diagramTitle="Scapula pro/retrac">
+           <Label name="RScapProRetraction"
+              ycomponent="0" 
+              ylabel="RScapProRetraction"
+              xcomponent="0"
+              xlabel="RShoulderEleDepHDCalDirCosAngle"
+              side="right"/>
+           <Label name="LScapProRetraction"
+              ycomponent="0" 
+              ylabel="LScapProRetraction"
+              xcomponent="0"
+              xlabel="LShoulderEleDepHDCalDirCosAngle"
+              side="left"/>        
+         </Diagram>    
+         <Diagram name="ScapulaRotation" 
+           column="1"
+           row="2"
+           xunit="deg"
+           yunit="deg" 
+           diagramDescriptionDown="med"
+           diagramDescriptionUp="lat"
+           plane="" 
+           diagramType="xy" 
+           diagramTitle="Scapula med/lat rotation">
+           <Label name="RScapRotation"
+              ycomponent="0" 
+              ylabel="RScapRotation"
+              xcomponent="0"
+              xlabel="RShoulderEleDepHDCalDirCosAngle"
+              side="right"/>
+           <Label name="LScapRotation"
+              ycomponent="0" 
+              ylabel="LScapRotation"
+              xcomponent="0"
+              xlabel="LShoulderEleDepHDCalDirCosAngle"
+              side="left"/>        
+         </Diagram>    
+         
+         <Diagram name="Scapula tilting" 
+           column="2"
+           row="2"
+           xunit="deg"
+           yunit="deg" 
+           diagramDescriptionDown="ant"
+           diagramDescriptionUp="post"
+           plane="" 
+           diagramType="xy" 
+           diagramTitle="Scapula tilting">
+           <Label name="RScapTilting"
+              ycomponent="0" 
+              ylabel="RScapTilting"
+              xcomponent="0"
+              xlabel="RShoulderEleDepHDCalDirCosAngle"
+              side="right"/>
+           <Label name="LScapTilting"
+              ycomponent="0" 
+              ylabel="LScapTilting"
+              xcomponent="0"
+              xlabel="LShoulderEleDepHDCalDirCosAngle"
+              side="left"/>        
+         </Diagram>  
+         
+         <Diagram name="ClaviculaProRetraction" 
+           column="0"
+           row="3"
+           xunit="deg"
+           yunit="deg" 
+           diagramDescriptionDown="retrac"
+           diagramDescriptionUp="pro"
+           plane="" 
+           diagramType="xy" 
+           diagramTitle="Clavicula pro/retrac">
+           <Label name="RClavProRetraction"
+              ycomponent="0" 
+              ylabel="RClavProRetraction"
+              xcomponent="0"
+              xlabel="RShoulderEleDepHDCalDirCosAngle"
+              side="right"/>
+           <Label name="LClavProRetraction"
+              ycomponent="0" 
+              ylabel="LClavProRetraction"
+              xcomponent="0"
+              xlabel="LShoulderEleDepHDCalDirCosAngle"
+              side="left"/>        
+         </Diagram>
+         
+         <Diagram name="ClaviculaEleDep" 
+           column="1"
+           row="3"
+           xunit="deg"
+           yunit="deg" 
+           diagramDescriptionDown="dep"
+           diagramDescriptionUp="ele"
+           plane="" 
+           diagramType="xy" 
+           diagramTitle="Clavicle ele/dep">
+           <Label name="RClavDepressionElevation"
+              ycomponent="0" 
+              ylabel="RClavDepressionElevation"
+              xcomponent="0"
+              xlabel="RShoulderEleDepHDCalDirCosAngle"
+              side="right"/>
+           <Label name="LClavDepressionElevation"
+              ycomponent="0" 
+              ylabel="LClavDepressionElevation"
+              xcomponent="0"
+              xlabel="LShoulderEleDepHDCalDirCosAngle"
+              side="left"/>        
+         </Diagram>
+         <Diagram name="ElbowFlexExt" 
+           column="2"
+           row="3"
+           xunit="deg"
+           yunit="deg" 
+           diagramDescriptionDown="ext"
+           diagramDescriptionUp="flex"
+           plane="" 
+           diagramType="xy" 
+           diagramTitle="Elbow flexion">
+           <Label name="RElbowFlexExtAngle"
+              ycomponent="0" 
+              ylabel="RElbowFlexExtAngle"
+              xcomponent="0"
+              xlabel="RShoulderEleDepHDCalDirCosAngle"
+              side="right"/>
+           <Label name="LElbowFlexExtAngle"
+              ycomponent="0" 
+              ylabel="LElbowFlexExtAngle"
+              xcomponent="0"
+              xlabel="LShoulderEleDepHDCalDirCosAngle"
+              side="left"/>        
+         </Diagram>
+         
+    </Page>
+    
+    <Page name="Phase angles" rows="4" columns="3">
+        
+        <Diagram name="ScapulaProRetracPhase" 
+           column="0"
+           row="0"
+           xunit="deg"
+           yunit="deg/s" 
+           diagramDescriptionDown="retrac"
+           diagramDescriptionUp="pro" 
+           plane="s" 
+           diagramType="phase" 
+           diagramTitle="Scapula pro/retrac">
+         <Label name="RScapProRetraction"
+              component="0" 
+              side="right"/>
+         <Label name="LScapProRetraction"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+        <Diagram name="ScapulaRotationPhase" 
+           column="1"
+           row="0"
+           xunit="deg"
+           yunit="deg/s" 
+           diagramDescriptionDown="med"
+           diagramDescriptionUp="lat" 
+           plane="f" 
+           diagramType="phase" 
+           diagramTitle="Scapula med/lat rotation">
+         <Label name="RScapRotation"
+              component="0" 
+              side="right"/>
+         <Label name="LScapRotation"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+        <Diagram name="ScapulaTiltPhase" 
+           column="2"
+           row="0"
+           xunit="deg"
+           yunit="deg/s" 
+           diagramDescriptionDown="ant"
+           diagramDescriptionUp="post" 
+           plane="t" 
+           diagramType="phase" 
+           diagramTitle="Scapula tilting">
+         <Label name="RScapTilting"
+              component="0" 
+              side="right"/>
+         <Label name="LScapTilting"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+    </Page>
+    
+    
+  </Pages>
+      
+  <!-- Gruppen von Trials z.B. schnelle und langsame Gehdurchgänge
+       definieren und die zugehörigen Farben für jedweils linke und
+       rechte Seite sowie die zugehörigen Normdaten -->
+  <Groups>
+        <DefaultGroup normData="abc.gnm"/>
+  </Groups>
+  
+  <View>
+     <Events>
+          <Event name="RHS"/>
+          <Event name="RTO"/>
+     </Events>
+     <Phases>
+         <Phase name="RCycle" startEvent="RHS" endEvent="RTO"/>
+         <Phase name="RCycleFW" startEvent="RHS" endEvent="RTO"/>
+         <Phase name="RCycleBW" startEvent="RHS" endEvent="RTO"/>
+     </Phases>
+     <Alignment event="RHS" phase="RCycle" normalization="RCycle"/>
+     <Alignment event="RHS" phase="RCycleFW" normalization="RCycleFW"/>
+     <Alignment event="RHS" phase="RCycleBW" normalization="RCycleBW"/>
+  </View>
+  
+</Sheet>

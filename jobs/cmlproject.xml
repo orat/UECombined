@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<CalcMLProcessConfig name="UEGeneral2 HUX + Cluster"
+                     version="1.0"
+                     defaultmodel="UEGeneral2+Cluster_without-SHO-markers.xml"
+                     defaultmarkerset="Input.xml"
+                     defaultconstants="constants.properties"
+                     defaultview="StickFigure.xml"
+                     useEventsFromSessionMetaDataFile="false">
+
+   <CalcGroups sequence="static_calibrate_right_AA static_calibrate_left_AA static_calibrate_T8 
+static_calibrate_right_SC static_calibrate_right_AC static_calibrate_right_TS static_calibrate_right_AI 
+ static_calibrate_right_EL static_calibrate_right_EM  
+static_calibrate_left_SC static_calibrate_left_AC 
+static_calibrate_left_TS static_calibrate_left_AI 
+static_calibrate_left_EL static_calibrate_left_EM 
+static_calibrate static_calibrate_ellbow static_calibrate_shoulder dynamic_calibrate_left_ellbow 
+dynamic_calibrate_right_ellbow dynamic_calibrate_left_shoulder dynamic_calibrate_right_shoulder 
+static_calibrate_shoulder2 static_calibrate_shoulder3 ShoulderAbdAdd ShoulderAnteRetro AroIro-0 
+Schuerzengriff Kaemmen Buch WaschenAchsel">
+
+      
+     <!-- calibration by locator -->
+     
+     <!-- thorax -->
+     
+     <CalcGroup name="static_calibrate_T8">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Thorax T8</entry>
+          <entry key="SIDE">Both</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <entry key="integerDigits">10</entry>
+            <entry key="fractionDigits">5</entry>
+        </output>
+        <!--output labelset="Output_calibrate.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output-->
+     </CalcGroup>
+    
+     <CalcGroup name="static_calibrate_IJ">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Thorax IJ</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+   
+     <CalcGroup name="static_calibrate_PX">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Thorax PX</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+
+
+     <!-- GH position -->
+     
+     <CalcGroup name="static_calibrate_right_GH">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="DESCRIPTION">GH</entry>
+          <entry key="SIDE">rechts|Side R</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     <CalcGroup name="static_calibrate_left_GH">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="DESCRIPTION">GH</entry>
+          <entry key="SIDE">links|Side L</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     
+     
+     <!-- clavicle -->
+     
+     <CalcGroup name="static_calibrate_right_SC">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Clavicle SC</entry>
+           <entry key="SIDE">rechts|Side R</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     <CalcGroup name="static_calibrate_left_SC">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Clavicle SC</entry>
+          <entry key="SIDE">links|Side L</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     
+     <CalcGroup name="static_calibrate_right_AC">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Clavicle AC</entry>
+           <entry key="SIDE">rechts|Side R</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     <CalcGroup name="static_calibrate_left_AC">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Clavicle AC</entry>
+          <entry key="SIDE">links|Side L</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     
+     
+    <!-- scapula -->
+      
+    <CalcGroup name="static_calibrate_right_TS">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Scapula TS</entry>
+           <entry key="SIDE">rechts|Side R</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     <CalcGroup name="static_calibrate_left_TS">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Scapula TS</entry>
+          <entry key="SIDE">links|Side L</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+  
+     <CalcGroup name="static_calibrate_right_AI">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Scapula AI</entry>
+           <entry key="SIDE">rechts|Side R</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     <CalcGroup name="static_calibrate_left_AI">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Scapula AI</entry>
+          <entry key="SIDE">links|Side L</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+  
+     <CalcGroup name="static_calibrate_right_AA">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Scapula AA</entry>
+           <entry key="SIDE">rechts|Side R</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     <CalcGroup name="static_calibrate_left_AA">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Scapula AA</entry>
+          <entry key="SIDE">links|Side L</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     
+     <CalcGroup name="static_calibrate_right_PC">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Scapula PC</entry>
+           <entry key="SIDE">rechts|Side R</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     <CalcGroup name="static_calibrate_left_PC">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Scapula PC</entry>
+          <entry key="SIDE">links|Side L</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+   
+   
+     <!-- forearm -->
+ 
+     <CalcGroup name="static_calibrate_right_EL">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Humerus EL</entry>
+           <entry key="SIDE">rechts|Side R</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     <CalcGroup name="static_calibrate_left_EL">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Humerus EL</entry>
+          <entry key="SIDE">links|Side L</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+ 
+     <CalcGroup name="static_calibrate_right_EM">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Humerus EM</entry>
+          <entry key="SIDE">rechts|Side R</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     <CalcGroup name="static_calibrate_left_EM">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Humerus EM</entry>
+          <entry key="SIDE">links|Side L</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+   
+     <CalcGroup name="static_calibrate_right_RS">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Forearm RS</entry>
+           <entry key="SIDE">rechts|Side R</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     <CalcGroup name="static_calibrate_left_RS">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Forearm RS</entry>
+          <entry key="SIDE">links|Side L</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     
+     <CalcGroup name="static_calibrate_right_US">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Forearm US</entry>
+           <entry key="SIDE">rechts|Side R</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+     <CalcGroup name="static_calibrate_left_US">
+        <identification>
+          <entry key="CLASS">Static_Cal|Static</entry>
+          <entry key="POSITION">Forearm US</entry>
+          <entry key="SIDE">links|Side L</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+     </CalcGroup>
+  
+  
+    <!-- static calibration -->
+    
+    <CalcGroup name="static_calibrate">
+        <identification>
+          <entry key="CLASS">Static_Cal</entry>
+          <entry key="SIDE">bds|links|rechts|Side R|Side L|Both</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+    </CalcGroup>
+
+    <CalcGroup name="static_calibrate_ellbow">
+        <identification>
+          <entry key="CLASS">Static_Cal</entry>
+          <entry key="SIDE">bds|Both</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+    </CalcGroup>
+
+    <CalcGroup name="static_calibrate_shoulder">
+        <identification>
+          <entry key="CLASS">Static_Cal</entry>
+          <entry key="SIDE">bds|Both</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+    </CalcGroup>
+    
+    <CalcGroup name="static_calibrate_shoulder2">
+        <identification>
+          <entry key="CLASS">Static_Cal</entry>
+          <!--entry key="POSITION">Undef</entry-->
+          <entry key="SIDE">bds|Both</entry>
+        </identification>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+    </CalcGroup>
+
+     <CalcGroup name="static_calibrate_shoulder3">
+        <identification>
+          <entry key="CLASS">Static_Cal</entry>
+          <!--entry key="POSITION">Undef</entry-->
+          <entry key="SIDE">bds|Both</entry>
+        </identification>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="NOEVENTS">true</entry>
+        </process>
+    </CalcGroup>
+    
+    <CalcGroup name="dynamic_calibrate_left_ellbow">
+        <identification>
+          <entry key="CLASS">EllbowFlex/Ext</entry>
+          <entry key="SIDE">bds|links|Side L|Both</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+    </CalcGroup>
+
+    <CalcGroup name="dynamic_calibrate_right_ellbow">
+        <identification>
+          <entry key="CLASS">EllbowFlex/Ext</entry>
+          <entry key="SIDE">bds|rechts|Side R|Both</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml" dir="">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+    </CalcGroup>
+   
+    <CalcGroup name="dynamic_calibrate_left_shoulder">
+        <identification>
+          <entry key="CLASS">ShoulderAnte/Retro|ShoulderAbd/Add</entry>
+          <entry key="SIDE">links|Side L|Both|bds</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml">
+            <entry key="overwrite">true</entry>
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+    </CalcGroup>
+   
+    <CalcGroup name="dynamic_calibrate_right_shoulder">
+        <identification>
+          <entry key="CLASS">ShoulderAnte/Retro|ShoulderAbd/Add</entry>
+          <entry key="SIDE">rechts|Side R|Both|bds</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="empty.xml">
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+    </CalcGroup>
+
+    <!--CalcGroup name="dynamic"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="CLASS">Dynamic|Dynamic\+Kinetics|ShoulderAnte/Retro|ShoulderAbd/Add</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+            <entry key="integerDigits">10</entry>
+            <entry key="fractionDigits">5</entry>
+        </output>    </CalcGroup-->
+
+    <CalcGroup name="ShoulderAbdAdd"
+               view="StickFigure.xml">
+        <identification>
+            <!--entry key="NOTES">ShoulderAbd/Add</entry-->
+            <!--entry key="CLASS">ShoulderAbd/Add</entry-->
+            <entry key="MOVEMENT">Abduk</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <!-- das overwrite-flag muss bei der ersten prozessierenten Group in ein MotionData-Objekt
+             gesetzt werden, damit eine entsprechende Datei, falls sie bereits existiert gelöscht werden kann -->
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+            <entry key="overwrite">true</entry>
+        </output>
+    </CalcGroup>
+    
+    <CalcGroup name="ShoulderAnteRetro"
+               view="StickFigure.xml">
+        <identification>
+            <!--entry key="NOTES">ShoulderAnte/Retro</entry-->
+            <!--entry key="CLASS">ShoulderAnte/Retro</entry-->
+            <entry key="MOVEMENT">Ante-/Retro</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    
+    <CalcGroup name="SGEleDep"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="NOTES">Elevation/Depression</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    <CalcGroup name="SGProRetrac"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="NOTES">Protraktion/Retraktion</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    <CalcGroup name="Schuerzengriff"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="MOVEMENT">Schuerzengriff</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    <CalcGroup name="Schuerzengriff"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="MOVEMENT">Schuerzengriff</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    <CalcGroup name="Kaemmen"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="MOVEMENT">Kaemmen</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    <CalcGroup name="Kaemmen"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="MOVEMENT">Kaemmen</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    <CalcGroup name="Armkreisen"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="NOTES">Armkreisen</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    <CalcGroup name="Buch"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="MOVEMENT">Buch</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    <CalcGroup name="WaschenAchsel"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="MOVEMENT">WaschenAchsel</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    <CalcGroup name="AroIro-0"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="MOVEMENT">ARO/IRO-0</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    <CalcGroup name="AroIro-90Abd"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="MOVEMENT">ARO/IRO-90Abduk</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    <CalcGroup name="AroIro-90Ante"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="MOVEMENT">ARO/IRO-90Ante</entry>
+            <entry key="CLASS">Dynamic</entry>
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+        </output>
+    </CalcGroup>
+    
+    <CalcGroup name="static"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="CLASS">Static</entry>
+            <!--entry key="CLASS">EllbowFlex/Ext|ShoulderAnte/Retro|ShoulderAbd/Add|Dynamic|proprio</entry-->
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+            <!--entry key="ANALOG">true</entry-->
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+            <!--entry key="useProjectsOutputFolder">true</entry-->
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+        <!--output labelset="Output.xml" dir=""
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler"/-->
+    </CalcGroup>
+
+    <CalcGroup name="proprio"
+               view="StickFigure.xml">
+        <identification>
+            <entry key="CLASS">Proprio|proprio</entry>
+            <!--entry key="CLASS">EllbowFlex/Ext|ShoulderAnte/Retro|ShoulderAbd/Add|Dynamic|proprio</entry-->
+        </identification>
+        <process>
+            <entry key="POINTS">true</entry>
+            <entry key="EVENTS">true</entry>
+        </process>
+        <output labelset="Output.xml"
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler">
+            <!--entry key="useProjectsOutputFolder">true</entry-->
+            <!-- maximale Zahl an Stellen -->
+            <entry key="integerDigits">10</entry>
+            <!-- maximale Zahl an Nachkommastellen -->
+            <entry key="fractionDigits">5</entry>
+        </output>
+        <!--output labelset="Output.xml" dir=""
+                handlerclass="de.orat.motionDataConverter.MotionDataOutputHandler"/-->
+    </CalcGroup>
+   
+  </CalcGroups>
+     
+  <Switches used="locator static_calibrate_right_GH static_calibrate_left_GH static_calibrate_T8 static_calibrate_IJ static_calibrate_PX static_calibrate_right_SC static_calibrate_right_AC static_calibrate_right_TS static_calibrate_right_AI static_calibrate_right_AA static_calibrate_right_PC static_calibrate_right_EL static_calibrate_right_EM static_calibrate_right_RS static_calibrate_right_US static_calibrate_left_SC static_calibrate_left_AC static_calibrate_left_TS static_calibrate_left_AI static_calibrate_left_AA static_calibrate_left_PC static_calibrate_left_EL static_calibrate_left_EM static_calibrate_left_RS static_calibrate_left_US static_calibrate static_calibrate_ellbow static_calibrate_shoulder static_calibrate_shoulder2 static_calibrate_shoulder3 dynamic_calibrate_left_ellbow dynamic_calibrate_right_ellbow dynamic_calibrate_left_shoulder dynamic_calibrate_right_shoulder dynamic_calibrate_ante dynamic_calibrate_abduk dynamic_shoulder_ele left right left_dynamic right_dynamic dynamic">
+    
+      <switch name="locator">
+          <entry key="TRIALCATEGORY">static_calibrate_right_GH|static_calibrate_left_GH|static_calibrate_T8|static_calibrate_IJ|static_calibrate_PX|static_calibrate_right_SC|static_calibrate_right_SC|static_calibrate_right_AC|static_calibrate_right_TS|static_calibrate_right_AI|static_calibrate_right_AA|static_calibrate_right_PC|static_calibrate_right_EL|static_calibrate_right_EM|static_calibrate_right_RS|static_calibrate_right_US|static_calibrate_left_SC|static_calibrate_left_AC|static_calibrate_left_TS|static_calibrate_left_AI|static_calibrate_left_AA|static_calibrate_left_PC|static_calibrate_left_EL|static_calibrate_left_EM|static_calibrate_left_RS|static_calibrate_left_US</entry>
+      </switch>
+      <!-- hier durch right/left_AA ersetzt da kein Marker SHO verfuegbar -->
+      <switch name="static_calibrate_right_GH">
+          <entry key="TRIALCATEGORY">static_calibrate_right_AA</entry>
+      </switch>
+      <switch name="static_calibrate_left_GH">
+          <entry key="TRIALCATEGORY">static_calibrate_left_AA</entry>
+      </switch>
+      <switch name="static_calibrate_T8">
+          <entry key="TRIALCATEGORY">static_calibrate_T8</entry>
+      </switch>
+      <switch name="static_calibrate_IJ">
+          <entry key="TRIALCATEGORY">static_calibrate_IJ</entry>
+      </switch>
+      <switch name="static_calibrate_PX">
+          <entry key="TRIALCATEGORY">static_calibrate_PX</entry>
+      </switch>
+      <switch name="static_calibrate_right_SC">
+          <entry key="TRIALCATEGORY">static_calibrate_right_SC</entry>
+      </switch>
+      <switch name="static_calibrate_right_AC">
+          <entry key="TRIALCATEGORY">static_calibrate_right_AC</entry>
+      </switch>
+      <switch name="static_calibrate_right_TS">
+          <entry key="TRIALCATEGORY">static_calibrate_right_TS</entry>
+      </switch>
+      <switch name="static_calibrate_right_AI">
+          <entry key="TRIALCATEGORY">static_calibrate_right_AI</entry>
+      </switch>
+      <switch name="static_calibrate_right_AA">
+          <entry key="TRIALCATEGORY">static_calibrate_right_AA</entry>
+      </switch>
+      <switch name="static_calibrate_right_PC">
+          <entry key="TRIALCATEGORY">static_calibrate_right_PC</entry>
+      </switch>
+      <switch name="static_calibrate_right_EL">
+          <entry key="TRIALCATEGORY">static_calibrate_right_EL</entry>
+      </switch>
+      <switch name="static_calibrate_right_EM">
+          <entry key="TRIALCATEGORY">static_calibrate_right_EM</entry>
+      </switch>
+      <switch name="static_calibrate_right_RS">
+          <entry key="TRIALCATEGORY">static_calibrate_right_RS</entry>
+      </switch>
+      <switch name="static_calibrate_right_US">
+          <entry key="TRIALCATEGORY">static_calibrate_right_US</entry>
+      </switch>
+      <switch name="static_calibrate_left_SC">
+          <entry key="TRIALCATEGORY">static_calibrate_left_SC</entry>
+      </switch>
+      <switch name="static_calibrate_left_AC">
+          <entry key="TRIALCATEGORY">static_calibrate_left_AC</entry>
+      </switch>
+      <switch name="static_calibrate_left_TS">
+          <entry key="TRIALCATEGORY">static_calibrate_left_TS</entry>
+      </switch>
+      <switch name="static_calibrate_left_AI">
+          <entry key="TRIALCATEGORY">static_calibrate_left_AI</entry>
+      </switch>
+      <switch name="static_calibrate_left_AA">
+          <entry key="TRIALCATEGORY">static_calibrate_left_AA</entry>
+      </switch>
+      <switch name="static_calibrate_left_PC">
+          <entry key="TRIALCATEGORY">static_calibrate_left_PC</entry>
+      </switch>
+      <switch name="static_calibrate_left_EL">
+          <entry key="TRIALCATEGORY">static_calibrate_left_EL</entry>
+      </switch>
+      <switch name="static_calibrate_left_EM">
+          <entry key="TRIALCATEGORY">static_calibrate_left_EM</entry>
+      </switch>
+      <switch name="static_calibrate_left_RS">
+          <entry key="TRIALCATEGORY">static_calibrate_left_RS</entry>
+      </switch>
+      <switch name="static_calibrate_left_US">
+          <entry key="TRIALCATEGORY">static_calibrate_left_US</entry>
+      </switch>
+          
+      
+      <switch name="static_calibrate">
+          <entry key="TRIALCATEGORY">static_calibrate</entry>
+      </switch>
+      <switch name="static_calibrate_shoulder">
+          <entry key="TRIALCATEGORY">static_calibrate_shoulder</entry>
+      </switch>
+      <switch name="static_calibrate_ellbow">
+          <entry key="TRIALCATEGORY">static_calibrate_ellbow</entry>
+      </switch>
+      <switch name="static_calibrate_shoulder2">
+          <entry key="TRIALCATEGORY">static_calibrate_shoulder2</entry>
+      </switch>
+      <switch name="static_calibrate_shoulder3">
+          <entry key="TRIALCATEGORY">static_calibrate_shoulder3</entry>
+      </switch>
+      <switch name="dynamic_calibrate_right_ellbow">
+          <entry key="TRIALCATEGORY">dynamic_calibrate_right_ellbow</entry>
+      </switch>
+      <switch name="dynamic_calibrate_left_ellbow">
+          <entry key="TRIALCATEGORY">dynamic_calibrate_left_ellbow</entry>
+      </switch>
+      <switch name="dynamic_calibrate_left_shoulder">
+          <entry key="TRIALCATEGORY">dynamic_calibrate_left_shoulder</entry>
+      </switch>
+      <switch name="dynamic_calibrate_right_shoulder">
+          <entry key="TRIALCATEGORY">dynamic_calibrate_right_shoulder</entry>
+      </switch>
+      
+      <switch name="dynamic_calibrate_abduk">
+          <!--entry key="TRIALCATEGORY">dynamic_calibrate_right_shoulder</entry>
+          <entry key="SIDE">bds|rechts|Side R|Both</entry-->
+          <entry key="CLASS">ShoulderAbd/Add</entry>
+      </switch>
+      
+      <switch name="dynamic_shoulder_ele">
+          <!--entry key="TRIALCATEGORY">dynamic_calibrate_right_shoulder</entry>
+          <entry key="SIDE">bds|rechts|Side R|Both</entry-->
+          <entry key="NOTES">Elevation/Depression</entry>
+      </switch>
+      
+      <switch name="dynamic_calibrate_ante">
+          <entry key="CLASS">ShoulderAnte/Retro</entry>
+      </switch>
+      
+      <switch name="left">
+        <entry key="SIDE">bds|links|Side L|Both</entry>
+      </switch>
+      <switch name="right">
+        <entry key="SIDE">bds|rechts|Side R|Both</entry>
+      </switch>
+      
+      <switch name="dynamic">
+        <entry key="TRIALCATEGORY">ShoulderAbdAdd|ShoulderAnteRetro|SGEleDep|SGProRetrac|Schuerzengriff|Kaemmen|Armkreisen|Buch|WaschenAchsel|AroIro-0|AroIro-90Abd|AroIro-90Ante</entry>
+      </switch>
+      
+      <switch name="right_dynamic">
+        <entry key="TRIALCATEGORY">ShoulderAbdAdd|ShoulderAnteRetro|SGEleDep|SGProRetrac|Schuerzengriff|Kaemmen|Armkreisen|Buch|WaschenAchsel|AroIro-0|AroIro-90Abd|AroIro-90Ante</entry>
+        <entry key="SIDE">bds|rechts|Side R|Both</entry>
+      </switch>
+       <switch name="left_dynamic">
+        <entry key="TRIALCATEGORY">ShoulderAbdAdd|ShoulderAnteRetro|SGEleDep|SGProRetrac|Schuerzengriff|Kaemmen|Armkreisen|Buch|WaschenAchsel|AroIro-0|AroIro-90Abd|AroIro-90Ante</entry>
+        <entry key="SIDE">bds|links|Side L|Both</entry>
+      </switch>
+      <switch name="static">
+        <entry key="TRIALCATEGORY">proprio|static</entry>
+      </switch>
+      
+  </Switches>
+  
+</CalcMLProcessConfig>

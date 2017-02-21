@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LabelSet name="Markers and points">
+    
+     <Labels fileSuffix="ux" baseFile="true">
+
+        <!-- Marker -->
+
+        <!--Label name="LSHO"/>
+        <Label name="RSHO"/-->
+        
+        <Label name="LHUMS"/>
+        <Label name="LHUMA"/>
+        <Label name="LHUMP"/>
+      
+        <Label name="LELB"/>
+        <Label name="LELBW"/>
+        <Label name="LULN"/>
+        <Label name="LRAD"/>
+        
+        <Label name="RHUMS"/>
+        <Label name="RHUMA"/>
+        <Label name="RHUMP"/>
+        
+        <Label name="RELB"/>
+        <Label name="RELBW"/>
+        <Label name="RULN"/>
+        <Label name="RRAD"/>
+        
+        <Label name="C7"/>
+        <Label name="RCLAV" optional="true"/>
+        <Label name="LCLAV" optional="true"/>
+        <Label name="CLAV"/>
+        <Label name="T10"/>
+        <Label name="STRN"/>
+
+        <Label name="SACR" optional="true"/>
+        <Label name="RASI" optional="true"/>
+        <Label name="LASI" optional="true"/>
+        
+        <!--Label name="LMCD" optional="true"/>
+        <Label name="LMCP" optional="true"/>
+        <Label name="RMCD" optional="true"/>
+        <Label name="RMCP" optional="true"/-->
+
+
+        <!-- Cluster markers -->
+        
+        <Label name="THRX1"/>
+        <Label name="THRX2"/>
+        <Label name="THRX3"/>
+        <Label name="THRX4"/> 
+
+        <Label name="RSCAP1"/>
+        <Label name="RSCAP2"/>
+        <Label name="RSCAP3"/>
+        <Label name="RSCAP4"/>
+
+        <Label name="LSCAP1"/>
+        <Label name="LSCAP2"/>
+        <Label name="LSCAP3"/>
+        <Label name="LSCAP4"/>
+
+        <Label name="RHUM4"/>
+        <Label name="LHUM4"/>
+
+        <Label name="LOCATOR1"/>
+        <Label name="LOCATOR2"/>
+        <Label name="LOCATOR3"/>
+        <Label name="LOCATOR4"/>
+
+              
+        <!-- Gelenkzentren -->
+
+        <Label name="RGHJC" optional="true"/>
+        <Label name="LGHJC" optional="true"/>
+        
+        <Label name="RGHJCRab" optional="true"/>
+        <Label name="LGHJCRab" optional="true"/>
+        
+        <Label name="REJC" optional="true"/>
+        <Label name="LEJC" optional="true"/>
+       
+        <Label name="RHUMC" optional="true"/>
+        <Label name="LHUMC" optional="true"/>
+        
+        <Label name="RHUMC2" optional="true"/>
+        <Label name="LHUMC2" optional="true"/>
+        
+        <Label name="PELC" optional="true"/>
+        
+        <Label name="RWJC" optional="true"/>
+        <Label name="LWJC" optional="true"/>
+        
+        
+        
+        <!-- Achsen -->
+
+        <Label name="LongitudinalAxisHDCalEnd" optional="true"/>
+        <Label name="AntPostAxisHDCalEnd" optional="true"/>
+        
+        <Label name="LElbowAxisHead" optional="true"/>
+        <Label name="RElbowAxisHead" optional="true"/>
+
+        <Label name="REJCSARA" optional="true"/>
+        <Label name="RElbowAxisHeadSARA" optional="true"/>
+
+        <!-- Koordinatensysteme -->
+        <!--Label name="LParting" optional="true"/>
+        <Label name="RParting" optional="true"/>
+        <Label name="LPartingPosition" optional="true"/>
+        <Label name="RPartingPosition" optional="true"/>
+        
+        <Label name="RHumuersHDCalA" optional="true"/>
+        <Label name="RHumuersHDCalAPosition" optional="true"/>
+        
+        <Label name="RThoraxHDCalA" optional="true"/>
+        <Label name="RThoraxHDCalAPosition" optional="true"/-->
+        
+        <!-- anatomische Punkte -->
+
+        <Label name="P"/>
+        
+
+        <!-- Thorax -->
+         
+        <Label name="T8"/>
+         
+        
+        <!-- Humerus -->
+        <Label name="REL" optional="true"/>
+        <Label name="REM" optional="true"/>
+        <Label name="LEL" optional="true"/>
+        <Label name="LEM" optional="true"/>
+        
+        <!-- Scapula/Acromion -->
+        <Label name="RTS" optional="true"/>
+        <!--Label name="RPC" optional="true"/-->
+        <Label name="RAA" optional="true"/>
+        <Label name="RAI" optional="true"/>
+        <Label name="RAC" optional="true"/>
+        
+        <Label name="LTS" optional="true"/>
+        <!--Label name="LPC" optional="true"/-->
+        <Label name="LAA" optional="true"/>
+        <Label name="LAI" optional="true"/>
+        <Label name="LAC" optional="true"/>
+        
+        <!-- Cluster -->
+        <Label name="Right_AcromionPosition"/>
+        <Label name="Right_Acromion"/>
+        <Label name="Left_AcromionPosition"/>
+        <Label name="Left_Acromion"/>
+        
+        <Label name="Left_Position"/>
+        <Label name="Left_Acromion"/>
+    </Labels>
+    
+</LabelSet>

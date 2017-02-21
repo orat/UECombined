@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LabelSet name="Angles, Markers, Jointcenters and EMG">
+    
+     <Labels name="Shoulder dircos" fileSuffix="1">
+         
+        <!-- Öffnungswinkel -->
+       
+        <Label name="RShoulderAbdAddDirCosAngle"/>
+        <Label name="LShoulderAbdAddDirCosAngle"/>
+       
+        <Label name="RShoulderEleDepDirCosAngle"/>
+        <Label name="LShoulderEleDepDirCosAngle"/>
+        
+        <Label name="RShoulderAnteRetroDirCosAngle"/>
+        <Label name="LShoulderAnteRetroDirCosAngle"/>        
+       
+     </Labels>
+     
+     
+      <Labels name="Shoulder proj" fileSuffix="2">
+         
+        <!-- Projektionswinkel -->
+        <Label name="RShoulderAbdAddProjAngle"/>
+        <Label name="LShoulderAbdAddProjAngle"/>  
+        
+        <Label name="RShoulderAnteRetroProjAngle"/>
+        <Label name="LShoulderAnteRetroProjAngle"/> 
+        
+     </Labels>
+      
+     <Labels name="Shoulder iro/aro" fileSuffix="3">
+         
+        <Label name="RShoulderIroAroAngle"/>
+        <Label name="LShoulderIroAroAngle"/>
+
+        <Label name="RShoulderIroAroAngleGlobe"/>
+        <Label name="LShoulderIroAroAngleGlobe"/>
+        
+        <Label name="RShoulderIroAroAngleGlobe2"/>
+        <Label name="LShoulderIroAroAngleGlobe2"/>
+
+        <Label name="RShoulderIroAroAngleGlobe3"/>
+        <Label name="LShoulderIroAroAngleGlobe3"/>
+
+        <Label name="RShoulderIroAroAngleGlobeAP"/>
+        <Label name="LShoulderIroAroAngleGlobeAP"/>
+       
+     </Labels>
+     
+     <Labels name="Shoulder dircos (with Pelvis markers)" fileSuffix="4">
+        
+        <!-- Öffnungswinkel -->
+        
+        <Label name="RShoulderAbdAddHDCalDirCosAngle"/>
+        <Label name="LShoulderAbdAddHDCalDirCosAngle"/>
+        
+        <Label name="RShoulderEleDepHDCalDirCosAngle"/>
+        <Label name="LShoulderEleDepHDCalDirCosAngle"/>
+        
+        <Label name="RShoulderAnteRetroHDCalDirCosAngle"/>
+        <Label name="LShoulderAnteRetroHDCalDirCosAngle"/>   
+        
+     </Labels>
+     
+     <Labels name="Shoulder iro/aro (with Pelvis markers)" fileSuffix="5">
+         
+        <Label name="RShoulderIroAroHDCalAngle"/>
+        <Label name="LShoulderIroAroHDCalAngle"/>
+
+        <Label name="RShoulderHDAdjunctRotationAngles"/>
+        <Label name="LShoulderHDAdjunctRotationAngles"/>
+        
+        <Label name="RShoulderIroAroHDCalAngleGlobe"/>
+        <Label name="LShoulderIroAroHDCalAngleGlobe"/>
+        
+        <Label name="RShoulderIroAroHDCalAngleGlobeAP"/>
+        <Label name="LShoulderIroAroHDCalAngleGlobeAP"/>
+       
+    </Labels>
+    
+    <Labels name="Shoulder proj (with Pelvis markers)" fileSuffix="6">
+         
+        <!-- Projektionswinkel -->
+         
+        <Label name="RShoulderAbdAddHDCalProjAngle"/>
+        <Label name="LShoulderAbdAddHDCalProjAngle"/>         
+
+        <Label name="RShoulderAnteRetroHDCalProjAngle"/>
+        <Label name="LShoulderAnteRetroHDCalProjAngle"/> 
+        
+    </Labels>
+    
+    <Labels name="Elbow" fileSuffix="7">
+         
+        <Label name="RProSupiAngle"/>
+        <Label name="LProSupiAngle"/> 
+        
+        <Label name="RElbowFlexExtAngle"/>
+        <Label name="LElbowFlexExtAngle"/>
+
+    </Labels>
+     
+    <Labels name="Trunk proj" fileSuffix="8">
+
+        <Label name="TrunkTiltAngle"/>
+        <Label name="RTrunkObliquityAngle"/>
+        <Label name="LTrunkObliquityAngle"/>
+        <Label name="TrunkRotationAngle"/>
+         
+    </Labels>
+    
+    <Labels name="Trunk proj (with Pelvis markers)" fileSuffix="9">
+
+        <Label name="TrunkTiltHDCalAngle"/>
+        <Label name="RTrunkObliquityHDCalAngle"/>
+        <Label name="LTrunkObliquityHDCalAngle"/>
+        <Label name="TrunkRotationHDCalAngle"/>
+         
+    </Labels>
+   
+    <Labels name="Shouldergirdle" fileSuffix="10">
+        <Label name="RShoulderGirdleEleDepAngle" optional="true"/>
+        <Label name="LShoulderGirdleEleDepAngle" optional="true"/>
+        <Label name="RShoulderGirdleProRetracProjAngle" optional="true"/>
+        <Label name="LShoulderGirdleProRetracProjAngle" optional="true"/>
+    </Labels>
+    
+    <Labels name="Shouldergirdle (with Pelivis markers)" fileSuffix="11">
+        <Label name="RShoulderGirdleEleDepHDCalAngle" optional="true"/>
+        <Label name="LShoulderGirdleEleDepHDCalAngle" optional="true"/>
+        <Label name="RShoulderGirdleProRetracHDCalProjAngle" optional="true"/>
+        <Label name="LShoulderGirdleProRetracHDCalProjAngle" optional="true"/>
+    </Labels>
+    
+    <Labels name="Glenohumeral" fileSuffix="12">
+         <Label name="RGlenohumeralEleDepDirCosAngle" optional="true"/>
+         <Label name="LGlenohumeralEleDepDirCosAngle" optional="true"/>
+         <Label name="RGlenohumeralEleDepHDCalDirCosAngle" optional="true"/>
+         <Label name="LGlenohumeralEleDepHDCalDirCosAngle" optional="true"/>
+    </Labels>
+    
+    <Labels name="Scapula Euler/Cardan" fileSuffix="13">
+        <!-- Scapula to thorax -->
+        <Label name="RScapProRetraction"/>
+        <Label name="RScapRotation"/>
+        <Label name="RScapTilting"/>
+        <Label name="LScapProRetraction"/>
+        <Label name="LScapRotation"/>
+        <Label name="LScapTilting"/>
+        
+        <Label name="RScapTiltingProj2Angle"/>
+    </Labels>
+    
+    <Labels name="Clavicula Euler/Cardan" fileSuffix="14">
+        <!-- Clavicula to thorax -->
+        <Label name="RClavProRetraction"/>
+        <Label name="RClavDepressionElevation"/>
+        <Label name="RClavAxialRotation"/>
+        <Label name="LClavProRetraction"/>
+        <Label name="LClavDepressionElevation"/>
+        <Label name="LClavAxialRotation"/>
+    </Labels>
+    
+    <!-- testweise -->
+    <!--Labels name="Clavicula dircos and proj" fileSuffix="15">
+        <Label name="RClavDepressionElevationAAngle"/>
+    </Labels-->
+</LabelSet>

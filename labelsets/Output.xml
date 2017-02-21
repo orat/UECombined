@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LabelSet name="Winkel">
+    
+     <Labels name="All" fileSuffix="glx" baseFile="true">
+
+        <Label name="T"/>
+        
+        <!-- Winkel -->
+
+        <!--Label name="HeadTiltProjAngle"/>
+        <Label name="RHeadObliquityProjAngle"/>
+        <Label name="LHeadObliquityProjAngle"/-->
+
+        <Label name="TrunkTiltAngle"/>
+        <Label name="RTrunkObliquityAngle"/>
+        <Label name="LTrunkObliquityAngle"/>
+        <!--Label name="TrunkRotationAngle"/-->
+         
+        <Label name="TrunkTiltHDCalAngle"/>
+        <Label name="RTrunkObliquityHDCalAngle"/>
+        <Label name="LTrunkObliquityHDCalAngle"/>
+        <!--Label name="TrunkRotationHDCalAngle"/-->
+        
+        <!-- Humeruswinkel -->
+        
+        <!-- als Öffnungswinkel -->
+        <Label name="RShoulderAbdAddDirCosAngle" optional="true"/>
+        <Label name="LShoulderAbdAddDirCosAngle" optional="true"/>
+        
+        <Label name="RShoulderAbdAddHDCalDirCosAngle" optional="true"/>
+        <Label name="LShoulderAbdAddHDCalDirCosAngle" optional="true"/>
+       
+        <Label name="RShoulderEleDepDirCosAngle" optional="true"/>
+        <Label name="LShoulderEleDepDirCosAngle" optional="true"/>
+        
+        <Label name="RShoulderEleDepHDCalDirCosAngle" optional="true"/>
+        <Label name="LShoulderEleDepHDCalDirCosAngle" optional="true"/>
+        
+        <Label name="RShoulderAnteRetroDirCosAngle" optional="true"/>
+        <Label name="LShoulderAnteRetroDirCosAngle" optional="true"/>
+       
+        <Label name="RShoulderAnteRetroHDCalDirCosAngle" optional="true"/>
+        <Label name="LShoulderAnteRetroHDCalDirCosAngle" optional="true"/>
+        
+        <!-- als Projektionswinkel -->
+        <Label name="RShoulderAnteRetroProjAngle" optional="true"/>
+        <Label name="LShoulderAnteRetroProjAngle" optional="true"/>
+        
+        <Label name="RShoulderAnteRetroHDCalProjAngle" optional="true"/>
+        <Label name="LShoulderAnteRetroHDCalProjAngle" optional="true"/>
+       
+        <Label name="RShoulderAbdAddProjAngle" optional="true"/>
+        <Label name="LShoulderAbdAddProjAngle" optional="true"/>
+
+        <Label name="RShoulderAbdAddHDCalProjAngle" optional="true"/>
+        <Label name="LShoulderAbdAddHDCalProjAngle" optional="true"/>
+         
+        
+        <!-- iro/aro -->
+        <Label name="RShoulderIroAroAngle" optional="true"/>
+        <Label name="LShoulderIroAroAngle" optional="true"/>
+        
+        <Label name="RShoulderIroAroHDCalAngle" optional="true"/>
+        <Label name="LShoulderIroAroHDCalAngle" optional="true"/>
+       
+        <Label name="RShoulderIroAroAngleGlobe" optional="true"/>
+        <Label name="LShoulderIroAroAngleGlobe" optional="true"/>
+
+         
+        <!--Label name="RShoulderIroAroAngleGlobeAP" optional="true"/>
+        <Label name="LShoulderIroAroAngleGlobeAP" optional="true"/-->
+        
+        <Label name="RShoulderIroAroHDCalAngleGlobe" optional="true"/>
+        <Label name="LShoulderIroAroHDCalAngleGlobe" optional="true"/>
+        
+        <!--Label name="RShoulderIroAroHDCalAngleGlobe2"/>
+        <Label name="LShoulderIroAroHDCalAngleGlobe2"/-->
+     
+        <!--Label name="RShoulderIroAroHDCalAngleGlobe3"/>
+        <Label name="LShoulderIroAroHDCalAngleGlobe3"/>
+
+        <Label name="RShoulderIroAroHDCalAngleGlobeAP" optional="true"/>
+        <Label name="LShoulderIroAroHDCalAngleGlobeAP" optional="true"/-->
+        
+        <Label name="RShoulderHDAdjunctRotationAngles" optional="true"/>
+        <Label name="LShoulderHDAdjunctRotationAngles" optional="true"/>
+     
+        <Label name="RShoulderHDAdjunctRotation2Angles"/>
+        
+        <!-- testweise -->
+        <!--Label name="RShoulderXYZAngles"/-->
+        
+        
+        <!--Label name="RShoulderYXYAngles"/>
+        <Label name="RShoulderYXY1Angles"/> 
+        <Label name="RShoulderYXY2Angles"/-->
+        
+        <Label name="RHumerusS"/>
+        <Label name="RHumerusSPosition"/>
+        
+        <!-- Schultergürtelwinkel -->
+        
+        <!-- SG EleDepression -->   
+        
+        <Label name="RShoulderGirdleEleDepAngle" optional="true"/>
+        <Label name="LShoulderGirdleEleDepAngle" optional="true"/>
+
+        <Label name="RShoulderGirdleEleDepHDCalAngle" optional="true"/>
+        <Label name="LShoulderGirdleEleDepHDCalAngle" optional="true"/>
+        
+        
+        <!-- SG ProRetraction -->
+        
+        <Label name="RShoulderGirdleProRetracProjAngle" optional="true"/>
+        <Label name="LShoulderGirdleProRetracProjAngle" optional="true"/>
+        
+        <Label name="RShoulderGirdleProRetracHDCalProjAngle" optional="true"/>
+        <Label name="LShoulderGirdleProRetracHDCalProjAngle" optional="true"/>
+        
+        
+        <!-- glenohumerale Winkel -->
+    
+        <Label name="RGlenohumeralEleDepDirCosAngle" optional="true"/>
+        <Label name="LGlenohumeralEleDepDirCosAngle" optional="true"/>
+        
+        <Label name="RGlenohumeralEleDepHDCalDirCosAngle" optional="true"/>
+        <Label name="LGlenohumeralEleDepHDCalDirCosAngle" optional="true"/>
+         
+        <!-- Unterarm -->
+        
+        <Label name="RElbowFlexExtAngle" differentiations="1" optional="true"/>
+        <Label name="LElbowFlexExtAngle" differentiations="1" optional="true"/>
+
+        <Label name="RProSupiProjAngle" optional="true"/>
+        <Label name="LProSupiProjAngle" optional="true"/>
+        
+        
+        <!--Label name="RHandFlexExtAngle" optional="true"/>
+        <Label name="LHandFlexExtAngle" optional="true"/>
+        
+        <Label name="RHandRadUlnAngle" optional="true"/>
+        <Label name="LHandRadUlnAngle" optional="true"/-->
+
+
+        <!-- scapula angles -->
+        
+        <Label name="RScapProRetraction"/>
+        <Label name="RScapRotation"/>
+        <Label name="RScapTilting"/>
+        
+        <Label name="LScapProRetraction"/>
+        <Label name="LScapRotation"/>
+        <Label name="LScapTilting"/>
+        
+        <!-- testweise Winkel -->
+        <!--Label name="RScapTiltingProjAngle"/>
+        <Label name="RScapTiltingProj2Angle"/-->
+        
+        
+        <!-- clavicula angles -->
+        
+        <Label name="RClavProRetraction"/>
+        <Label name="RClavDepressionElevation"/>
+        
+        <!-- testweise -->
+        <Label name="RClavDepressionElevationAAngle"/>
+        
+        <Label name="LClavProRetraction"/>
+        <Label name="LClavDepressionElevation"/>
+        
+        
+        <!-- Marker -->
+
+        <!--Label name="LSHO"/>
+        <Label name="RSHO"/-->
+        
+        <Label name="LHUMS"/>
+        <Label name="LHUMA"/>
+        <Label name="LHUMP"/>
+      
+        <Label name="LELB"/>
+        <Label name="LELBW"/>
+        <Label name="LULN"/>
+        <Label name="LRAD"/>
+        
+        <Label name="RHUMS"/>
+        <Label name="RHUMA"/>
+        <Label name="RHUMP"/>
+        
+        <Label name="RELB"/>
+        <Label name="RELBW"/>
+        <Label name="RULN"/>
+        <Label name="RRAD"/>
+        
+        <Label name="C7"/>
+        <!--Label name="RCLAV" optional="true"/>
+        <Label name="LCLAV" optional="true"/-->
+        <Label name="CLAV"/>
+        <Label name="T10"/>
+        <Label name="STRN"/>
+
+        <Label name="SACR" optional="true"/>
+        <Label name="RASI" optional="true"/>
+        <Label name="LASI" optional="true"/>
+        
+        <!--Label name="LMCD" optional="true"/>
+        <Label name="LMCP" optional="true"/>
+        <Label name="RMCD" optional="true"/>
+        <Label name="RMCP" optional="true"/-->
+
+
+        <!-- Cluster markers -->
+        
+        <Label name="THRX1"/>
+        <Label name="THRX2"/>
+        <Label name="THRX3"/>
+        <Label name="THRX4"/> 
+
+        <Label name="RSCAP1"/>
+        <Label name="RSCAP2"/>
+        <Label name="RSCAP3"/>
+        <Label name="RSCAP4"/>
+
+        <Label name="LSCAP1"/>
+        <Label name="LSCAP2"/>
+        <Label name="LSCAP3"/>
+        <Label name="LSCAP4"/>
+
+        <Label name="RHUM4"/>
+        <Label name="LHUM4"/>
+
+        <Label name="LOCATOR1"/>
+        <Label name="LOCATOR2"/>
+        <Label name="LOCATOR3"/>
+        <Label name="LOCATOR4"/>
+
+        <!-- Gelenkzentren -->
+
+        <Label name="RGHJC" optional="true"/>
+        <Label name="LGHJC" optional="true"/>
+        
+        <Label name="RGHJCRab" optional="true"/>
+        <Label name="LGHJCRab" optional="true"/>
+        
+        <Label name="REJC" optional="true"/>
+        <Label name="LEJC" optional="true"/>
+       
+        <Label name="RHUMC" optional="true"/>
+        <Label name="LHUMC" optional="true"/>
+        
+        <!--Label name="RHUMC2" optional="true"/>
+        <Label name="LHUMC2" optional="true"/-->
+        
+        <Label name="PELC" optional="true"/>
+        
+        <Label name="RWJC" optional="true"/>
+        <Label name="LWJC" optional="true"/>
+        
+        
+        
+        <!-- Achsen -->
+
+        <Label name="LongitudinalAxisHDCalEnd" optional="true"/>
+        <Label name="AntPostAxisHDCalEnd" optional="true"/>
+        
+        <Label name="AntPostAxisHDCalScaled" optional="true"/>
+        <Label name="LongitudinalAxisHDCalScaled" optional="true"/>
+        <Label name="MedioLateralAxisHDCalScaled" optional="true"/>
+        
+        <Label name="ThoraxC1"/>
+     
+        <Label name="LElbowAxisHead" optional="true"/>
+        <Label name="RElbowAxisHead" optional="true"/>
+
+        <Label name="REJCSARA" optional="true"/>
+        <Label name="RElbowAxisHeadSARA" optional="true"/>
+
+        
+        <!-- Koordinatensysteme -->
+        
+        <!--Label name="LParting" optional="true"/>
+        <Label name="RParting" optional="true"/>
+        <Label name="LPartingPosition" optional="true"/>
+        <Label name="RPartingPosition" optional="true"/-->
+        
+        <Label name="RHumuersHDCalA" optional="true"/>
+        <Label name="RHumuersHDCalAPosition" optional="true"/>
+        
+        <Label name="RThoraxHDCalA" optional="true"/>
+        <Label name="RThoraxHDCalAPosition" optional="true"/>
+       
+        <Label name="RThorax_ISB" optional="true"/>
+        <Label name="RThorax_ISBPosition" optional="true"/>
+        
+        <Label name="LThorax_ISB" optional="true"/>
+        <Label name="LThorax_ISBPosition" optional="true"/>
+          
+        <Label name="RScapula_ISB" optional="true"/>
+        <Label name="RScapula_ISBPosition" optional="true"/>
+        
+        <Label name="LScapula_ISB" optional="true"/>
+        <Label name="LScapula_ISBPosition" optional="true"/>
+        
+        <Label name="RClavicula_ISB" optional="true"/>
+        <Label name="RClavicula_ISBPosition" optional="true"/>
+        
+        <Label name="LClavicula_ISB" optional="true"/>
+        <Label name="LClavicula_ISBPosition" optional="true"/>
+
+        <!-- anatomische Punkte -->
+
+        <!-- Thorax -->
+         
+        <Label name="T8"/>
+        
+        
+        <!-- Humerus -->
+        <Label name="REL" optional="true"/>
+        <Label name="REM" optional="true"/>
+        <Label name="LEL" optional="true"/>
+        <Label name="LEM" optional="true"/>
+        
+        <!-- Scapula/Acromion -->
+        <Label name="RTS" optional="true"/>
+        <!--Label name="RPC" optional="true"/-->
+        <Label name="RAA" optional="true"/>
+        <Label name="RAI" optional="true"/>
+        <Label name="RAC" optional="true"/>
+        <Label name="LTS" optional="true"/>
+        <!--Label name="LPC" optional="true"/-->
+        <Label name="LAA" optional="true"/>
+        <Label name="LAI" optional="true"/>
+        <Label name="LAC" optional="true"/>
+        
+        <!-- Cluster -->
+        <Label name="Right_AcromionPosition"/>
+        <Label name="Right_Acromion"/>
+        <Label name="Left_AcromionPosition"/>
+        <Label name="Left_Acromion"/>
+        <Label name="Thorax_ClusterPosition"/>
+        <Label name="Thorax_Cluster"/>        
+    </Labels>
+    <!--Phases>
+        <Phase name="RCycle"/>
+        <Phase name="RCycleFW"/>
+        <Phase name="RCycleA"/>
+        <Phase name="RCycleBW"/>
+        <Phase name="LCycle"/>
+        <Phase name="LCycleFW"/>
+        <Phase name="LCycleA"/>
+        <Phase name="LCycleBW"/>    
+    </Phases-->
+</LabelSet>

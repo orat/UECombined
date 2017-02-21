@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EclipsePreferences>
+  <Column TYPE="Name" NAME="Name" WIDTH="98" MUTUALLYEXCLUSIVE="False"></Column>
+  <Column TYPE="Files" NAME="Files" WIDTH="80" MUTUALLYEXCLUSIVE="False"></Column>
+  <Column TYPE="Created" NAME="Created" WIDTH="100" MUTUALLYEXCLUSIVE="False"></Column>
+  <Column TYPE="Modified" NAME="Modified" WIDTH="100" MUTUALLYEXCLUSIVE="False"></Column>
+  <Column TYPE="Type" NAME="Type" WIDTH="100" MUTUALLYEXCLUSIVE="False"></Column>
+  <Column TYPE="Description" NAME="Description" WIDTH="100" MUTUALLYEXCLUSIVE="False">
+    <ColumnValue VALUE="Undef" COLOUR="-16777216" />
+    <ColumnValue VALUE="Static" COLOUR="-16777216" />
+    <ColumnValue VALUE="Static_Cal" COLOUR="-16777216" />
+    <ColumnValue VALUE="Dynamic" COLOUR="-16777216" />
+    <ColumnValue VALUE="Dynamic+Kinetics" COLOUR="-16777216" />
+    <ColumnValue VALUE="Joint" COLOUR="-16777216" />
+    <ColumnValue VALUE="ElbowFlex/Ext" COLOUR="-16777216" />
+    <ColumnValue VALUE="ShoulderAbd/Add" COLOUR="-16777216" />
+    <ColumnValue VALUE="ShoulderAnte/Retro" COLOUR="-16777216" />
+    <ColumnValue VALUE="ShoulderTransAbd" COLOUR="-16777216" />
+    <ColumnValue VALUE="ShoulderCircle" COLOUR="-16777216" />
+    <ColumnValue VALUE="HipAbd/Add" COLOUR="-16777216" />
+    <ColumnValue VALUE="HipFlex/Ext" COLOUR="-16777216" />
+    <ColumnValue VALUE="HipCircle" COLOUR="-16777216" />
+    <ColumnValue VALUE="KneeFlex/Ext" COLOUR="-16777216" />
+    <ColumnValue VALUE="AnklePro/Supi" COLOUR="-16777216" />
+    <ColumnValue VALUE="AnkleDors/Plant" COLOUR="-16777216" />
+    <ColumnValue VALUE="AnkleCircle" COLOUR="-16777216" />
+    <ColumnValue VALUE="Not For Use" COLOUR="-16777216" />
+  </Column>
+  <Column TYPE="Side" NAME="Side" WIDTH="100" MUTUALLYEXCLUSIVE="False">
+    <ColumnValue VALUE="Side R" COLOUR="-16777216" />
+    <ColumnValue VALUE="Side L" COLOUR="-16777216" />
+    <ColumnValue VALUE="Both" COLOUR="-16777216" />
+  </Column>
+  <Column TYPE="ForcePlate" NAME="ForcePlate1" WIDTH="100" MUTUALLYEXCLUSIVE="False">
+    <ColumnValue VALUE="Automatic" COLOUR="-1" />
+    <ColumnValue VALUE="Not valid" COLOUR="-8355712" />
+    <ColumnValue VALUE="Left valid" COLOUR="-18751" />
+    <ColumnValue VALUE="Right valid" COLOUR="-7278960" />
+  </Column>
+  <Column TYPE="ForcePlate" NAME="ForcePlate2" WIDTH="100" MUTUALLYEXCLUSIVE="False">
+    <ColumnValue VALUE="Automatic" COLOUR="-1" />
+    <ColumnValue VALUE="Not valid" COLOUR="-8355712" />
+    <ColumnValue VALUE="Left valid" COLOUR="-18751" />
+    <ColumnValue VALUE="Right valid" COLOUR="-7278960" />
+  </Column>
+  <Column TYPE="ForcePlate" NAME="ForcePlate3" WIDTH="100" MUTUALLYEXCLUSIVE="False">
+    <ColumnValue VALUE="Automatic" COLOUR="-1" />
+    <ColumnValue VALUE="Not valid" COLOUR="-8355712" />
+    <ColumnValue VALUE="Left valid" COLOUR="-18751" />
+    <ColumnValue VALUE="Right valid" COLOUR="-7278960" />
+  </Column>
+  <Column TYPE="ForcePlate" NAME="ForcePlate4" WIDTH="100" MUTUALLYEXCLUSIVE="False">
+    <ColumnValue VALUE="Automatic" COLOUR="-1" />
+    <ColumnValue VALUE="Not valid" COLOUR="-8355712" />
+    <ColumnValue VALUE="Left valid" COLOUR="-18751" />
+    <ColumnValue VALUE="Right valid" COLOUR="-7278960" />
+  </Column>
+  <Column TYPE="Notes" NAME="Notes" WIDTH="100" MUTUALLYEXCLUSIVE="False"></Column>
+  <NodeType STEREOTYPE="ECLIPSEDATABASE" TYPESTRINGS="Eclipse Database" />
+  <NodeType STEREOTYPE="PATIENT_CLASSIFICATION" TYPESTRINGS="Patient Classification,Top level" />
+  <NodeType STEREOTYPE="SUBJECT" TYPESTRINGS="Patient,Subject" />
+  <NodeType STEREOTYPE="SESSION" TYPESTRINGS="Session" />
+  <NodeType STEREOTYPE="REPORT" TYPESTRINGS="Report" />
+  <NodeType STEREOTYPE="TRIAL" TYPESTRINGS="Trial,Take" />
+  <NodeType STEREOTYPE="SUBJECTFILE" TYPESTRINGS="Subject" />
+  <NodeType STEREOTYPE="MARKERFILE" TYPESTRINGS="Marker File" />
+  <NodeType STEREOTYPE="UNKNOWN" TYPESTRINGS="Unknown Node Type" />
+  <C3DVersionStrings Version1="Labelled" Version2="Gap Filled" Version3="Filtered" Version4="Modelled" />
+</EclipsePreferences>

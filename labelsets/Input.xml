@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LabelSet name="Markers">
+    
+  <Labels name="Markers" baseFile="true">
+
+      <Filter name="zero2nan"/>
+
+      <!-- HUX markers -->
+ 
+      <!--Label name="LSHO"/-->
+      <!--Label name="RSHO"/-->
+      
+      
+      <Label name="LHUMS"/>
+      <Label name="LHUMA"/>
+      <Label name="LHUMP"/>
+
+      <Label name="LELB"/>
+      <Label name="LELBW"/>
+
+      <!--Label name="ULELB" optional="true"/>
+      <Label name="ULELBW" optional="true"/-->
+
+      <Label name="LULN"/>
+      <Label name="LRAD"/>
+      
+      
+      <Label name="RHUMS"/>
+      <Label name="RHUMA"/>
+      <Label name="RHUMP"/>
+
+      <Label name="RELB"/>
+      <Label name="RELBW"/>
+
+      <!--Label name="URELB"  optional="true"/>
+      <Label name="URELBW" optional="true"/-->
+
+      <Label name="RULN"/>
+      <Label name="RRAD"/>
+      
+      <Label name="C7"/>
+      <!--Label name="RCLAV" optional="true"/>
+      <Label name="LCLAV" optional="true"/-->
+      <Label name="T10"/>
+      
+      <Label name="CLAV"/> <!-- IJ Incisura jugularis -->
+      <Label name="STRN"/> <!-- PX processus xiphoidus -->
+
+      <!-- Hand -->
+      <!--Label name="LMCD"/>
+      <Label name="RMCD"/>
+
+      <Label name="LMCP"/>
+      <Label name="RMCP"/-->
+      
+      <Label name="RASI"/>
+      <Label name="LASI"/>
+      <Label name="SACR"/>
+
+      
+      <!-- Cluster markers -->
+      
+      <Label name="THRX1">
+          <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label>
+      <Label name="THRX2">
+          <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label>
+      <Label name="THRX3">
+           <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label>
+      <Label name="THRX4">
+           <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label> 
+
+      <Label name="RSCAP1">
+           <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label> 
+      <Label name="RSCAP2">
+           <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label> 
+      <Label name="RSCAP3">
+           <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label> 
+      <Label name="RSCAP4">
+           <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label> 
+      
+      <Label name="LSCAP1">
+           <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label> 
+      <Label name="LSCAP2">
+           <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label> 
+      <Label name="LSCAP3">
+           <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label> 
+      <Label name="LSCAP4">
+           <Filter name="butterorder2" cutOffFrequency="3" zeroPhase="true" samplingFrequency="120"/>
+      </Label> 
+      
+      <Label name="RHUM4"/>
+      <Label name="LHUM4"/>
+               
+      <Label name="LOCATOR1"/>
+      <Label name="LOCATOR2"/>
+      <Label name="LOCATOR3"/>
+      <Label name="LOCATOR4"/> 
+                        
+  </Labels> 
+
+  <LabelsMap>
+      <Label from="RHUM1" to="RHUMS"/>
+      <Label from="RHUM2" to="RHUMA"/>
+      <Label from="RHUM3" to="RHUMP"/>
+      <Label from="LHUM1" to="LHUMS"/>
+      <Label from="LHUM2" to="LHUMA"/>
+      <Label from="LHUM3" to="LHUMP"/>
+      
+      <Label from="TH10" to="T10"/>
+  </LabelsMap>
+</LabelSet>

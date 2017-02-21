@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<View4d name="Full Body">
+    <MarkerSet name="Markers">
+        
+        <!-- thorax -->
+        <Marker name="CLAV" origin="CLAV"/>
+        <Marker name="RCLAV" origin="CLAV"/>
+        <Marker name="LCLAV" origin="CLAV"/>
+        
+        <Marker name="STRN" origin="STRN"/>
+        <Marker name="C7"   origin="C7"/>
+             
+        <Marker name="T10"  origin="T10"/> 
+        <Marker name="TH10"  origin="TH10"/>
+        
+        <!-- pelvis -->
+        <Marker name="SACR" origin="SACR"/>
+        <Marker name="RASI" origin="RASI"/>
+        <Marker name="LASI" origin="LASI"/>
+                
+        <!-- left leg -->
+        <Marker name="LTHI" origin="LTHI"/>
+        <Marker name="LKNE" origin="LKNE"/>
+        <Marker name="LTIB" origin="LTIB"/>
+        <Marker name="LANK" origin="LANK"/>
+        <Marker name="LHEE" origin="LHEE"/>
+        <Marker name="LTOE" origin="LTOE"/>
+     
+        <!-- right leg -->
+        <Marker name="RTHI" origin="RTHI"/>
+        <Marker name="RKNE" origin="RKNE"/>
+        <Marker name="RTIB" origin="RTIB"/>
+        <Marker name="RHEE" origin="RHEE"/>
+        <Marker name="RTOE" origin="RTOE"/>
+        <Marker name="RANK" origin="RANK"/>
+        
+        <!-- KAD -->
+        <Marker name="LKD2" origin="LKD2"/>
+        <Marker name="RKD2" origin="RKD2"/>
+        <Marker name="RKAX" origin="RKAX"/>
+        <Marker name="LKD1" origin="LKD1"/>
+        <Marker name="RKD1" origin="RKD1"/>
+        <Marker name="LKAX" origin="LKAX"/>
+        <!--Marker name="PELF" origin="PELF"/--> 
+                
+        <Marker name="RRAD"  origin="RRAD"/>
+        <Marker name="RULN"  origin="RULN"/>  
+        <Marker name="RELB"  origin="RELB"/>
+        <Marker name="RELBW" origin="RELBW"/> 
+        
+        <Marker name="RHUMS" origin="RHUMS"/>
+        <Marker name="RHUMA" origin="RHUMA"/>
+        <Marker name="RHUMP" origin="RHUMP"/>
+                
+        <!-- left arm -->
+        <Marker name="LRAD"  origin="LRAD"/>
+        <Marker name="LULN"  origin="LULN"/>
+        <Marker name="LELB"  origin="LELB"/>
+        <Marker name="LELBW" origin="LELBW"/>
+        
+        <Marker name="LHUMS" origin="LHUMS"/>
+        <Marker name="LHUMA" origin="LHUMA"/>
+        <Marker name="LHUMP" origin="LHUMP"/>
+        
+                
+        <!-- head -->
+        <Marker name="RMAS"  origin="RMAS"/>
+        <Marker name="LMAS"  origin="LMAS"/>
+        <Marker name="HEAD"  origin="HEAD"/>
+                
+        <Marker name="RMCD"  origin="RMCD"/>
+        <Marker name="RMCP"  origin="RMCP"/>
+        <Marker name="LMCD"  origin="LMCD"/>
+        <Marker name="LMCP"  origin="LMCP"/>
+
+        <!-- locator -->
+        <Marker name="LOCATOR1"  origin="LOCATOR1" color="green"/>
+        <Marker name="LOCATOR2"  origin="LOCATOR2" color="blue"/>
+        <Marker name="LOCATOR3"  origin="LOCATOR3" color="yellow"/>
+        <Marker name="LOCATOR4"  origin="LOCATOR4" color="red"/>
+        
+        <Marker name="THRX1"  origin="THRX1"/>
+        <Marker name="THRX2"  origin="THRX2"/>
+        <Marker name="THRX3"  origin="THRX3"/>
+        <Marker name="THRX4"  origin="THRX4"/>
+        
+        <!-- acromion cluster markers -->
+        
+        <Marker name="RSCAP1"  origin="RSCAP1"/>
+        <Marker name="RSCAP2"  origin="RSCAP2"/>
+        <Marker name="RSCAP3"  origin="RSCAP3"/>
+        <Marker name="RSCAP4"  origin="RSCAP4"/>
+        
+        <Marker name="LSCAP1"  origin="LSCAP1"/>
+        <Marker name="LSCAP2"  origin="LSCAP2"/>
+        <Marker name="LSCAP3"  origin="LSCAP3"/>
+        <Marker name="LSCAP4"  origin="LSCAP4"/>
+        
+        <ConnectionSet name="MarkerConnections">
+            
+            <!-- locator -->
+            <Connection name="Locator13"
+                        start="LOCATOR1"
+                        end="LOCATOR3"/>
+            <Connection name="Locator24"
+                        start="LOCATOR2"
+                        end="LOCATOR4"/>
+             
+            <Connection name="1"
+                        start="C7"
+                        end="RSHO"/>
+            <Connection name="2"
+                        start="RSHO"
+                        end="CLAV"/> 
+                        
+            <Connection name="3a"
+                        start="CLAV"
+                        end="RCLAV"/> 
+            <Connection name="3b"
+                        start="CLAV"
+                        end="LCLAV"/> 
+            <Connection name="3c"
+                        start="RCLAV"
+                        end="LCLAV"/> 
+                        
+            <Connection name="5"
+                        start="CLAV"
+                        end="STRN"/> 
+            <Connection name="6"
+                        start="C7"
+                        end="T10"/> 
+            <Connection name="6A"
+                        start="C7"
+                        end="TH10"/>
+            <Connection name="6B"
+                        start="C7"
+                        end="CLAV"/> 
+            <Connection name="7"
+                        start="T10"
+                        end="SACR"/> 
+             <Connection name="7a"
+                        start="TH10"
+                        end="SACR"/> 
+            <Connection name="7b"
+                        start="T10"
+                        end="STRN"/> 
+            <Connection name="7c"
+                        start="TH10"
+                        end="STRN"/> 
+            <Connection name="8"
+                        start="SACR"
+                        end="RASI"/> 
+            <Connection name="9"
+                        start="RASI"
+                        end="LASI"/> 
+            <Connection name="10"
+                        start="LASI"
+                        end="SACR"/> 
+               
+            <Connection name="11"
+                        start="RASI"
+                        end="RTHI"/> 
+            <Connection name="12"
+                        start="RTHI"
+                        end="RKNE"/> 
+            <Connection name="13"
+                        start="RKNE"
+                        end="RTIB"/> 
+            <Connection name="14"
+                        start="RTIB"
+                        end="RANK"/> 
+                        
+            <Connection name="15"
+                        start="RANK"
+                        end="RHEE"/> 
+            <Connection name="16"
+                        start="RHEE"
+                        end="RTOE"/> 
+            <Connection name="17"
+                        start="RTOE"
+                        end="RANK"/> 
+            
+            <Connection name="18"
+                        start="LASI"
+                        end="LTHI"/> 
+            <Connection name="19"
+                        start="LTHI"
+                        end="LKNE"/> 
+            <Connection name="20"
+                        start="LKNE"
+                        end="LTIB"/> 
+            <Connection name="21"
+                        start="LTIB"
+                        end="LANK"/>  
+             
+            <Connection name="22"
+                        start="LANK"
+                        end="LHEE"/> 
+            <Connection name="23"
+                        start="LHEE"
+                        end="LTOE"/> 
+            <Connection name="24"
+                        start="LTOE"
+                        end="LANK"/> 
+                        
+             <Connection name="25"
+                        start="LRAD"
+                        end="LULN"/> 
+            <Connection name="26"
+                        start="LULN"
+                        end="LELBW"/> 
+            <Connection name="27"
+                        start="LRAD"
+                        end="LELB"/>
+            <Connection name="28"
+                        start="LELBW"
+                        end="LHUMS"/> 
+            <Connection name="29"
+                        start="LELB"
+                        end="LHUMS"/> 
+            <Connection name="30"
+                        start="LHUMS"
+                        end="LSHO"/>  
+                
+            <Connection name="30aa"
+                        start="LELB"
+                        end="LELBW"/> 
+                    
+            <Connection name="30a"
+                        start="LHUMS"
+                        end="LHUMA"/>  
+            <Connection name="30b"
+                        start="LHUMS"
+                        end="LHUMP"/>  
+            <Connection name="30c"
+                        start="LHUMA"
+                        end="LHUMP"/>  
+                        
+                        
+            <Connection name="31"
+                        start="RRAD"
+                        end="RULN"/> 
+            <Connection name="32"
+                        start="RULN"
+                        end="RELBW"/> 
+            <Connection name="33"
+                        start="RRAD"
+                        end="RELB"/>
+            <Connection name="34"
+                        start="RELBW"
+                        end="RHUMS"/> 
+            <Connection name="35"
+                        start="RELB"
+                        end="RHUMS"/>
+                        
+            <Connection name="36"
+                        start="RHUMS"
+                        end="RSHO"/>  
+                   
+            <Connection name="36a"
+                        start="RHUMS"
+                        end="RHUMA"/>  
+            <Connection name="36b"
+                        start="RHUMS"
+                        end="RHUMP"/>  
+            <Connection name="36c"
+                        start="RHUMA"
+                        end="RHUMP"/>  
+                        
+            <Connection name="37a"
+                        start="RELB"
+                        end="RELBW"/>  
+               
+            <Connection name="37"
+                        start="LMAS"
+                        end="RMAS"/> 
+            <Connection name="38"
+                        start="RMAS"
+                        end="HEAD"/> 
+            <Connection name="39"
+                        start="HEAD"
+                        end="LMAS"/>  
+            
+            <!-- acromion marker cluster -->
+            <Connection name="RACCluster1"
+                        start="RSCAP1"
+                        end="RSCAP2"/> 
+            <Connection name="RACCluster2"
+                        start="RSCAP2"
+                        end="RSCAP3"/>  
+            <Connection name="RACCluster3"
+                        start="RSCAP3"
+                        end="RSCAP4"/> 
+            <Connection name="RACCluster4"
+                        start="RSCAP4"
+                        end="RSCAP1"/> 
+            <Connection name="LACCluster1"
+                        start="LSCAP1"
+                        end="LSCAP2"/> 
+            <Connection name="LACCluster2"
+                        start="LSCAP2"
+                        end="LSCAP3"/>  
+            <Connection name="LACCluster3"
+                        start="LSCAP3"
+                        end="LSCAP4"/> 
+            <Connection name="LACCluster4"
+                        start="LSCAP4"
+                        end="LSCAP1"/> 
+            
+            <Connection name="THRXCluster1"
+                        start="THRX1"
+                        end="THRX2"/> 
+            <Connection name="THRXCluster2"
+                        start="THRX2"
+                        end="THRX3"/> 
+            <Connection name="THRXCluster3"
+                        start="THRX3"
+                        end="THRX4"/> 
+            <Connection name="THRXCluster4"
+                        start="THRX4"
+                        end="THRX1"/> 
+            
+        </ConnectionSet>
+    </MarkerSet>
+    
+    <PointSet name="Joint centres">
+        
+        <!-- lower body PiG -->
+        
+        <!-- ankle joint center -->
+        <Point name="RTIO" origin="RTIO"/>
+        <Point name="LTIO" origin="LTIO"/>
+
+        <!-- knee joint center -->
+        <Point name="RFEO" origin="RFEO"/>
+        <Point name="LFEO" origin="LFEO"/>
+
+        <!-- hip joint center -->
+        <Point name="LFEP" origin="LFEP"/>
+        <Point name="RFEP" origin="RFEP"/>
+        
+        
+        <!-- upper body -->
+        
+        <Point name="RGHJC" origin="RGHJC"/>
+        <Point name="LGHJC" origin="LGHJC"/>
+        
+        <Point name="RHUMC" origin="RHUMC"/>
+        <Point name="LHUMC" origin="LHUMC"/>
+        
+        <!--Point name="RGHJCA" origin="RGHJCA"/>
+        <Point name="LGHJCA" origin="LGHJCA"/-->
+        
+        <Point name="REJC" origin="REJC"/>
+        <Point name="LEJC" origin="LEJC"/>
+        
+        <Point name="RWJC" origin="RWJC"/>
+        <Point name="LWJC" origin="LWJC"/>
+        
+        <ConnectionSet name="JointCenterConnections">
+            
+             <Connection name="RLowerArm"
+                        start="RWJC"
+                        end="REJC"
+                        color="red"/> 
+             <Connection name="LLowerArm"
+                        start="LWJC"
+                        end="LEJC"
+                        color="red"/> 
+             <Connection name="RUpperArm"
+                        start="RGHJC"
+                        end="REJC"
+                        color="red"/> 
+             <Connection name="LUpperArm"
+                        start="LGHJC"
+                        end="LEJC"
+                        color="red"/> 
+             
+             <!--Connection name="RArm"
+                        start="RHUMC"
+                        end="RGHJC"/> 
+             <Connection name="LArm"
+                        start="LHUMC"
+                        end="LGHJC"/--> 
+             
+             <!--Connection name="LElbow"
+                        start="LEJC"
+                        end="LElbowAxisHead"/> 
+             <Connection name="RElbow"
+                        start="REJC"
+                        end="RElbowAxisHead"/--> 
+             
+             <Connection name="RElbowMarkers"
+                        start="RELB"
+                        end="RELBW"/> 
+             <Connection name="LElbowMarkers"
+                        start="LELB"
+                        end="LELBW"/> 
+             
+        </ConnectionSet>
+        
+    </PointSet>
+    
+    <PointSet name="Anatomical points defined by pointer">
+        
+        <Point name="RSHO" origin="RSHO" color="blue"/>      
+        <Point name="LSHO" origin="LSHO" color="blue"/>   
+        
+        <!-- Humerus -->
+        <Point name="REL" origin="REL" color="yellow"/>
+        <Point name="REM" origin="REM" color="yellow"/>
+        <Point name="LEL" origin="LEL" color="yellow"/>
+        <Point name="LEM" origin="LEM" color="yellow"/>
+        <!-- Scapula/Acromion -->
+        <Point name="RTS" origin="RTS" color="yellow"/>
+        <Point name="RPC" origin="RPC" color="yellow"/>
+        <Point name="RAA" origin="RAA" color="yellow"/>
+        <Point name="RAI" origin="RAI" color="yellow"/>
+        <Point name="RAC" origin="RAC" color="yellow"/>
+        <Point name="LTS" origin="LTS" color="yellow"/>
+        <Point name="LPC" origin="LPC" color="yellow"/>
+        <Point name="LAA" origin="LAA" color="yellow"/>
+        <Point name="LAI" origin="LAI" color="yellow"/>
+        <Point name="LAC" origin="LAC" color="yellow"/>
+    
+        <!-- forearm -->
+        <Point name="RRS" origin="RRS" color="yellow"/>
+        <Point name="RUS" origin="RUS" color="yellow"/>
+        <Point name="LRS" origin="LRS" color="yellow"/>
+        <Point name="LUS" origin="LUS" color="yellow"/>
+        
+        <Point name="T8" origin="T8" color="yellow"/>
+        
+        <ConnectionSet name="ScapulaAndHumerus">
+            
+             <!-- elbow -->
+             
+             <Connection name="RElbow"
+                        start="REL"
+                        end="REM"
+                        color="yellow"/>
+             <Connection name="LElbow"
+                        start="LEL"
+                        end="LEM"
+                        color="yellow"/>  
+             
+             <!-- Scapula -->
+             
+             <Connection name="RScapula1"
+                        start="RAI"
+                        end="RAA"
+                        color="yellow"/>
+             <Connection name="RScapula2"
+                        start="RAA"
+                        end="RTS"
+                        color="yellow"/>
+             <Connection name="RScapula3"
+                        start="RTS"
+                        end="RAI"
+                        color="yellow"/>
+             <Connection name="RScapula4"
+                        start="RAA"
+                        end="RAC"
+                        color="yellow"/>
+              
+             <Connection name="LScapula1"
+                        start="LAI"
+                        end="LAA"
+                        color="yellow"/>
+             <Connection name="LScapula2"
+                        start="LAA"
+                        end="LTS"
+                        color="yellow"/>
+             <Connection name="LScapula3"
+                        start="LTS"
+                        end="LAI"
+                        color="yellow"/>
+             <Connection name="LScapula4"
+                        start="LAA"
+                        end="LAC"
+                        color="yellow"/>
+             
+             <!-- clavicle -->
+             
+             <Connection name="LClavicle"
+                        start="LAC"
+                        end="LSC"
+                        color="yellow"/>
+             <Connection name="RClavicle"
+                        start="RAC"
+                        end="RSC"
+                        color="yellow"/>
+             
+        </ConnectionSet>
+        
+    </PointSet>
+    
+    <ArrowSet name="Arrows">
+        
+        <Arrow name="Pointer"
+               start="LOCATOR1"
+               end="P"/>
+         
+        <Arrow name="RElbowHinge"
+               start="REJC"
+               end="RElbowAxisHead"
+               color="red"/>
+        
+        <Arrow name="LElbowHinge"
+               start="LEJC"
+               end="LElbowAxisHead"
+               color="red"/>
+        
+        <!-- Thorax axes -->
+        <!--Arrow name="LongitudinalAxis"
+               end="LongitudinalAxisHDCalEnd"
+               start="PELC"/>
+        <Arrow name="LongitudinalAxisHDCal"
+               end="LongitudinalAxisHDCalEnd"
+               start="PELC"/>
+        <Arrow name="AntPostAxisHDCal"
+               end="AntPostAxisHDCalEnd"
+               start="PELC"/>
+        <Arrow name="AntPostAxisHDCal"
+               end="AntPostAxisHDCalEnd"
+               start="PELC"/-->
+    </ArrowSet>
+    <FrameSet>
+        <!--Frame name="RClavicle"
+               origin="RClaviclePosition"
+               rotation="RClavicle"/>
+        <Frame name="LClavicle"
+               origin="LClaviclePosition"
+               rotation="LClavicle"/-->
+        <!--Frame name="RParting"
+               origin="RPartingPosition"
+               rotation="RParting"/>
+        <Frame name="LParting"
+               origin="LPartingPosition"
+               rotation="LParting"/>
+
+        <Frame name="RPartingHDCal"
+               origin="RPartingHDCalPosition"
+               rotation="RPartingHDCal"/>
+        <Frame name="LPartingHDCal"
+               origin="LPartingHDCalPosition"
+               rotation="LPartingHDCal"/>
+               
+        <Frame name="RHumerusS"
+               origin="RHumerusSPosition"
+               rotation="RHumerusS"/-->
+        <!--Frame name="RThoraxHDCalA"
+               origin="RThoraxHDCalAPosition"
+               rotation="RThoraxHDCalA"/>
+        <Frame name="RHumuersHDCalA"
+               origin="RHumuersHDCalAPosition"
+               rotation="RHumuersHDCalA"/-->
+               
+        <Frame name="RScapula_Cluster"
+               origin="Right_AcromionPosition"
+               rotation="Right_Acromion"/>
+        <Frame name="LScapula_Cluster"
+               origin="Left_AcromionPosition"
+               rotation="Left_Acromion"/>
+        <Frame name="Thorax_Cluster"
+               origin="Thorax_ClusterPosition"
+               rotation="Thorax_Cluster"/>
+        
+        
+        
+        <Frame name="RThorax_ISB"
+               origin="RThorax_ISBPosition"
+               rotation="RThorax_ISB"/>
+        <Frame name="LThorax_ISB"
+               origin="LThorax_ISBPosition"
+               rotation="LThorax_ISB"/>
+         
+        <Frame name="RClavicula_ISB"
+               origin="RClavicula_ISBPosition"
+               rotation="RClavicula_ISB"/>
+        <Frame name="LClavicula_ISB"
+               origin="LClavicula_ISBPosition"
+               rotation="LClavicula_ISB"/>
+        
+        <Frame name="Right_Scapula_ISB"
+               origin="RScapula_ISBPosition"
+               rotation="RScapula_ISB"/>
+        <Frame name="Left_Scapula_ISB"
+               origin="LScapula_ISBPosition"
+               rotation="LScapula_ISB"/>
+    </FrameSet>
+    
+    
+    <PlaneSet name="Thorax anatomical planes">
+        <Plane name="Sagital Plane"
+               xaxis="AntPostAxisHDCalScaled"
+               yaxis="LongitudinalAxisHDCalScaled"
+               origin="ThoraxC1">
+        </Plane>
+        <Plane name="Frontal Plane"
+               xaxis="MedioLateralAxisHDCalScaled"
+               yaxis="LongitudinalAxisHDCalScaled"
+               origin="ThoraxC1">
+        </Plane>
+        
+    </PlaneSet>
+</View4d>
