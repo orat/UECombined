@@ -1,2 +1,2 @@
 # UECombined
-A combined HUX and ISB model, which includes scapula movements.
+A combined HUX and ISB model, which includes the scapula.
