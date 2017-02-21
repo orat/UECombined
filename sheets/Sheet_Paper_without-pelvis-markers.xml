@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<Sheet name="Upper Extremities Angles">
+    
+<!--
+pro/supi    elbowflex   shoulderele
+            RElbowFlexExtAngle
+            
+humabdukdircos  humanteretrodircos  humeruselevationdircos
+RHumerusAbdAddDircosAngle       RHumerusElevationDirCos
+
+humerusiroaroglobe  humiroaroconjunct
+                    RHumerusIroAroAngle
+                    
+thoraxtilt  thoraxboliquity thoraxrotation
+TrunkTiltAngle   RTrunkObliquityAngle   TrunkRotationAngle
+
+Kippung     Schiefstand     Rotation
+-->
+
+  <Pages>
+      
+    <Page name="Angles" rows="4" columns="3">
+        
+        <!-- first row -->
+         
+        <Diagram name="ShoulderAbduktion" 
+           column="0"
+           row="0"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="add"
+           diagramDescriptionUp="abd" 
+           plane="" 
+           diagramType="xt" 
+           diagramTitle="A  shoulder abd/add">
+         <Label name="RShoulderEleDepDirCosAngle"
+              component="0" 
+              side="right"/>
+         <Label name="LShoulderEleDepDirCosAngle"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+        
+        <Diagram name="ShoulderAnteRetroversion" 
+           column="1"
+           row="0"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="retro"
+           diagramDescriptionUp="ante" 
+           plane="" 
+           diagramType="xt" 
+           diagramTitle="C  shoulder ante/retro">
+           <Label name="RShoulderAnteRetroDirCosAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LShoulderAnteRetroDirCosAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+        
+        <Diagram name="ShoulderIroAro" 
+           column="2"
+           row="0"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="ext"
+           diagramDescriptionUp="ent"
+           plane="" 
+           diagramType="xt" 
+           diagramTitle="E  shoulder int/ext rot">
+           <Label name="RShoulderIroAroAngle"
+              component="0" 
+              side="right"/>
+           <Label name="LShoulderIroAroAngle"
+              component="0" 
+              side="left"/>        
+        </Diagram>
+         
+        <Diagram name="SGElevation" 
+           column="0"
+           row="1"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="dep" 
+           diagramDescriptionUp="ele" 
+           plane="" 
+           diagramType="xt" 
+           diagramTitle="B  shoulder girdle ele/dep">
+           <Label name="RShoulderGirdleEleDepAngle"
+                  component="0" 
+                  side="right"/> 
+           <Label name="LShoulderGirdleEleDepAngle"
+                  component="0" 
+                  side="left"/>
+         </Diagram>
+      
+         <Diagram name="SGProRetrac" 
+                   column="1"
+                   row="1"
+                   xunit="% movement cycle"
+                   yunit="deg" 
+                   diagramDescriptionDown="retrac" 
+                   diagramDescriptionUp="pro" 
+                   plane="" 
+                   diagramType="xt" 
+                   diagramTitle="D  shoulder girdle pro/retrac">
+               <Label name="RShoulderGirdleProRetracProjAngle"
+                    component="0"
+                    side="right"/>
+               <Label name="LShoulderGirdleProRetracProjAngle"
+                    component="0"
+                    side="left"/>
+        </Diagram>
+       
+        <!--Diagram name="GlenohumeralAbduktion" 
+           column="0"
+           row="2"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="add" 
+           diagramDescriptionUp="abd" 
+           plane="f" 
+           diagramType="xt" 
+           diagramTitle="Glenohumeral abd/add">
+           <Label name="RGlenohumeralEleDepDirCosAngle"
+                  component="0" 
+                  side="right"/> 
+           <Label name="LGlenohumeralEleDepDirCosAngle"
+                  component="0" 
+                  side="left"/>
+         </Diagram-->
+    </Page>
+    
+    
+  </Pages>
+      
+  <!-- Gruppen von Trials z.B. schnelle und langsame Gehdurchgänge
+       definieren und die zugehörigen Farben für jedweils linke und
+       rechte Seite sowie die zugehörigen Normdaten -->
+  <Groups>
+        <DefaultGroup normData="abc.gnm"/>
+  </Groups>
+  
+  <View>
+     <Events>
+          <Event name="RHS"/>
+          <Event name="RTO"/>
+     </Events>
+     <Phases>
+         <Phase name="RCycle" startEvent="RHS" endEvent="RTO"/>
+     </Phases>
+     <Alignment event="RHS" phase="RCycle" normalization="RCycle"/>
+  </View>
+  
+</Sheet>

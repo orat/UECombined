@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<Sheet name="Upper Extremities Angles">
+    
+  <Pages>
+      
+    <Page name="Angles" rows="4" columns="3">
+        
+        <!-- first row -->
+         
+        <Diagram name="ElbowFlex" 
+           column="0"
+           row="0"
+           xunit="%"
+           yunit="deg"  
+           diagramDescriptionDown="ext" 
+           diagramDescriptionUp="flex" 
+           plane="" 
+           diagramType="xt" 
+           diagramTitle="Elbow ext/flex">
+           <Label name="RElbowFlexExtAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LElbowFlexExtAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+
+        <Diagram name="ElbowProSupiProj" 
+           column="1"
+           row="0"
+           xunit="%"
+           yunit="deg"  
+           diagramDescriptionDown="supi" 
+           diagramDescriptionUp="pro" 
+           plane="" 
+           diagramType="xt" 
+           diagramTitle="Elbow pro/supi">
+           <Label name="RProSupiProjAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LProSupiProjAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+
+        <Diagram name="ShoulderAbduktion" 
+           column="2"
+           row="0"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown="add"
+           diagramDescriptionUp="abd" 
+           plane="f" 
+           diagramType="xt" 
+           diagramTitle="Shoulder add/abd">
+         <Label name="RShoulderAbdAddHDCalDirCosAngle"
+              component="0" 
+              side="right"/>
+         <Label name="LShoulderAbdAddHDCalDirCosAngle"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+
+        <Diagram name="ShoulderElevation" 
+           column="0"
+           row="1"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown="dep"
+           diagramDescriptionUp="ele" 
+           plane="f" 
+           diagramType="xt" 
+           diagramTitle="Shoulder dep/ele">
+         <Label name="RShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="right"/>
+         <Label name="LShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+        
+        <Diagram name="ShoulderAnteRetroversion" 
+           column="1"
+           row="1"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown="retro"
+           diagramDescriptionUp="ante" 
+           plane="s" 
+           diagramType="xt" 
+           diagramTitle="Shoulder ante/retro">
+           <Label name="RShoulderAnteRetroHDCalDirCosAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LShoulderAnteRetroHDCalDirCosAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+        
+        <Diagram name="ShoulderIntExt" 
+           column="2"
+           row="1"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown="ext"
+           diagramDescriptionUp="int"
+           plane="" 
+           diagramType="xt" 
+           diagramTitle="Shoulder int/ext rot">
+           <Label name="RShoulderIroAroHDCalAngle"
+              component="0" 
+              side="right"/>
+           <Label name="LShoulderIroAroHDCalAngle"
+              component="0" 
+              side="left"/>        
+        </Diagram>
+         
+        <Diagram name="SGElevation" 
+           column="0"
+           row="2"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown="dep" 
+           diagramDescriptionUp="ele" 
+           plane="f" 
+           diagramType="xt" 
+           diagramTitle="Shouldergirdle ele/dep">
+           <Label name="RShoulderGirdleEleDepHDCalAngle"
+                  component="0" 
+                  side="right"/> 
+           <Label name="LShoulderGirdleEleDepHDCalAngle"
+                  component="0" 
+                  side="left"/>
+         </Diagram>
+      
+         <Diagram name="SGProRetrac" 
+                   column="1"
+                   row="2"
+                   xunit="%"
+                   yunit="deg" 
+                   diagramDescriptionDown="retrac" 
+                   diagramDescriptionUp="pro" 
+                   plane="s" 
+                   diagramType="xt" 
+                   diagramTitle="Shouldergirdle pro/retrac">
+               <Label name="RShoulderGirdleProRetracHDCalProjAngle"
+                    component="0"
+                    side="right"/>
+               <Label name="LShoulderGirdleProRetracHDCalProjAngle"
+                    component="0"
+                    side="left"/>
+        </Diagram>
+       
+        <Diagram name="ShoulderIroAroGlobe" 
+           column="2"
+           row="2"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown="int"
+           diagramDescriptionUp="ext"
+           plane="s" 
+           diagramType="xt" 
+           diagramTitle="Shoulder ext/int (globe)">
+           <Label name="RShoulderIroAroAngleGlobe"
+              component="0" 
+              side="right"/>
+           <Label name="LShoulderIroAroAngleGlobe"
+              component="0" 
+              side="left"/>            
+        </Diagram>
+
+        <Diagram name="GlenohumeralAbduktion" 
+           column="0"
+           row="3"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown="add" 
+           diagramDescriptionUp="abd" 
+           plane="f" 
+           diagramType="xt" 
+           diagramTitle="Glenohumeral abd/add">
+           <Label name="RGlenohumeralEleDepDirCosAngle"
+                  component="0" 
+                  side="right"/> 
+           <Label name="LGlenohumeralEleDepDirCosAngle"
+                  component="0" 
+                  side="left"/>
+         </Diagram>
+
+         <Diagram name="TrunkObliquity" 
+           column="1"
+           row="3"
+           xunit="%"
+           yunit="deg"  
+           diagramDescriptionDown="med"
+           diagramDescriptionUp="lat"
+           plane="f" 
+           diagramType="xt" 
+           diagramTitle="Trunk obliquity">
+           <Label name="RTrunkObliquityAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LTrunkObliquityAngle"
+                  component="0" 
+                  side="left"/> 
+         </Diagram>
+
+         <Diagram name="TrunkTilt" 
+           column="2"
+           row="3"
+           xunit="%"
+           yunit="deg"  
+           diagramDescriptionDown="post"
+           diagramDescriptionUp="ant"
+           plane="s" 
+           diagramType="xt" 
+           diagramTitle="Trunk tilt">
+           <Label name="TrunkTiltAngle"
+                  component="0" 
+                  side="both"/>
+         </Diagram>
+
+    </Page>
+    
+    <Page name="Phasen" rows="4" columns="3">
+        
+        <!-- first row -->
+         
+        <Diagram name="ElbowFlex" 
+           column="0"
+           row="0"
+           xunit="deg"
+           yunit="deg/s"  
+           diagramDescriptionDown="ext" 
+           diagramDescriptionUp="flex" 
+           plane="" 
+           diagramType="phase" 
+           diagramTitle="Elbow ext/flex">
+           <Label name="RElbowFlexExtAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LElbowFlexExtAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+
+        <Diagram name="ElbowProSupiProj" 
+           column="1"
+           row="0"
+           xunit="deg"
+           yunit="deg/s"  
+           diagramDescriptionDown="supi" 
+           diagramDescriptionUp="pro" 
+           plane="" 
+           diagramType="phase" 
+           diagramTitle="Elbow pro/supi">
+           <Label name="RProSupiProjAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LProSupiProjAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+
+        <Diagram name="ShoulderAbduktion" 
+           column="2"
+           row="0"
+           xunit="deg"
+           yunit="deg/s" 
+           diagramDescriptionDown="add"
+           diagramDescriptionUp="abd" 
+           plane="f" 
+           diagramType="phase" 
+           diagramTitle="Shoulder add/abd">
+         <Label name="RShoulderAbdAddHDCalDirCosAngle"
+              component="0" 
+              side="right"/>
+         <Label name="LShoulderAbdAddHDCalDirCosAngle"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+
+        <Diagram name="ShoulderElevation" 
+           column="0"
+           row="1"
+           xunit="deg"
+           yunit="deg/s" 
+           diagramDescriptionDown="dep"
+           diagramDescriptionUp="ele" 
+           plane="f" 
+           diagramType="phase" 
+           diagramTitle="Shoulder dep/ele">
+         <Label name="RShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="right"/>
+         <Label name="LShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+        
+        <Diagram name="ShoulderAnteRetroversion" 
+           column="1"
+           row="1"
+           xunit="deg"
+           yunit="deg/s" 
+           diagramDescriptionDown="retro"
+           diagramDescriptionUp="ante" 
+           plane="s" 
+           diagramType="phase" 
+           diagramTitle="Shoulder ante/retro">
+           <Label name="RShoulderAnteRetroHDCalDirCosAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LShoulderAnteRetroHDCalDirCosAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+        
+        <Diagram name="ShoulderIroAroAdjunct" 
+           column="2"
+           row="1"
+           xunit="deg"
+           yunit="deg/s" 
+           diagramDescriptionDown="int"
+           diagramDescriptionUp="ext"
+           plane="" 
+           diagramType="phase" 
+           diagramTitle="Shoulder ext/int">
+           <Label name="RShoulderIroAroHDCalAngle"
+              component="0" 
+              side="right"/>
+           <Label name="LShoulderIroAroHDCalAngle"
+              component="0" 
+              side="left"/>        
+        </Diagram>
+         
+        <Diagram name="SGElevation" 
+           column="0"
+           row="2"
+           xunit="deg"
+           yunit="deg/s" 
+           diagramDescriptionDown="dep" 
+           diagramDescriptionUp="ele" 
+           plane="f" 
+           diagramType="phase" 
+           diagramTitle="Shouldergirdle ele/dep">
+           <Label name="RShoulderGirdleEleDepHDCalAngle"
+                  component="0" 
+                  side="right"/> 
+           <Label name="LShoulderGirdleEleDepHDCalAngle"
+                  component="0" 
+                  side="left"/>
+         </Diagram>
+      
+         <Diagram name="SGProRetrac" 
+                   column="1"
+                   row="2"
+                   xunit="deg"
+                   yunit="deg/s" 
+                   diagramDescriptionDown="retrac" 
+                   diagramDescriptionUp="pro" 
+                   plane="s" 
+                   diagramType="phase" 
+                   diagramTitle="Shouldergirdle pro/retrac">
+               <Label name="RShoulderGirdleProRetracHDCalProjAngle"
+                    component="0"
+                    side="right"/>
+               <Label name="LShoulderGirdleProRetracHDCalProjAngle"
+                    component="0"
+                    side="left"/>
+        </Diagram>
+       
+        <Diagram name="ShoulderIroAroGlobe" 
+           column="2"
+           row="2"
+           xunit="deg"
+           yunit="deg/s" 
+           diagramDescriptionDown="int"
+           diagramDescriptionUp="ext"
+           plane="s" 
+           diagramType="phase" 
+           diagramTitle="Shoulder ext/int (globe)">
+           <Label name="RShoulderIroAroAngleGlobe"
+              component="0" 
+              side="right"/>
+           <Label name="LShoulderIroAroAngleGlobe"
+              component="0" 
+              side="left"/>            
+        </Diagram>
+
+        <Diagram name="GlenohumeralAbduktion" 
+           column="0"
+           row="3"
+           xunit="deg"
+           yunit="deg/s" 
+           diagramDescriptionDown="add" 
+           diagramDescriptionUp="abd" 
+           plane="f" 
+           diagramType="phase" 
+           diagramTitle="Glenohumeral abd/add">
+           <Label name="RGlenohumeralEleDepDirCosAngle"
+                  component="0" 
+                  side="right"/> 
+           <Label name="LGlenohumeralEleDepDirCosAngle"
+                  component="0" 
+                  side="left"/>
+         </Diagram>
+
+         <Diagram name="TrunkObliquity" 
+           column="1"
+           row="3"
+           xunit="deg"
+           yunit="deg/s"  
+           diagramDescriptionDown="med"
+           diagramDescriptionUp="lat"
+           plane="f" 
+           diagramType="phase" 
+           diagramTitle="Trunk obliquity">
+           <Label name="RTrunkObliquityAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LTrunkObliquityAngle"
+                  component="0" 
+                  side="left"/> 
+         </Diagram>
+
+         <Diagram name="TrunkTilt" 
+           column="2"
+           row="3"
+           xunit="deg"
+           yunit="deg/s"  
+           diagramDescriptionDown="post"
+           diagramDescriptionUp="ant"
+           plane="s" 
+           diagramType="phase" 
+           diagramTitle="Trunk tilt">
+           <Label name="TrunkTiltAngle"
+                  component="0" 
+                  side="both"/>
+         </Diagram>
+
+    </Page>
+
+
+
+    <Page name="Phasenwinkel" rows="4" columns="3">
+        
+        <!-- first row -->
+         
+        <Diagram name="ElbowFlex" 
+           column="0"
+           row="0"
+           xunit="%"
+           yunit="deg"  
+           diagramDescriptionDown="" 
+           diagramDescriptionUp="" 
+           plane="" 
+           diagramType="phaseangle" 
+           diagramTitle="Elbow ext/flex">
+           <Label name="RElbowFlexExtAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LElbowFlexExtAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+
+        <Diagram name="ElbowProSupiProj" 
+           column="1"
+           row="0"
+           xunit="%"
+           yunit="deg"  
+           diagramDescriptionDown="" 
+           diagramDescriptionUp="" 
+           plane="" 
+           diagramType="phaseangle" 
+           diagramTitle="Elbow pro/supi">
+           <Label name="RProSupiProjAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LProSupiProjAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+
+        <Diagram name="ShoulderAbduktion" 
+           column="2"
+           row="0"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown=""
+           diagramDescriptionUp="" 
+           plane="f" 
+           diagramType="phaseangle" 
+           diagramTitle="Shoulder add/abd">
+         <Label name="RShoulderAbdAddHDCalDirCosAngle"
+              component="0" 
+              side="right"/>
+         <Label name="LShoulderAbdAddHDCalDirCosAngle"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+
+        <Diagram name="ShoulderElevation" 
+           column="0"
+           row="1"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown=""
+           diagramDescriptionUp="" 
+           plane="f" 
+           diagramType="phaseangle" 
+           diagramTitle="Shoulder dep/ele">
+         <Label name="RShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="right"/>
+         <Label name="LShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+        
+        <Diagram name="ShoulderAnteRetroversion" 
+           column="1"
+           row="1"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown=""
+           diagramDescriptionUp="" 
+           plane="s" 
+           diagramType="phaseangle" 
+           diagramTitle="Shoulder ante/retro">
+           <Label name="RShoulderAnteRetroHDCalDirCosAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LShoulderAnteRetroHDCalDirCosAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+        
+        <Diagram name="ShoulderIroAroAdjunct" 
+           column="2"
+           row="1"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown=""
+           diagramDescriptionUp=""
+           plane="" 
+           diagramType="phaseangle" 
+           diagramTitle="Shoulder ext/int">
+           <Label name="RShoulderIroAroHDCalAngle"
+              component="0" 
+              side="right"/>
+           <Label name="LShoulderIroAroHDCalAngle"
+              component="0" 
+              side="left"/>        
+        </Diagram>
+         
+        <Diagram name="SGElevation" 
+           column="0"
+           row="2"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown="" 
+           diagramDescriptionUp="" 
+           plane="f" 
+           diagramType="phaseangle" 
+           diagramTitle="Shouldergirdle ele/dep">
+           <Label name="RShoulderGirdleEleDepHDCalAngle"
+                  component="0" 
+                  side="right"/> 
+           <Label name="LShoulderGirdleEleDepHDCalAngle"
+                  component="0" 
+                  side="left"/>
+         </Diagram>
+      
+         <Diagram name="SGProRetrac" 
+                   column="1"
+                   row="2"
+                   xunit="%"
+                   yunit="deg" 
+                   diagramDescriptionDown="" 
+                   diagramDescriptionUp="" 
+                   plane="s" 
+                   diagramType="phaseangle" 
+                   diagramTitle="Shouldergirdle pro/retrac">
+               <Label name="RShoulderGirdleProRetracHDCalProjAngle"
+                    component="0"
+                    side="right"/>
+               <Label name="LShoulderGirdleProRetracHDCalProjAngle"
+                    component="0"
+                    side="left"/>
+        </Diagram>
+       
+        <Diagram name="ShoulderIroAroGlobe" 
+           column="2"
+           row="2"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown=""
+           diagramDescriptionUp=""
+           plane="s" 
+           diagramType="phaseangle" 
+           diagramTitle="Shoulder ext/int (globe)">
+           <Label name="RShoulderIroAroAngleGlobe"
+              component="0" 
+              side="right"/>
+           <Label name="LShoulderIroAroAngleGlobe"
+              component="0" 
+              side="left"/>            
+        </Diagram>
+
+        <Diagram name="GlenohumeralAbduktion" 
+           column="0"
+           row="3"
+           xunit="%"
+           yunit="deg" 
+           diagramDescriptionDown="" 
+           diagramDescriptionUp="" 
+           plane="f" 
+           diagramType="phaseangle" 
+           diagramTitle="Glenohumeral abd/add">
+           <Label name="RGlenohumeralEleDepDirCosAngle"
+                  component="0" 
+                  side="right"/> 
+           <Label name="LGlenohumeralEleDepDirCosAngle"
+                  component="0" 
+                  side="left"/>
+         </Diagram>
+
+         <Diagram name="TrunkObliquity" 
+           column="1"
+           row="3"
+           xunit="%"
+           yunit="deg"  
+           diagramDescriptionDown=""
+           diagramDescriptionUp=""
+           plane="f" 
+           diagramType="phaseangle" 
+           diagramTitle="Trunk obliquity">
+           <Label name="RTrunkObliquityAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LTrunkObliquityAngle"
+                  component="0" 
+                  side="left"/> 
+         </Diagram>
+
+         <Diagram name="TrunkTilt" 
+           column="2"
+           row="3"
+           xunit="%"
+           yunit="deg"  
+           diagramDescriptionDown=""
+           diagramDescriptionUp=""
+           plane="s" 
+           diagramType="phaseangle" 
+           diagramTitle="Trunk tilt">
+           <Label name="TrunkTiltAngle"
+                  component="0" 
+                  side="both"/>
+         </Diagram>
+
+    </Page>
+  </Pages>
+      
+  <!-- Gruppen von Trials z.B. schnelle und langsame Gehdurchgänge
+       definieren und die zugehörigen Farben für jedweils linke und
+       rechte Seite sowie die zugehörigen Normdaten -->
+  <Groups>
+        <DefaultGroup normData="abc.gnm"/>
+  </Groups>
+  
+  <View>
+     <Events>
+          <Event name="RHS"/>
+          <Event name="RTO"/>
+     </Events>
+     <Phases>
+         <Phase name="RCycle" startEvent="RHS" endEvent="RTO"/>
+     </Phases>
+     <Alignment event="RHS" phase="RCycle" normalization="RCycle"/>
+  </View>
+  
+</Sheet>

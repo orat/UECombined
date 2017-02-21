@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<KinematicModel MODEL="Clusters5" VERSION="3.2">
+	<Parameters>
+		<Parameter NAME="Thorax_Scapula_x" VALUE="-5.8402814865112305" PRIOR="-5.8402814865112305" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Scapula_y" VALUE="13.886924743652344" PRIOR="13.886924743652344" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Scapula_z" VALUE="-20.167425155639648" PRIOR="-20.167425155639648" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax1_x" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax1_y" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax1_z" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax2_x" VALUE="-8.3266726846886741e-016" PRIOR="-8.3266726846886741e-016" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax2_y" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax2_z" VALUE="-47.321216583251953" PRIOR="-47.321216583251953" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax3_x" VALUE="-8.8817841970012523e-016" PRIOR="-8.8817841970012523e-016" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax3_y" VALUE="32.952396392822266" PRIOR="32.952396392822266" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax3_z" VALUE="-19.127416610717773" PRIOR="-19.127416610717773" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax4_x" VALUE="-23.36088752746582" PRIOR="-23.36088752746582" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax4_y" VALUE="22.595277786254883" PRIOR="22.595277786254883" HIDDEN="1"/>
+		<Parameter NAME="Thorax_Thorax4_z" VALUE="-14.221009254455566" PRIOR="-14.221009254455566" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Humerus_x" VALUE="0.29177209734916687" PRIOR="0.29177209734916687" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Humerus_y" VALUE="0.98317235708236694" PRIOR="0.98317235708236694" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Humerus_z" VALUE="-22.591266632080078" PRIOR="-22.591266632080078" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula1_x" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula1_y" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula1_z" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula2_x" VALUE="8.8817841970012523e-016" PRIOR="8.8817841970012523e-016" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula2_y" VALUE="4.2743586448068527e-015" PRIOR="4.2743586448068527e-015" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula2_z" VALUE="-44.671562194824219" PRIOR="-44.671562194824219" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula3_x" VALUE="8.8817841970012523e-016" PRIOR="8.8817841970012523e-016" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula3_y" VALUE="22.803989410400391" PRIOR="22.803989410400391" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula3_z" VALUE="-22.781360626220703" PRIOR="-22.781360626220703" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula4_x" VALUE="1.1670758724212646" PRIOR="1.1670758724212646" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula4_y" VALUE="-18.871288299560547" PRIOR="-18.871288299560547" HIDDEN="1"/>
+		<Parameter NAME="Scapula_Scapula4_z" VALUE="-22.912155151367188" PRIOR="-22.912155151367188" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Forearm_x" VALUE="-7.3810830116271973" PRIOR="-7.3810830116271973" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Forearm_y" VALUE="17.855281829833984" PRIOR="17.855281829833984" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Forearm_z" VALUE="-12.428618431091309" PRIOR="-12.428618431091309" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus1_x" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus1_y" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus1_z" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus2_x" VALUE="-4.4408920985006262e-016" PRIOR="-4.4408920985006262e-016" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus2_y" VALUE="-8.8817841970012523e-016" PRIOR="-8.8817841970012523e-016" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus2_z" VALUE="-27.36749267578125" PRIOR="-27.36749267578125" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus3_x" VALUE="1.7763568394002505e-015" PRIOR="1.7763568394002505e-015" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus3_y" VALUE="28.736366271972656" PRIOR="28.736366271972656" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus3_z" VALUE="-2.8390209674835205" PRIOR="-2.8390209674835205" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus4_x" VALUE="-29.423301696777344" PRIOR="-29.423301696777344" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus4_y" VALUE="43.455425262451172" PRIOR="43.455425262451172" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus4_z" VALUE="-5.3940653800964355" PRIOR="-5.3940653800964355" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus5_x" VALUE="-7.482269287109375" PRIOR="-7.482269287109375" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus5_y" VALUE="17.08453369140625" PRIOR="17.08453369140625" HIDDEN="1"/>
+		<Parameter NAME="Humerus_Humerus5_z" VALUE="-26.543239593505859" PRIOR="-26.543239593505859" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Hand_x" VALUE="-5.0121631622314453" PRIOR="-5.0121631622314453" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Hand_y" VALUE="7.310570240020752" PRIOR="7.310570240020752" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Hand_z" VALUE="-21.623104095458984" PRIOR="-21.623104095458984" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm1_x" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm1_y" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm1_z" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm2_x" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm2_y" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm2_z" VALUE="-36.8402099609375" PRIOR="-36.8402099609375" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm3_x" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm3_y" VALUE="30.12725830078125" PRIOR="30.12725830078125" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm3_z" VALUE="-10.108835220336914" PRIOR="-10.108835220336914" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm4_x" VALUE="-20.04878044128418" PRIOR="-20.04878044128418" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm4_y" VALUE="-0.88507246971130371" PRIOR="-0.88507246971130371" HIDDEN="1"/>
+		<Parameter NAME="Forearm_Forearm4_z" VALUE="-39.543106079101562" PRIOR="-39.543106079101562" HIDDEN="1"/>
+		<Parameter NAME="Hand_Locator_x" VALUE="-4.2699646949768066" PRIOR="-4.2699646949768066" HIDDEN="1"/>
+		<Parameter NAME="Hand_Locator_y" VALUE="6.5452151298522949" PRIOR="6.5452151298522949" HIDDEN="1"/>
+		<Parameter NAME="Hand_Locator_z" VALUE="-18.328332901000977" PRIOR="-18.328332901000977" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand1_x" VALUE="-0" PRIOR="-0" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand1_y" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand1_z" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand2_x" VALUE="3.5527136788005009e-015" PRIOR="3.5527136788005009e-015" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand2_y" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand2_z" VALUE="-40.557182312011719" PRIOR="-40.557182312011719" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand3_x" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand3_y" VALUE="24.719648361206055" PRIOR="24.719648361206055" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand3_z" VALUE="-26.085487365722656" PRIOR="-26.085487365722656" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand4_x" VALUE="-17.079843521118164" PRIOR="-17.079843521118164" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand4_y" VALUE="1.4612452983856201" PRIOR="1.4612452983856201" HIDDEN="1"/>
+		<Parameter NAME="Hand_Hand4_z" VALUE="-6.6706089973449707" PRIOR="-6.6706089973449707" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator1_x" VALUE="-0" PRIOR="-0" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator1_y" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator1_z" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator2_x" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator2_y" VALUE="0" PRIOR="0" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator2_z" VALUE="-82.283378601074219" PRIOR="-82.283378601074219" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator3_x" VALUE="-3.5527136788005009e-015" PRIOR="-3.5527136788005009e-015" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator3_y" VALUE="69.16162109375" PRIOR="69.16162109375" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator3_z" VALUE="-54.438888549804687" PRIOR="-54.438888549804687" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator4_x" VALUE="-20.943498611450195" PRIOR="-20.943498611450195" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator4_y" VALUE="-37.164836883544922" PRIOR="-37.164836883544922" HIDDEN="1"/>
+		<Parameter NAME="Locator_Locator4_z" VALUE="-56.503631591796875" PRIOR="-56.503631591796875" HIDDEN="1"/>
+	</Parameters>
+	<Skeleton RGB="93 93 93">
+                <Segment NAME="Locator" OPACITY="255" BOUNDS="-8.22833824 -8.22833824 -82.2833786 8.22833824 8.22833824 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="0" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+                        <JointFree NAME="Hand_Locator" >
+                                <!--JointTemplate-->
+                        </JointFree>
+                </Segment>
+		<Segment NAME="Thorax" OPACITY="255" BOUNDS="-4.73212194 -4.73212194 -47.3212166 4.73212194 4.73212194 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="0" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+			<JointFree NAME="World_Thorax">
+                            <!--JointTemplate/-->
+                        </JointFree>
+			<Segment NAME="RightScapula" OPACITY="255" BOUNDS="-4.46715641 -4.46715641 -44.6715622 4.46715641 4.46715641 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="0" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+				<JointFree NAME="Thorax_Scapula">
+                                    <!--JointTemplate/-->
+                                </JointFree>
+				<Segment NAME="RightHumerus" OPACITY="255" BOUNDS="-2.73674941 -2.73674941 -27.3674927 2.73674941 2.73674941 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="0" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+					<JointBall NAME="RightScapula_RightHumerus">
+                                            <!--JointTemplate/-->
+                                        </JointBall>
+					<Segment NAME="RightForearm" OPACITY="255" BOUNDS="-3.684021 -3.684021 -36.84021 3.684021 3.684021 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="0" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+						<JointFree NAME="RightHumerus_RightForearm">
+                                                    <!--JointTemplate/--> 
+                                                </JointFree>
+                                                <Segment NAME="RightHand" OPACITY="255" BOUNDS="-4.05571842 -4.05571842 -40.5571823 4.05571842 4.05571842 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="0" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+						    <JointFree NAME="RightForearm_RightHand">
+                                                        <!--JointTemplate/--> 
+                                                    </JointFree>
+						</Segment>
+					</Segment>
+				</Segment>
+			</Segment>
+                        
+                        <Segment NAME="LeftScapula" OPACITY="255" BOUNDS="-4.46715641 -4.46715641 -44.6715622 4.46715641 4.46715641 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="0" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+				<JointFree NAME="Thorax_Scapula">
+                                    <!--JointTemplate/_--> 
+                                </JointFree>
+				<Segment NAME="LeftHumerus" OPACITY="255" BOUNDS="-2.73674941 -2.73674941 -27.3674927 2.73674941 2.73674941 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="0" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+					<JointBall NAME="LeftScapula_LeftHumerus">
+                                            <!--JointTemplate/--> 
+                                        </JointBall>
+					<Segment NAME="LeftForearm" OPACITY="255" BOUNDS="-3.684021 -3.684021 -36.84021 3.684021 3.684021 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="0" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+						<JointFree NAME="LeftHumerus_LeftForearm">
+                                                    <!--JointTemplate-->
+                                                </JointFree>
+						<Segment NAME="LeftHand" OPACITY="255" BOUNDS="-4.05571842 -4.05571842 -40.5571823 4.05571842 4.05571842 0" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="0" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+							<JointFree NAME="LeftForearm_LeftHand">
+                                                            <!--JointTemplate--> 
+                                                        </JointFree>
+						</Segment>
+					</Segment>
+				</Segment>
+			</Segment>
+		</Segment>
+                <Segment NAME="Pelvis" OPACITY="255" MASS="0" MASS-CENTRE="0 0 0" INERTIA="0 0 0" RGB="255 164 0" HIDDEN="0" DRAW-END-RATIO="1" DRAW-HEIGHT="0.5" DRAW-TWIST="0" DRAW-WIDTH="0.5" DRAW-STYLE="box" DRAW-SHADING="shaded-smooth">
+                </Segment>
+	</Skeleton>
+	<MarkerSet>
+		<Markers>
+                    
+                        <Marker SEGMENT="Thorax" NAME="Trx" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="Thorax" NAME="Trx1" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="Thorax" NAME="Trx2" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="Thorax" NAME="Trx3" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+			<Marker SEGMENT="RightScapula" NAME="RSHO" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightScapula" NAME="RSHO1" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightScapula" NAME="RSHO2" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightScapula" NAME="RSHO3" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+                        <Marker SEGMENT="LeftScapula" NAME="LSHO" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftScapula" NAME="LSHO1" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftScapula" NAME="LSHO2" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftScapula" NAME="LSHO3" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+                        <Marker SEGMENT="LeftHumerus" NAME="LHUMS" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftHumerus" NAME="LHUMA" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftHumerus" NAME="LHUMP" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftHumerus" NAME="LHUM1" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftHumerus" NAME="LHUM2" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+                        <Marker SEGMENT="RightHumerus" NAME="RHUMS" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightHumerus" NAME="RHUMA" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightHumerus" NAME="RHUMP" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightHumerus" NAME="RHUMS1" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightHumerus" NAME="RHUMS2" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+                        <Marker SEGMENT="LeftForearm" NAME="LELB" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftForearm" NAME="LELBW" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftForearm" NAME="LELB1" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftForearm" NAME="LELB2" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+                        <Marker SEGMENT="RightForearm" NAME="RELB" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightForearm" NAME="RELBW" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightForearm" NAME="RELB1" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightForearm" NAME="RELB2" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+                        <Marker SEGMENT="LeftHand" NAME="LRAD" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftHand" NAME="LULN" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftHand" NAME="LMCP" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftHand" NAME="LMCD" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+                        <Marker SEGMENT="LeftHand" NAME="LHAND1" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftHand" NAME="LHAND2" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftHand" NAME="LHAND3" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="LeftHand" NAME="LHAND4" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+                        <Marker SEGMENT="RightHand" NAME="RRAD" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightHand" NAME="RULN" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightHand" NAME="RMCP" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightHand" NAME="RMCD" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+                        <Marker SEGMENT="RightHand" NAME="RHAND1" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightHand" NAME="RHAND2" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightHand" NAME="RHAND3" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="RightHand" NAME="RHAND4" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+                        <Marker SEGMENT="Pelvis" NAME="RASI" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="Pelvis" NAME="LASI" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			<Marker SEGMENT="Pelvis" NAME="SACR" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+			
+                         
+                        <Marker NAME="Loc1" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="Loc2" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="Loc3" RADIUS="12.5" RGB="255 164 0" STATUS="required" VIEW-ANGLE="0"/>
+			<Marker NAME="Loc4" RADIUS="12.5" RGB="255 164 0" STATUS="optional" VIEW-ANGLE="0"/>
+		</Markers>
+		<Sticks>
+                        <Stick MARKER1="Trx" MARKER2="Trx1" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="Trx" MARKER2="Trx2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="Trx" MARKER2="Trx3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="Trx1" MARKER2="Trx2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="Trx1" MARKER2="Trx3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="Trx2" MARKER2="Trx3" RGB1="255 164 0" RGB2="255 164 0"/>
+                
+			<Stick MARKER1="RSHO" MARKER2="RSHO1" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="RSHO" MARKER2="RSHO2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="RSHO" MARKER2="RSHO3" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RSH1" MARKER2="RSHO2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RSH1" MARKER2="RSHO3" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RSH2" MARKER2="RSHO3" RGB1="255 164 0" RGB2="255 164 0"/>
+                        
+                        <Stick MARKER1="LSHO" MARKER2="LSHO1" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="LSHO" MARKER2="LSHO2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="LSHO" MARKER2="LSHO3" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LSH1" MARKER2="LSHO2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LSH1" MARKER2="LSHO3" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LSH2" MARKER2="LSHO3" RGB1="255 164 0" RGB2="255 164 0"/>
+                        
+			<Stick MARKER1="LHUMS" MARKER2="LHUMA" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="LHUMS" MARKER2="LHUMA" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="LHUMS" MARKER2="LHUMP" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHUMS" MARKER2="LHUM1" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHUMS" MARKER2="LHUM2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHUMA" MARKER2="LHUMP" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHUMA" MARKER2="LHUM1" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHUMA" MARKER2="LHUM2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHUMP" MARKER2="LHUM1" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHUMP" MARKER2="LHUM2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHUM1" MARKER2="LHUM2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        
+                        <Stick MARKER1="RHUMS" MARKER2="RHUMA" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="RHUMS" MARKER2="RHUMA" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="RHUMS" MARKER2="RHUMP" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHUMS" MARKER2="RHUM1" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHUMS" MARKER2="RHUM2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHUMA" MARKER2="RHUMP" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHUMA" MARKER2="RHUM1" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHUMA" MARKER2="RHUM2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHUMP" MARKER2="RHUM1" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHUMP" MARKER2="RHUM2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHUM1" MARKER2="RHUM2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        
+			<Stick MARKER1="LELB" MARKER2="LELBW" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="LELB" MARKER2="LELB1" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="LELB" MARKER2="LELB2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="LELBW" MARKER2="LELB1" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="LELBW" MARKER2="LELB2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="LELB1" MARKER2="LELB2" RGB1="255 164 0" RGB2="255 164 0"/>
+			 
+                        <Stick MARKER1="RELB" MARKER2="RELBW" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="RELB" MARKER2="RELB1" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="RELB" MARKER2="RELB2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="RELBW" MARKER2="RELB1" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="RELBW" MARKER2="RELB2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="RELB1" MARKER2="RELB2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        
+			<Stick MARKER1="LMCD" MARKER2="LMCP" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LRAD" MARKER2="LULN" RGB1="255 164 0" RGB2="255 164 0"/>
+			  
+                        <Stick MARKER1="RMCD" MARKER2="RMCP" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RRAD" MARKER2="RULN" RGB1="255 164 0" RGB2="255 164 0"/>
+               
+                        <Stick MARKER1="LHAND1" MARKER2="LHAND2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHAND1" MARKER2="LHAND3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="LHAND1" MARKER2="LHAND4" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHAND2" MARKER2="LHAND3" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHAND2" MARKER2="LHAND4" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="LHAND3" MARKER2="LHAND4" RGB1="255 164 0" RGB2="255 164 0"/>
+			 
+                        <Stick MARKER1="RHAND1" MARKER2="RHAND2" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHAND1" MARKER2="RHAND3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="RHAND1" MARKER2="RHAND4" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHAND2" MARKER2="RHAND3" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHAND2" MARKER2="RHAND4" RGB1="255 164 0" RGB2="255 164 0"/>
+                        <Stick MARKER1="RHAND3" MARKER2="RHAND4" RGB1="255 164 0" RGB2="255 164 0"/>
+                        
+			<Stick MARKER1="Loc1" MARKER2="Loc2" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="Loc1" MARKER2="Loc3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="Loc1" MARKER2="Loc4" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="Loc2" MARKER2="Loc3" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="Loc2" MARKER2="Loc4" RGB1="255 164 0" RGB2="255 164 0"/>
+			<Stick MARKER1="Loc3" MARKER2="Loc4" RGB1="255 164 0" RGB2="255 164 0"/>
+                        
+		</Sticks>
+	</MarkerSet>
+	<!-->
+		<Targets>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Scapula1" OPACITY="255" POSITION="Scapula_Scapula1_x Scapula_Scapula1_y Scapula_Scapula1_z" RGB="93 93 93" SEGMENT="Scapula" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Scapula2" OPACITY="255" POSITION="Scapula_Scapula2_x Scapula_Scapula2_y Scapula_Scapula2_z" RGB="93 93 93" SEGMENT="Scapula" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Scapula3" OPACITY="255" POSITION="Scapula_Scapula3_x Scapula_Scapula3_y Scapula_Scapula3_z" RGB="93 93 93" SEGMENT="Scapula" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Scapula4" OPACITY="255" POSITION="Scapula_Scapula4_x Scapula_Scapula4_y Scapula_Scapula4_z" RGB="93 93 93" SEGMENT="Scapula" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Thorax1" OPACITY="255" POSITION="Thorax_Thorax1_x Thorax_Thorax1_y Thorax_Thorax1_z" RGB="93 93 93" SEGMENT="Thorax" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Thorax2" OPACITY="255" POSITION="Thorax_Thorax2_x Thorax_Thorax2_y Thorax_Thorax2_z" RGB="93 93 93" SEGMENT="Thorax" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Thorax3" OPACITY="255" POSITION="Thorax_Thorax3_x Thorax_Thorax3_y Thorax_Thorax3_z" RGB="93 93 93" SEGMENT="Thorax" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Thorax4" OPACITY="255" POSITION="Thorax_Thorax4_x Thorax_Thorax4_y Thorax_Thorax4_z" RGB="93 93 93" SEGMENT="Thorax" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Humerus1" OPACITY="255" POSITION="Humerus_Humerus1_x Humerus_Humerus1_y Humerus_Humerus1_z" RGB="93 93 93" SEGMENT="Humerus" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Humerus2" OPACITY="255" POSITION="Humerus_Humerus2_x Humerus_Humerus2_y Humerus_Humerus2_z" RGB="93 93 93" SEGMENT="Humerus" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Humerus3" OPACITY="255" POSITION="Humerus_Humerus3_x Humerus_Humerus3_y Humerus_Humerus3_z" RGB="93 93 93" SEGMENT="Humerus" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Humerus4" OPACITY="255" POSITION="Humerus_Humerus4_x Humerus_Humerus4_y Humerus_Humerus4_z" RGB="93 93 93" SEGMENT="Humerus" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Humerus5" OPACITY="255" POSITION="Humerus_Humerus5_x Humerus_Humerus5_y Humerus_Humerus5_z" RGB="93 93 93" SEGMENT="Humerus" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Forearm1" OPACITY="255" POSITION="Forearm_Forearm1_x Forearm_Forearm1_y Forearm_Forearm1_z" RGB="93 93 93" SEGMENT="Forearm" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Forearm2" OPACITY="255" POSITION="Forearm_Forearm2_x Forearm_Forearm2_y Forearm_Forearm2_z" RGB="93 93 93" SEGMENT="Forearm" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Forearm3" OPACITY="255" POSITION="Forearm_Forearm3_x Forearm_Forearm3_y Forearm_Forearm3_z" RGB="93 93 93" SEGMENT="Forearm" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Forearm4" OPACITY="255" POSITION="Forearm_Forearm4_x Forearm_Forearm4_y Forearm_Forearm4_z" RGB="93 93 93" SEGMENT="Forearm" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Hand1" OPACITY="255" POSITION="Hand_Hand1_x Hand_Hand1_y Hand_Hand1_z" RGB="93 93 93" SEGMENT="Hand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Hand2" OPACITY="255" POSITION="Hand_Hand2_x Hand_Hand2_y Hand_Hand2_z" RGB="93 93 93" SEGMENT="Hand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Hand3" OPACITY="255" POSITION="Hand_Hand3_x Hand_Hand3_y Hand_Hand3_z" RGB="93 93 93" SEGMENT="Hand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Hand4" OPACITY="255" POSITION="Hand_Hand4_x Hand_Hand4_y Hand_Hand4_z" RGB="93 93 93" SEGMENT="Hand" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Locator1" OPACITY="255" POSITION="Locator_Locator1_x Locator_Locator1_y Locator_Locator1_z" RGB="93 93 93" SEGMENT="Locator" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Locator2" OPACITY="255" POSITION="Locator_Locator2_x Locator_Locator2_y Locator_Locator2_z" RGB="93 93 93" SEGMENT="Locator" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Locator3" OPACITY="255" POSITION="Locator_Locator3_x Locator_Locator3_y Locator_Locator3_z" RGB="93 93 93" SEGMENT="Locator" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+			<TargetLocalPointToWorldPoint COVARIANCE="1 0 0 0 1 0 0 0 1" FILL-GAPS="0" GAUSSIAN="1" HIDDEN="0" MARKER="Locator4" OPACITY="255" POSITION="Locator_Locator4_x Locator_Locator4_y Locator_Locator4_z" RGB="93 93 93" SEGMENT="Locator" WEIGHT="1" DRAW-STYLE="None">
+				<TargetLocalPointToWorldPointTemplate COVARIANCE="1 0 0 0 1 0 0 0 1"/>
+			</TargetLocalPointToWorldPoint>
+		</Targets>
+	</TargetSet-->
+</KinematicModel>

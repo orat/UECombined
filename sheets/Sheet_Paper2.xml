@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<Sheet name="Upper Extremities Angles">
+    
+<!--
+pro/supi    elbowflex   shoulderele
+            RElbowFlexExtAngle
+            
+humabdukdircos  humanteretrodircos  humeruselevationdircos
+RHumerusAbdAddDircosAngle       RHumerusElevationDirCos
+
+humerusiroaroglobe  humiroaroconjunct
+                    RHumerusIroAroAngle
+                    
+thoraxtilt  thoraxboliquity thoraxrotation
+TrunkTiltAngle   RTrunkObliquityAngle   TrunkRotationAngle
+
+Kippung     Schiefstand     Rotation
+-->
+
+  <Pages>
+      
+    <Page name="Angles" rows="4" columns="3">
+        
+        <!-- first row -->
+         
+        <Diagram name="ShoulderAbduktion" 
+           column="0"
+           row="0"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="add"
+           diagramDescriptionUp="abd" 
+           plane="" 
+           diagramType="xt" 
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramTitle="Shoulder abd/add">
+         <Label name="RShoulderAbdAddHDCalDirCosAngle"
+              component="0" 
+              side="right"/>
+         <Label name="LShoulderAbdAddHDCalDirCosAngle"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+
+        <!--Diagram name="ShoulderElevation" 
+           column="0"
+           row="0"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="add"
+           diagramDescriptionUp="abd" 
+           plane="" 
+           diagramType="xt" 
+           diagramTitle="Shoulder ele/dep">
+         <Label name="RShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="right"/>
+         <Label name="LShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="left"/>       
+        </Diagram-->
+        
+        <Diagram name="ShoulderAnteRetroversion" 
+           column="1"
+           row="0"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="retro"
+           diagramDescriptionUp="ante" 
+           plane="" 
+           diagramType="xt" 
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramTitle="Shoulder ante/retro">
+           <Label name="RShoulderAnteRetroHDCalDirCosAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LShoulderAnteRetroHDCalDirCosAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+        
+        <Diagram name="ShoulderIroAro" 
+           column="2"
+           row="0"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="ext"
+           diagramDescriptionUp="int"
+           plane="" 
+           diagramType="xt" 
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramTitle="A conjunct rot">
+           <Label name="RShoulderIroAroHDCalAngle"
+              component="0" 
+              side="right"/>
+           <Label name="LShoulderIroAroHDCalAngle"
+              component="0" 
+              side="left"/>        
+        </Diagram>
+         
+        <Diagram name="SGElevation" 
+           column="0"
+           row="1"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="dep" 
+           diagramDescriptionUp="ele" 
+           plane="" 
+           diagramType="xt" 
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramTitle="Shoulder girdle ele/dep">
+           <Label name="RShoulderGirdleEleDepHDCalAngle"
+                  component="0" 
+                  side="right"/> 
+           <Label name="LShoulderGirdleEleDepHDCalAngle"
+                  component="0" 
+                  side="left"/>
+         </Diagram>
+      
+         <Diagram name="SGProRetrac" 
+                   column="1"
+                   row="1"
+                   xunit="% movement cycle"
+                   yunit="deg" 
+                   diagramDescriptionDown="retrac" 
+                   diagramDescriptionUp="pro" 
+                   plane="" 
+                   diagramType="xt" 
+                   rightEvents="REleMax"
+                   leftEvents="LEleMax"
+                   diagramTitle="Shoulder girdle pro/retrac">
+               <Label name="RShoulderGirdleProRetracHDCalProjAngle"
+                    component="0"
+                    side="right"/>
+               <Label name="LShoulderGirdleProRetracHDCalProjAngle"
+                    component="0"
+                    side="left"/>
+        </Diagram>
+       
+        <Diagram name="ShoulderAdjunct" 
+           column="2"
+           row="1"
+           xunit="% movement cycle" 
+           yunit="deg"  
+           diagramDescriptionDown="ext"  
+           diagramDescriptionUp="int"  
+           plane=""  
+           diagramType="xt" 
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramTitle="B adjunct rot"> 
+           <!--Label name="RShoulderHDAdjunctRotationAngles"
+                  component="1" 
+                  side="right"/-->  
+           <Label name="RShoulderHDAdjunctRotationAngles2"
+                  component="1" 
+                  offset="RShoulderIroAroHDCalAngle"
+                  side="right"/>  
+           <Label name="LShoulderHDAdjunctRotationAngles"
+                  component="1" 
+                  sign="true"
+                  side="left"/>  
+           
+         </Diagram>
+
+        <Diagram name="ShoulderAbduktionProj" 
+           column="0"
+           row="2"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="add"
+           diagramDescriptionUp="abd" 
+           plane="" 
+           diagramType="xt" 
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramTitle="Shoulder abd/add (proj)">
+         <Label name="RShoulderAbdAddHDCalProjAngle"
+              component="0" 
+              side="right"/>
+         <Label name="LShoulderAbdAddHDCalProjAngle"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+        
+        <Diagram name="ShoulderAnteRetroversionProj" 
+           column="1"
+           row="2"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="retro"
+           diagramDescriptionUp="ante" 
+           plane="" 
+           diagramType="xt" 
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramTitle="Shoulder ante/retro (proj)">
+           <Label name="RShoulderAnteRetroHDCalProjAngle"
+                  component="0" 
+                  side="right"/>
+           <Label name="LShoulderAnteRetroHDCalProjAngle"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+         <Diagram name="ShoulderGlobe" 
+           column="2"
+           row="2"
+           xunit="% movement cycle" 
+           yunit="deg"  
+           diagramDescriptionDown="ext"  
+           diagramDescriptionUp="int"  
+           plane=""  
+           diagramType="xt" 
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramTitle="C globe rot"> 
+           <Label name="RShoulderIroAroHDCalAngleGlobe3"
+                  component="0" 
+                  side="right"/>  
+           <Label name="RShoulderIroAroHDCalAngleGlobe"
+                  component="0" 
+                  side="right"/> 
+           <Label name="LShoulderIroAroHDCalAngleGlobe3"
+                  component="0" 
+                  side="left"/>  
+         </Diagram>
+
+    </Page>
+    
+
+
+    <Page name="Angles-xy-phases" rows="4" columns="3">
+        
+        <!-- first row -->
+
+        <Diagram name="ShoulderElevation" 
+           column="0"
+           row="0"
+           xunit="% movement cycle"
+           yunit="deg" 
+           diagramDescriptionDown="ele"
+           diagramDescriptionUp="dep" 
+           plane="" 
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramType="xt" 
+           diagramTitle="Shoulder ele/dep">
+         <Label name="RShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="right"/>
+         <Label name="LShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="left"/>       
+        </Diagram>
+
+        <Diagram name="ShoulderIroAroPhase" 
+           column="1"
+           row="0"
+           yunit="1/s" 
+           diagramDescriptionDown=""
+           diagramDescriptionUp=""
+           plane="" 
+           diagramType="phase" 
+           diagramTitle="Shoulder conjunct rot (phase)">
+           <Label name="RShoulderIroAroHDCalAngle"
+              ycomponent="0" 
+              ylabel="RShoulderIroAroHDCalAngle"
+              xcomponent="0"
+              xlabel="RShoulderEleDepHDCalDirCosAngle"
+              side="right"/>
+           <Label name="LShoulderIroAroHDCalAngle"
+              ycomponent="0" 
+              ylabel="LShoulderIroAroHDCalAngle"
+              xcomponent="0"
+              xlabel="LShoulderEleDepHDCalDirCosAngle"
+              side="left"/>     
+        </Diagram>
+        
+        <Diagram name="ShoulderIroAro" 
+           column="2"
+           row="0"
+           xunit="deg"
+           yunit="deg" 
+           diagramDescriptionDown="ext"
+           diagramDescriptionUp="int"
+           plane="" 
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramType="xy" 
+           diagramTitle="Shoulder conjunct rot">
+           <Label name="RShoulderIroAroHDCalAngle"
+              ycomponent="0" 
+              ylabel="RShoulderIroAroHDCalAngle"
+              xcomponent="0"
+              xlabel="RShoulderEleDepHDCalDirCosAngle"
+              side="right"/>
+           <Label name="LShoulderIroAroHDCalAngle"
+              ycomponent="0" 
+              ylabel="LShoulderIroAroHDCalAngle"
+              xcomponent="0"
+              xlabel="LShoulderEleDepHDCalDirCosAngle"
+              side="left"/>        
+        </Diagram>
+         
+        <Diagram name="SGElevation" 
+           column="0"
+           row="1"
+           yunit="1/s" 
+           diagramDescriptionDown="" 
+           diagramDescriptionUp="" 
+           plane="" 
+           diagramType="phase" 
+           diagramTitle="Shoulder girdle ele/dep (phase)">
+          <Label name="RShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="right"/>
+           <Label name="LShoulderEleDepHDCalDirCosAngle"
+              component="0" 
+              side="left"/>   
+         </Diagram>
+      
+         <Diagram name="ShoulderAdjunctPhase" 
+                   column="1"
+                   row="1"
+                   xunit=""
+                   yunit="1/s" 
+                   diagramDescriptionDown="" 
+                   diagramDescriptionUp="" 
+                   plane="" 
+                   diagramType="phase" 
+                   diagramTitle="Shoulder adjunct rot (phase)">
+               <Label name="RShoulderHDAdjunctRotationAngles"
+                    component="1"
+                    side="right"/>
+               <Label name="LShoulderHDAdjunctRotationAngles"
+                    component="1"
+                    sign="true"
+                    side="left"/>
+        </Diagram>
+       
+        <Diagram name="ShoulderAdjunctXY" 
+           column="2"
+           row="1"
+           xunit="deg" 
+           yunit="deg"  
+           diagramDescriptionDown="ext"  
+           diagramDescriptionUp="int"  
+           plane=""  
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramType="xy" 
+           diagramTitle="Shoulder adjunct rot"> 
+           <Label name="RShoulderHDAdjunctRotationAngles"
+                  ycomponent="1" 
+                  ylabel="RShoulderHDAdjunctRotationAngles"
+                  xcomponent="0"
+                  xlabel="RShoulderEleDepHDCalDirCosAngle"
+                  side="right"/>  
+           <Label name="LShoulderHDAdjunctRotationAngles"
+                  ycomponent="1" 
+                  ylabel="LShoulderHDAdjunctRotationAngles"
+                  ysign="true"
+                  xcomponent="0"
+                  xlabel="LShoulderEleDepHDCalDirCosAngle"
+                  side="left"/>
+         </Diagram>
+
+
+
+        
+        <Diagram name="ShoulderGlobePhase" 
+           column="1"
+           row="2"
+           yunit="1/s" 
+           diagramDescriptionDown=""
+           diagramDescriptionUp="" 
+           plane="" 
+           diagramType="phase" 
+           diagramTitle="Shoulder globe rot (phase)">
+           <Label name="RShoulderIroAroHDCalAngleGlobe3"
+                  component="0" 
+                  side="right"/>
+           <Label name="LShoulderIroAroHDCalAngleGlobe3"
+                  component="0" 
+                  side="left"/>
+        </Diagram>
+         
+
+        <Diagram name="ShoulderGlobeXY" 
+           column="2"
+           row="2"
+           xunit="deg" 
+           yunit="deg"  
+           diagramDescriptionDown="ext"  
+           diagramDescriptionUp="int"  
+           plane=""  
+           diagramType="xy" 
+           rightEvents="REleMax"
+           leftEvents="LEleMax"
+           diagramTitle="Shoulder globe rot"> 
+           <Label name="RShoulderIroAroHDCalAngleGlobe3"
+                  ycomponent="0"
+                  ylabel="RShoulderIroAroHDCalAngleGlobe3"
+                  xcomponent="0"
+                  xlabel="RShoulderEleDepHDCalDirCosAngle"
+                  side="right"/>  
+           <!--Label name="LShoulderYXY2Angles"
+                  ycomponent="2" 
+                  ylabel="LShoulderYXY2Angles" 
+                  xcomponent="0" 
+                  xlabel="LShoulderEleDepHDCalDirCosAngle" 
+                  side="left"/-->  
+         </Diagram>
+
+    </Page>
+    
+  </Pages>
+      
+  <!-- Gruppen von Trials z.B. schnelle und langsame Gehdurchgänge
+       definieren und die zugehörigen Farben für jedweils linke und
+       rechte Seite sowie die zugehörigen Normdaten -->
+  <Groups>
+        <DefaultGroup normData="abc.gnm"/>
+  </Groups>
+  
+  <View>
+     <Events>
+          <Event name="RHS"/>
+          <Event name="REleMax"/>
+          <Event name="RTO"/>
+          <Event name="GG"/>
+          <Event name="RG"/>
+          <Event name="LG"/>
+     </Events>
+     <Phases>
+        <Phase name="RCycle" startEvent="RHS" endEvent="RTO"/>
+        <Phase name="RCycle3" startEvent="RHS" endEvent="GG"/>
+        <Phase name="RAbdukPhase"/>
+        <Phase name="RAntePhase"/>
+        <Phase name="RRetroPhase"/>
+        <Phase name="RCycleBW"/>
+        <Phase name="RCycleFW"/>
+     </Phases>
+     <Alignment event="RHS" phase="RCycle" normalization="RCycle"/>
+     <Alignment event="RHS" phase="RCycle3" normalization="RCycle3"/>
+  </View>
+  
+</Sheet>

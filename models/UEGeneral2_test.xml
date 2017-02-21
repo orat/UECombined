@@ -1,0 +1,1251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   :    UEGeneral2
+    Author     :    Oliver Rettig
+   
+    Description: - Testweise Bestimmung des SARASchultergelenkszentrums für die rechte Seite mit dynamischer Calibration
+                 - Bestimmung des Ellenbogengelenkszentrum durch dynamische Calibration.
+                 - Head angles und Thorax-Achsen mit statischer Kalibration
+                 - RthoraxRefISB is the main referential. Its axis are not set relative
+                   to the vertical like in the other versions.
+                   
+    ToDo
+    !!!          - For Points/Vector, we can't use calibratesIncludes with Includes. It will be fixed one day     
+    
+-->
+<CalcModel version="1.1">
+
+    <Real name="T">t*1.0</Real>
+    
+    <Phase name="RCycle" startEvent="RHS" endEvent="RTO" process="post" 
+           includes="dynamic,dynamic_shoulder_ele,dynamic_calibrate_abduk"/>
+    <Phase name="LCycle" startEvent="LHS" endEvent="LTO" process="post" 
+           includes="dynamic,dynamic_shoulder_ele,dynamic_calibrate_abduk"/>
+    
+    <!--Phase name="RSubCycle1" startEvent="RHS" endEvent="RG" process="post" includes="dynamic"/>
+    <Phase name="RSubCycle2" startEvent="RG" endEvent="RTO" process="post" includes="dynamic"/>
+    <Phase name="LSubCycle1" startEvent="LHS" endEvent="LG" process="post" includes="dynamic"/>
+    <Phase name="LSubCycle2" startEvent="LG" endEvent="LTO" process="post" includes="dynamic"/-->
+
+    <!-- Stupid referential equivalent to Rvicon. It´s to solve the problem than
+         we can use calibrateIncludes only defining a local referential -->
+    <CoordinateSystem name="Global"
+          Position="vec(0,0,0)"
+          FirstAxis="vec(1,0,0)"
+          DefiningVector="vec(0,0,1)"
+          orientation="xyz"/> 
+
+    <!-- Thorax-Koordinatensystem, T10 is more stable than C7 and the vectors
+         used to define the directions are the longest possible -->
+    <CoordinateSystem name="ThoraxUncalibrated"
+          Position="(CLAV+CLAV)/2.0"
+          FirstAxis="T10-CLAV"
+          DefiningVector="T10-STRN"
+          orientation="xyz"/>
+
+    <!-- The axis respect the orientation of the ISB recommandations but the
+         upward axis is defined using the static trial -->
+    <!-- MedioLateralAxis: nach rechts
+         longitudinal: nach oben 
+         AntPost: nach vorne -->
+    <Vector name="MedioLateralAxisISBo">normalize((C7-CLAV)*((STRN+T10)/2.0-CLAV))</Vector>
+    <Vector name="LongitudinalAxisISBo">normalize((C7+CLAV)/2-(STRN+T10)/2.0)</Vector>
+    <Vector name="AntPostAxisISBo">normalize(LongitudinalAxisISBo*MedioLateralAxisISBo)</Vector>
+
+    <Vector name="MedioLateralAxisISB"
+          coordinateSystem="ThoraxUncalibrated"
+          calibrateIncludes="static_calibrate">MedioLateralAxisISBo</Vector>
+    <Vector name="LongitudinalAxisISB"
+          coordinateSystem="ThoraxUncalibrated"
+          calibrateIncludes="static_calibrate">LongitudinalAxisISBo</Vector>
+    <!-- mir scheint, hier fehlt calibrateIncludes, nein, das brauche ich
+         nicht, da AntPostAxisISBo als Kreuzprodukt longitudinal und mediolatera axes,
+         scheint nach hinten zu zeigen -->
+          <!-- TODO aber dann muss ich doch auch ein Kreuzprodukt reinschreiben:
+               normalize(LongitudinalAxisISB*MedioLateralAxisISB)
+          urspruenglich stand hier AntPostAxisISBo-->
+    <Vector name="AntPostAxisISB"
+          coordinateSystem="ThoraxUncalibrated">normalize(LongitudinalAxisISBo*MedioLateralAxisISBo)</Vector>
+    <!-- so hatte das Laetitia gemacht, aber das ist doch falsch -->
+    <Vector name="AntPostAxisISB1"
+          coordinateSystem="ThoraxUncalibrated">AntPostAxisISBo</Vector>
+    <!-- so sollte es eigentlich auch funktionieren -->
+    <Vector name="AntPostAxisISB2"
+          coordinateSystem="ThoraxUncalibrated"
+          calibrateIncludes="static_calibrate">AntPostAxisISBo</Vector>
+
+    <!-- Thorax axes defined by thorax and pelvis markers -->
+    
+    <Point name="PELC">(LASI+RASI+SACR)/3.0</Point>
+    <!-- PigMo: ThoraxC = (LSHO + RSHO) .* 0.25 + C7 .* 0.5-->
+    <Point name="ThoraxC1">(LSHO + RSHO)*0.25 + C7 * 0.5</Point>
+    <!-- different from PigMo to be independend from shoulder markers -->
+    <Point name="ThoraxC2">(CLAV+C7)*0.5</Point>
+    
+    <!-- nach vorne unten
+         so hatte ich das im Paper bisher gemacht
+         aber das ist kein Kreuzprodukt, damit stehen die 3 Achsen nicht alle senkrecht aufeinander    -->
+    <Vector name="AntPostAxisHDCal0"
+          coordinateSystem="ThoraxUncalibrated"
+          calibrateIncludes="static_calibrate">normalize(CLAV-(RSHO+LSHO)*0.5)</Vector>
+    <!-- nach oben --> 
+    <Vector name="LongitudinalAxisHDCal"
+          coordinateSystem="ThoraxUncalibrated"
+          calibrateIncludes="static_calibrate">normalize(ThoraxC1-PELC)</Vector>
+    <!--  nach rechts -->
+    <Vector name="MedioLateralAxisHDCal"
+            excludes="static_calibrate">AntPostAxisHDCal0*LongitudinalAxisHDCal</Vector>
+    
+    <!-- neu: ant-post als Kreuzprodukt --> 
+    <Vector name="AntPostAxisHDCal"
+            excludes="static_calibrate">LongitudinalAxisHDCal*MedioLateralAxisHDCal
+    </Vector>
+    
+    <!-- 3d Stickfigure -->
+    <Point name="LongitudinalAxisHDCalEnd"
+           excludes="static_calibrate">normalize(LongitudinalAxisHDCal)*500.0+PELC
+    </Point>
+    <Point name="AntPostAxisHDCalEnd"
+           excludes="static_calibrate">normalize(AntPostAxisHDCal)*100.0+PELC
+    </Point>
+    
+    <!-- statischer Trial als Referenz -->
+    <Vector name="AntPostAxisRefHDCal0"
+          coordinateSystem="Global"
+          calibrateIncludes="static_calibrate"
+          excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,static_calibrate_shoulder2,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">normalize(CLAV-(RSHO+LSHO)*0.5)</Vector>
+    <Vector name="LongitudinalAxisRefHDCal"
+          coordinateSystem="Global"
+          calibrateIncludes="static_calibrate"
+          excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,static_calibrate_shoulder2,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">normalize(ThoraxC1-PELC)</Vector>
+    <Vector name="MedioLateralAxisRefHDCal"
+          coordinateSystem="Global"
+          excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,static_calibrate_shoulder2,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">AntPostAxisRefHDCal0*LongitudinalAxisRefHDCal</Vector>
+    
+    <Vector name="AntPostAxisRefHDCal"
+          coordinateSystem="Global"
+          excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,static_calibrate_shoulder2,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">LongitudinalAxisRefHDCal*MedioLateralAxisRefHDCal</Vector>
+   
+    
+    
+    
+    <!--  ____________________________________________Trunk Bewegung -->
+    <!-- The axis respect the orientation of the ISB recommandations -->
+    <Vector name="MedioLateralAxisRefISB"
+          coordinateSystem="Global"
+          calibrateIncludes="static_calibrate"
+          excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,static_calibrate_shoulder2,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">MedioLateralAxisISBo</Vector>
+    <Vector name="LongitudinalAxisRefISB"
+          coordinateSystem="Global"
+          calibrateIncludes="static_calibrate"
+          excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,static_calibrate_shoulder2,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">LongitudinalAxisISBo</Vector>
+    <Vector name="AntPostAxisRefISB"
+          coordinateSystem="Global"
+          excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,static_calibrate_shoulder2,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">AntPostAxisISBo</Vector>
+          
+    <!-- Head angles -->
+
+    <!-- TODO mit static trial kalibrierte Achsen bauen -->
+    <!-- Achse nach oben -->
+    <!--Vector name="HeadUpDownAxis">normalize((RMAS-LMAS)*(HEAD-LMAS))</Vector-->
+    <!-- Achse nach links -->
+    <!--Vector name="HeadLatMedAxis">normalize(LMAS-RMAS)</Vector-->
+    <!-- Achse nach vorne -->
+    <!--Vector name="HeadAntPostAxis">HeadLatMedAxis*HeadUpDownAxis</Vector-->
+
+ 
+     <!-- head Tilt als Projektionswinkel -->
+    <!-- MedioLateralAxisRefISB nach rechts
+         LongitudinalAxisRefISB nach unten -->
+    <!-- HeadUpDownAxis nach oben -->
+    <!--ProjectionAngle name="HeadTiltProjA"
+                    Axis="-MedioLateralAxisISB"
+                    FirstVector="HeadUpDownAxis"
+                    SecondVector="AntPostAxisISB"
+                    unsigned="false"
+                    useOffset="false"
+                    includes="dynamic"/>
+    <Real name="HeadTiltProjAngle"
+          includes="dynamic">90.0-HeadTiltProjAAngle</Real-->
+
+   <!-- Head Obliquity (proj) -->
+    <!-- AntPostAxis zeigt nach vorne -->
+    <!-- HeadUpDownAxis nach oben -->
+    <!-- MedioLateralAxis zeigt nach rechts -->
+    <!--ProjectionAngle name="RHeadObliquityProjA"
+                Axis="AntPostAxisISB"
+                SecondVector="MedioLateralAxisISB"
+                FirstVector="HeadUpDownAxis"
+                unsigned="false"
+                useOffset="false"
+                includes="dynamic"/>
+    <Real name="RHeadObliquityProjAngle"
+          includes="dynamic">RHeadObliquityProjAAngle-90.0</Real>
+    <ProjectionAngle name="LHeadObliquityProjA"
+                Axis="-AntPostAxisISB"
+                FirstVector="-MedioLateralAxisISB"
+                SecondVector="HeadUpDownAxis"
+                unsigned="false"
+                useOffset="false"
+                includes="dynamic"/>
+    <Real name="LHeadObliquityProjAngle"
+          includes="dynamic">LHeadObliquityProjAAngle-90.0</Real-->
+
+
+  <!-- Head rotation (proj) -->
+  <!--ProjectionAngle name="RHeadRotProj"
+                Axis="TrunkZ"
+                FirstVector="-HeadLatMedAxis"
+                SecondVector="-HorizontalAxis"
+                unsigned="false"
+                useOffset="false"
+                includes="dynamic"/>
+  <ProjectionAngle name="LHeadRotProj"
+                Axis="-TrunkZ"
+                FirstVector="HeadLatMedAxis"
+                SecondVector="HorizontalAxis"
+                unsigned="false"
+                useOffset="false"
+                includes="dynamic"/-->
+
+    <!-- AntPostAxis zeigt nach vorne -->
+    <ProjectionAngle name="RTrunkObliquity"
+          Axis="AntPostAxisRefISB"
+          FirstVector="LongitudinalAxisISB"
+          SecondVector="LongitudinalAxisRefISB"
+          unsigned="false"
+          useOffset="false"
+          includes="dynamic"/>
+    <ProjectionAngle name="LTrunkObliquity"
+          Axis="-AntPostAxisRefISB"
+          FirstVector="LongitudinalAxisISB"
+          SecondVector="LongitudinalAxisRefISB"
+          unsigned="false"
+          useOffset="false"
+          includes="dynamic"/>
+    <!-- MedioLateralAxisRefISB zeigt nach vorne -->
+    <ProjectionAngle name="TrunkTilt"
+          Axis="MedioLateralAxisRefISB"
+          FirstVector="LongitudinalAxisRefISB"
+          SecondVector="LongitudinalAxisISB"
+          unsigned="false"
+          useOffset="false"
+          includes="dynamic"/>
+
+    <!-- Internal/external axial rotation -->
+    <!--ProjectionAngle name="TrunkRotation"
+          Axis="-LongitudinalAxisRefISB"
+          FirstVector="AntPostAxisRefISB"
+          SecondVector="AntPostAxisISB"
+          unsigned="false"
+          useOffset="false"
+          includes="dynamic"/-->
+
+    
+    <!-- with Pelvis markers -->
+
+    <ProjectionAngle name="RTrunkObliquityHDCal"
+          Axis="AntPostAxisRefHDCal"
+          FirstVector="LongitudinalAxisHDCal"
+          SecondVector="LongitudinalAxisRefHDCal"
+          unsigned="false"
+          useOffset="false"
+          includes="dynamic"/>
+    <ProjectionAngle name="LTrunkObliquityHDCal"
+          Axis="-AntPostAxisRefHDCal"
+          FirstVector="LongitudinalAxisHDCal"
+          SecondVector="LongitudinalAxisRefHDCal"
+          unsigned="false"
+          useOffset="false"
+          includes="dynamic"/>
+    <ProjectionAngle name="TrunkTiltHDCal"
+          Axis="MedioLateralAxisRefHDCal"
+          FirstVector="LongitudinalAxisRefHDCal"
+          SecondVector="LongitudinalAxisHDCal"
+          unsigned="false"
+          useOffset="false"
+          includes="dynamic"/>
+    <!--ProjectionAngle name="TrunkRotationHDCal"
+          Axis="-LongitudinalAxisRefHDCal"
+          FirstVector="AntPostAxisRefHDCal"
+          SecondVector="AntPostAxisHDCal"
+          unsigned="false"
+          useOffset="false"
+          includes="dynamic"/-->
+    
+    <!-- Abstand des Schultergelenkszentrums senkrecht unterhalb der RSHO/LSHO Marker nach Rab -->
+    <Real name="RabShoulderDist"
+            calibrateIncludes="static_calibrate">RabShoulderOffset*dist(RSHO,LSHO)</Real>
+
+
+    <!-- ______________________________________________________RECHTE SEITE -->
+
+    <SubModel name="RightSide"
+              includes="right">
+                
+        <!-- _________________________________________Ellenbogen-Scharniergelenk -->
+        
+        <!-- Bestimmung einer groben Scharniergelenksachse ohne jede Calibration -->
+        <Point name="RWJC">RULN+0.2*(RRAD-RULN)</Point>        
+        
+        <CoordinateSystem name="R_RElbow"
+              Position="RWJC*1.0"
+              FirstAxis="normalize(RWJC-RELB)"
+              DefiningVector="normalize(RWJC-RELBW)"/>   
+  
+        <Point name="RLEP"
+               coordinateSystem="R_RElbow"
+               calibrateIncludes="static_calibrate">RELBW</Point>
+        <Point name="RMEP"
+               coordinateSystem="R_RElbow"
+               calibrateIncludes="static_calibrate">RELB</Point>
+        <Point name="REJC0">(RLEP+RMEP)/2.0</Point>
+        <Vector name="RElbowHingeSimpleAxis">normalize(RLEP-RMEP)</Vector>
+        <AoRGamage2002 name="RElbowHinge"
+               coordinateSystem="R_RElbow"
+               ReferencePoint="REJC0"
+               SignAxis="RElbowHingeSimpleAxis"
+               startEventType="RHS"
+               endEventType="RTO"
+               calibrateIncludes="dynamic_calibrate_right_ellbow"
+               includes="static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic_calibrate_right_ellbow,dynamic_calibrate_right_shoulder,dynamic,static">RHUMS</AoRGamage2002>         
+              
+        <CoordinateSystem name="RHumerusS"
+              Position="RHUMS"
+              FirstAxis="normalize(RHUMA-RHUMP)"
+              Line="normalize(RHUMS-RHUMA)"
+              orientation="xyz"/>
+        <AoRSARA name="RElbowHingeSARA"
+                 coordinateSystem="R_RElbow"
+                 ReferencePoint="REJC0"
+                 considerSymmetricSolution="false"
+                 movingCoordinateSystem="RHumerusS"
+                 SignAxis="RElbowHingeSimpleAxis"
+                 startEventType="RHS"
+                 endEventType="RTO"
+                 calibrateIncludes="dynamic_calibrate_right_ellbow"
+                 includes="static_calibrate_shoulder2,dynamic_calibrate_right_ellbow,dynamic_calibrate_right_shoulder,dynamic,static"/>       
+              
+        <!-- Visualisation right elbow axis -->
+        <Point name="REJC"
+               includes="static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic_calibrate_right_shoulder,dynamic,static">RElbowHingeOrigin</Point>
+        <Point name="RElbowAxisHead"
+               includes="static_calibrate_shoulder2,dynamic_calibrate_right_shoulder,dynamic">RElbowHingeOrigin+100*RElbowHingeAxis</Point>
+             
+        <!-- Visualisation right elbow axis determined with SARA -->
+        <Point name="REJCSARA"
+               includes="static_calibrate_shoulder2,dynamic_calibrate_right_shoulder,dynamic,static">RElbowHingeSARAOrigin</Point>
+        <Point name="RElbowAxisHeadSARA"
+               includes="static_calibrate_shoulder2,dynamic_calibrate_right_shoulder,dynamic">RElbowHingeSARAOrigin+100*RElbowHingeSARAAxis</Point>
+    
+                                    
+        <!-- ________________________________________Schultergelenkszentrum bestimmen -->
+        <!-- other referential for the computation of the corrected shoulder position -->       
+        <CoordinateSystem name="R_RThorax"
+              Position="CLAV"
+              FirstAxis="MedioLateralAxisISB"
+              Line="AntPostAxisISB"
+              orientation="xyz"
+              excludes="static_calibrate,static_calibrate_ellbow,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow"/>
+     
+        <CoordinateSystem name="RClavicle"
+              Position="(RSHO+RSHO)/2.0"
+              FirstAxis="normalize(RSHO-CLAV)"
+              Line="normalize(LongitudinalAxisISB)"
+              orientation="xyz"
+              includes="static_calibrate_shoulder,static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic_calibrate_right_shoulder,dynamic,static"/>
+              
+        <!-- first estimation of elevation angle for phase definitions -->
+        <DirectedCosinAngle name="RHumAbdukClav"
+             SecondVector="-z(RClavicle)"
+             FirstVector="normalize(RHUMS-RSHO)"
+             includes="dynamic_calibrate_right_shoulder"/>
+        <TDP name="RHumAbdukAngleMin" 
+             method="min"
+             process="post"
+             calibrateIncludes="dynamic_calibrate_right_shoulder"
+             includes="dynamic_calibrate_right_shoulder">RHumAbdukClavAngle</TDP>
+        <Phase name="RAbduk"                                                         
+             process="post"
+             calibrateIncludes="dynamic_calibrate_right_shoulder"
+             includes="dummy">(RHumAbdukClavAngle &lt; (FuncionalTrialAbdukROM + 10.0 + RHumAbdukAngleMin)) &amp;&amp; (RHumAbdukClavAngle &gt; (10.0 + RHumAbdukAngleMin))</Phase>
+  
+        <CoRGamage2002 name="RGHJCGamage"
+             coordinateSystem="RClavicle"
+             phase="RAbduk"
+             biasCompensation="true"
+             biasCompensationIterations="5"
+             calibrateIncludes="dynamic_calibrate_right_shoulder"
+             includes="static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic,static">RHUMS</CoRGamage2002>
+     
+        <!-- Schultergelenkszentrum - Berechnung nach Rab -->
+        <Point name="RGHJCRab"
+                coordinateSystem="RClavicle"
+                includes="static_calibrate_shoulder2,dynamic,static"
+                calibrateIncludes="static_calibrate_shoulder">RSHO-vec(0.0,0.0,1.0)*RabShoulderDist</Point>
+
+        <!-- geometrische Rekonstruktion des Schultergelenkszentrum 
+        <ShoulderJointCenter5 name="RGHJCHD5"
+             ElbowJointCenter="REJC"
+             ElbowJointAxis="normalize(RElbowHingeAxis)"
+             HumerusMarker="RHUMS"
+             debug="true"
+             useHumerusMarkerCorrection="true"
+             useMeanSolution="true"
+             calibrateIncludes="static_calibrate_shoulder2"
+             includes="static_calibrate_shoulder2,dynamic">RGHJCGamageOrigin</ShoulderJointCenter5>
+        -->
+        
+        <!-- schlecht: Führt dazu dass sich RGHJC beim Schürzengriff stark nach hinten bewegt --> 
+        <CoordinateSystem name="RHumerus"
+              Position="RHUMS"
+              FirstAxis="normalize(RHUMS-REJC)"
+              Line="normalize(RElbowHingeAxis)"
+              orientation="xyz"
+              includes="static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic,static"/>
+        
+        <!-- mit zusätzlichen Humerus-Markern, besser als RHumerus -->
+        <CoordinateSystem name="RHumerusA"
+              Position="RHUMS"
+              FirstAxis="normalize(RHUMA-RHUMP)"
+              Line="normalize(RHUMS-REJC)"
+              orientation="xyz"
+              includes="static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic,static"/>
+
+        <!-- Besondere Art das Schultergelenkszentrum in Markerkoordinaten des Ober- und
+             Unterarms auszudrücken -->
+             
+        <CoordinateSystem name="RElbow"
+              Position="RELB*1.0"
+              FirstAxis="normalize(RULN+0.5*(RRAD-RULN)-RELB)"
+              DefiningVector="normalize(RULN+0.5*(RRAD-RULN)-RELBW)"/>  
+        
+        <!-- Projektion von RGHJC auf die Elbow axis -->
+        <Point name="REJCA"
+              coordinateSystem="RElbow"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">PocL(REJC, normalize(RElbowHingeAxis),RGHJCGamageOrigin)</Point>
+        <!-- Projektion des Acromion-Markers auf die Achse REJC-RGHJC -->
+        <!--Point name="RACRC"
+              coordinateSystem="RElbow"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">PocL(REJCA, normalize(RGHJCGamageOrigin - REJCA),RSHO)</Point>
+        
+        <Point name="RACRC2"
+              coordinateSystem="RClavicle"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">PocL(REJCA, normalize(RGHJCGamageOrigin - REJCA),RSHO)</Point-->
+       
+     
+        <!-- Projektion von RHUM auf die Achse REJC-RGHJC und an dem unzuverlässigen
+             Koordinatensystem (HUMS, RHUMA, RHUMP, REJC) festgemacht  -->
+        <Point name="RHUMC"
+              coordinateSystem="RHumerusA"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">PocL(REJCA, normalize(RGHJCGamageOrigin - REJCA),RHUMS)</Point>
+        <!-- mit REJC statt REJCA -->
+        <!--Point name="RHUMC2"
+              coordinateSystem="RHumerusA"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">PocL(REJC, normalize(RGHJCGamageOrigin - REJC),RHUMS)</Point-->
+       
+        <!--Real name="RHumLength"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">length(RGHJCGamageOrigin - REJCA)</Real-->
+        <!-- proximale Humerus length, also von HUMC bis GHJC -->
+        <Real name="RHumLengthProx"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">length(RGHJCGamageOrigin - RHUMC)</Real>
+        <!--Real name="RHumLengthProx2"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">length(RGHJCGamageOrigin - RHUMC2)</Real-->
+       
+        <!--Real name="RHumACRLength"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">length(RACRC - REJCA)</Real>
+        <Real name="RHumACRLengthProx"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">length(RACRC - RHUMC)</Real-->
+       
+        <!-- an HUMC, REJCA, elbowaxis und Oberarmlänge festgemacht-->
+        <Point name="RGHJC"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder,static_calibrate_shoulder2">RHUMC+normalize(RHUMC - REJCA)*RHumLengthProx</Point>
+        <!--Point name="RGHJC2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder,static_calibrate_shoulder2">RHUMC2+normalize(RHUMC2 - REJC)*RHumLengthProx2</Point-->
+        
+        <!--Point name="RACR"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">RHUMC+normalize(RHUMC - REJCA)*RHumACRLengthProx</Point-->
+      
+        <!-- schlecht: bewegt sich beim Schürzengriff stark nach hinten,
+             HUMS + elbow marker + elbow axis Koordidinatensystem wird verwendet -->
+        <!--Point name="RGHJCC"
+              coordinateSystem="RHumerus"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">RGHJCGamageOrigin</Point-->
+        <!-- besser als RGHJC, Koordinatensystem mehrere Humerusmarker + REJC only -->
+        <!--Point name="RGHJCA"
+              coordinateSystem="RHumerusA"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">RGHJCGamageOrigin</Point>
+        <DirectedCosinAngle name="RShoulderGirdleDepEleOffsetA"
+             FirstVector="normalize(RGHJCA-CLAV)"
+             SecondVector="normalize(RSHO-CLAV)"
+             includes="dynamic"/-->
+     
+        <!-- am Clavicle Koordinatensystem mit SHO marker festgemacht -->
+        <!--Point name="RGHJCB"
+              coordinateSystem="RClavicle"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">RGHJCGamageOrigin</Point-->
+       
+
+        <!--  Schulter/RThorax -->
+
+        <!-- Öffnungswinkel -->
+    
+        <!-- Shoulder Elevation/Depression -->
+        <Angle name="RShoulderEleDepDirCos"
+               FirstVector="-LongitudinalAxisISB"
+               SecondVector="REJC-RGHJC"
+               includes="dynamic"/>
+        <Angle name="RShoulderEleDepHDCalDirCos"
+               FirstVector="-LongitudinalAxisHDCal"
+               SecondVector="REJC-RGHJC"
+               includes="dynamic"/>
+        
+        <!-- Shoulder Abduktion -->
+        <Angle name="RShoulderAbdAddJointB0"
+               FirstVector="-MedioLateralAxisISB"
+               SecondVector="REJC-RGHJC"
+               includes="dynamic"/>
+        <Real name="RShoulderAbdAddDirCosAngle"
+             includes="dynamic">RShoulderAbdAddJointB0Angle-90.0</Real>
+        <Angle name="RShoulderAbdAddJointHDCal"
+               FirstVector="-MedioLateralAxisHDCal"
+               SecondVector="REJC-RGHJC"
+               includes="dynamic"/>
+        <Real name="RShoulderAbdAddHDCalDirCosAngle"
+             includes="dynamic">RShoulderAbdAddJointHDCalAngle-90.0</Real>
+             
+        <Angle name="RGlenohumeralEleDepHDCalDirCos"
+               FirstVector="normalize(REJC-RGHJC)"
+               SecondVector="normalize(-AntPostAxisHDCal*(CLAV-RGHJC))"
+               includes="dynamic"/>
+        <Angle name="RGlenohumeralEleDepDirCos"
+               FirstVector="normalize(REJC-RGHJC)"
+               SecondVector="normalize(-AntPostAxisISB*(CLAV-RGHJC))"
+               includes="dynamic"/>    
+        
+        <!-- Projektionswinkel --> 
+        
+        <!-- Shoulder Abduktion -->
+        <ProjectionAngle name="RShoulderAbdAddProj"
+             Axis="-AntPostAxisISB"
+             FirstVector="-LongitudinalAxisHDCal"
+             SecondVector="REJC-RGHJC"
+             includes="dynamic"
+             unsigned="false"/>
+        <ProjectionAngle name="RShoulderAbdAddHDCalProj"
+               Axis="-AntPostAxisHDCal"
+               FirstVector="-LongitudinalAxisHDCal"
+               SecondVector="REJC-RGHJC"
+               includes="dynamic"
+               unsigned="false"/>
+        
+        <!-- Workaround: *1.0 da es sonst zu einer class cass exception kommt, Ursache
+             unbekannt ... -->
+        <Event name="RAbduk0" phase="RCycle" method="value" value="0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk10" phase="RCycle" method="value" value="10"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk20" phase="RCycle" method="value" value="20"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk30" phase="RCycle" method="value" value="30.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk40" phase="RCycle" method="value" value="40.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk50" phase="RCycle" method="value" value="50.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk60" phase="RCycle" method="value" value="60.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk70" phase="RCycle" method="value" value="70.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk80" phase="RCycle" method="value" value="80.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk90" phase="RCycle" method="value" value="90.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk100" phase="RCycle" method="value" value="100.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk110" phase="RCycle" method="value" value="110.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk120" phase="RCycle" method="value" value="120.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk130" phase="RCycle" method="value" value="130.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk140" phase="RCycle" method="value" value="140.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk150" phase="RCycle" method="value" value="150.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk160" phase="RCycle" method="value" value="160.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk170" phase="RCycle" method="value" value="170.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="RAbduk180" phase="RCycle" method="value" value="180.0"
+               includes="dynamic_abduk_events" process="post">RShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        
+        <!-- Shoulder Ante-/Retroversion -->
+             
+        <!-- Projektionswinkel -->
+        <ProjectionAngle name="RShoulderAnteRetroProj"
+             Axis="MedioLateralAxisISB"
+             FirstVector="-LongitudinalAxisISB"
+             SecondVector="REJC-RGHJC"
+             unsigned="false"
+             includes="dynamic"/>
+        <ProjectionAngle name="RShoulderAnteRetroHDCalProj"
+             Axis="MedioLateralAxisHDCal"
+             FirstVector="-LongitudinalAxisHDCal"
+             SecondVector="REJC-RGHJC"
+             unsigned="false"
+             includes="dynamic"/>
+        
+        <!-- Öffnungswinkel -->
+        <Angle name="RShoulderAnteRetroJoint0"
+               FirstVector="-AntPostAxisISB"
+               SecondVector="REJC-RGHJC"
+               includes="dynamic"/>
+        <Real name="RShoulderAnteRetroDirCosAngle"
+             includes="dynamic">RShoulderAnteRetroJoint0Angle-90.0</Real>
+        <Angle name="RShoulderAnteRetroJointHDCal"
+               FirstVector="-AntPostAxisHDCal"
+               SecondVector="REJC-RGHJC"
+               includes="dynamic"/>
+        <Real name="RShoulderAnteRetroHDCalDirCosAngle"
+             includes="dynamic">RShoulderAnteRetroJointHDCalAngle-90.0</Real>
+             
+        <Phase name="RAnte" 
+           process="post" maxvalue="30.0" minwidth="40"
+           value="RShoulderAnteRetroHDCalDirCosAngle*1.0" 
+           includes="dynamic_anteretro">RShoulderAnteRetroHDCalDirCosAngle &gt; 0.0</Phase>
+        <Phase name="RRetro" 
+           process="post" minvalue="-25.0" minwidth="40"
+           value="RShoulderAnteRetroHDCalDirCosAngle*1.0" 
+           includes="dynamic_anteretro">RShoulderAnteRetroHDCalDirCosAngle &lt; 0.0</Phase>
+   
+        <!-- Laetitia: Horizontal abduction/adduction oder Horizontal Ante/Retroversion
+             Oli: Besser Umstellung auf die Attribute FirstVector, SecondVector -->
+        <!-- umstellen: 0 soll vorne sein -->
+        <!--ProjectionAngle name="RShoulderHorAbdAddProj"
+             Axis="LongitudinalAxisISB"
+             JointCenter="RGHJC"
+             LeverArmPoint1="RGHJC+MedioLateralAxisISB*500.0"
+             LeverArmPoint2="(REJC+REJC)/2.0"
+             unsigned="false"
+             includes="dynamic"/-->              
+             
+             
+         <!-- Iro/Aro -->
+         
+         <!-- Projektion in eine Ebene mit Humerus als Normalenvektor -->
+         <!-- TODO Elbowaxis statt RWJC verwenden ... -->
+        <ProjectionAngle name="RShoulderIroAroJoint0"
+             Axis="(REJC-RGHJC)"
+             FirstVector="-LongitudinalAxisISB*(REJC-RGHJC)"
+             SecondVector="((REJC-RGHJC)*(RWJC-REJC))*(REJC-RGHJC)"
+             includes="dynamic"/>
+        <Real name="RShoulderIroAroAngleGlobe"
+             includes="dynamic">180.0-RShoulderIroAroJoint0Angle</Real>
+        <ProjectionAngle name="RShoulderIroAroJointHdCal"
+             Axis="(REJC-RGHJC)"
+             FirstVector="-LongitudinalAxisHDCal*(REJC-RGHJC)"
+             SecondVector="((REJC-RGHJC)*(RWJC-REJC))*(REJC-RGHJC)"
+             includes="dynamic"/>
+        <Real name="RShoulderIroAroHDCalAngleGlobe"
+             includes="dynamic">180.0-RShoulderIroAroJointHdCalAngle</Real>
+
+        <!-- Pole sollen vorne und hinten sein -->
+        <!-- TODO LongitudinalAxis muss durch AP-Achse ersetzt werden ... -->
+        <ProjectionAngle name="RShoulderIroAroJoint1"
+             Axis="(REJC-RGHJC)"
+             FirstVector="-LongitudinalAxisISB*(REJC-RGHJC)"
+             SecondVector="((REJC-RGHJC)*(RWJC-REJC))*(REJC-RGHJC)"
+             includes="dynamic"/>
+        <Real name="RShoulderIroAroAngleGlobeAP"
+             includes="dynamic">180.0-RShoulderIroAroJoint1Angle</Real>
+             
+             
+        <!-- Parting convention -->
+        <!-- x nach vorne, y nach aussen/rechts, z nach unten -->
+        <CoordinateSystem name="RParting"
+                 Position="RGHJC"
+                 FirstAxis="AntPostAxisISB"
+                 DefiningVector="-LongitudinalAxisISB"
+                 orientation="xyz"
+                 includes="dynamic"/>
+        <ConjunctRotation name="RShoulderConjunctRotation"
+                   coordinateSystem="RParting"
+                   RadiusVector="normalize(REJC-RGHJC)"
+                   PointingVector="-normalize(REJC-RGHJC)*RElbowHingeAxis"
+                   includes="dynamic"/>
+        <!-- unklar, warum ich das Vorzeichen hier ändern muss -->
+        <Real name="RShoulderIroAroAngle"
+              includes="dynamic">-RShoulderConjunctRotationAngle</Real>
+        <!-- Verwendung der anhand zusätzlicher Beckenmarker kalibrierter Thorax-Achsen
+             x=rot, y=grün, z=blau -->
+        <CoordinateSystem name="RPartingHDCal"
+                 Position="RGHJC"
+                 FirstAxis="AntPostAxisHDCal"
+                 DefiningVector="-LongitudinalAxisHDCal"
+                 orientation="xyz"
+                 includes="dynamic"/>
+        <ConjunctRotation name="RShoulderAdjunctRotationHDCal"
+                   coordinateSystem="RPartingHDCal"
+                   RadiusVector="normalize(REJC-RGHJC)"
+                   PointingVector="-normalize(REJC-RGHJC)*RElbowHingeAxis"
+                   includes="dynamic"/>
+        <!-- unklar, warum ich das Vorzeichen hier ändern muss -->
+        <Real name="RShoulderIroAroHDCalAngle"
+              includes="dynamic">-RShoulderAdjunctRotationHDCalAngle</Real>
+
+         
+        <Event name="RMaxShoulderIroAro" phase="RCycle" method="max"
+               includes="dynamic_shoulder_ele" process="post">RShoulderIroAroAngle*1.0</Event>
+        <Event name="RMinShoulderIroAro" phase="RCycle" method="min"
+               includes="dynamic_shoulder_ele" process="post">RShoulderIroAroAngle*1.0</Event>
+    
+    
+        <!--  Schultergürtel Bewegung -->
+        
+        <!-- Depression/Elevation -->
+        
+        <DirectedCosinAngle name="RShoulderGirdleEleDepOffset"
+             FirstVector="normalize(RGHJC-CLAV)"
+             SecondVector="normalize(RSHO-CLAV)"
+             calibrateIncludes="static_calibrate_shoulder3"
+             excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder,static_calibrate_shoulder2"/>
+        <!-- Referenz ist der Thorax -->
+        <DirectedCosinAngle name="RShoulderGirdleEleDepA"
+             FirstVector="-LongitudinalAxisISB"
+             SecondVector="normalize(RGHJC-CLAV)"
+             includes="dynamic,static"/>
+        <Real name="RShoulderGirdleEleDepAngle"
+             includes="dynamic,static">RShoulderGirdleEleDepAAngle-90.0+RShoulderGirdleEleDepOffsetAngleAverage</Real>
+          
+        <!-- Referenz Thorax + Becken + Kalibration als Öffnungswinkel-->
+        <DirectedCosinAngle name="RShoulderGirdleEleDepC"
+             FirstVector="-LongitudinalAxisHDCal"
+             SecondVector="normalize(RGHJC-CLAV)"
+             includes="dynamic"/>
+        <Real name="RShoulderGirdleEleDepHDCalAngle"
+             includes="dynamic">RShoulderGirdleEleDepCAngle-90.0+RShoulderGirdleEleDepOffsetAngleAverage</Real>   
+             
+        <Event name="RMaxShoulderGirdleEleDep" phase="RCycle" method="max"
+               includes="dynamic_shoulder_ele" process="post">RShoulderGirdleEleDepHDCalAngle*1.0</Event>
+        <Event name="RMinShoulderGirdleEleDep" phase="RCycle" method="min"
+               includes="dynamic_shoulder_ele" process="post">RShoulderGirdleEleDepHDCalAngle*1.0</Event>
+    
+      
+        <!-- Pro-/Retraction -->
+        
+        <ProjectionAngle name="RShoulderGirdleProRetracProj0"
+             Axis="LongitudinalAxisISB"
+             FirstVector="MedioLateralAxisISB"
+             SecondVector="normalize(RGHJC-CLAV)"
+             unsigned="false"
+             includes="dynamic"/>                                                                                                          
+        <Real name="RShoulderGirdleProRetracProjAngle"
+             includes="dynamic">RShoulderGirdleProRetracProj0Angle+30.0</Real> 
+             
+        <!-- an Thorax + Becken festgemacht mit Kalibraton, Projektionswinkel -->
+        <!-- das ist korrekt -->
+        <ProjectionAngle name="RShoulderGirdleProRetracB"
+             Axis="LongitudinalAxisHDCal"
+             FirstVector="MedioLateralAxisHDCal"
+             SecondVector="normalize(RGHJC-CLAV)"
+             unsigned="false"
+             includes="dynamic"/>    
+        <Real name="RShoulderGirdleProRetracHDCalProjAngle"
+             includes="dynamic">RShoulderGirdleProRetracBAngle+30.0</Real>    
+            
+       
+                     
+        <!-- elbow flexion/extension -->
+        
+        <ProjectionAngle name="RElbowFlexExt"
+             Axis="RElbowHingeAxis"
+             FirstVector="(REJC-RGHJC)"
+             SecondVector="(RWJC-REJC)"
+             unsigned="false"
+             includes="dynamic"/>
+             
+        <!-- wrist supination/pronation -->
+        <ProjectionAngle name="RProSupiProj"
+             Axis="-(RWJC-REJC)"
+             FirstVector="RElbowHingeAxis*(RWJC-REJC)"
+             SecondVector="normalize(RRAD-RULN)"
+             unsigned="false"
+             includes="dynamic"/> 
+
+
+        <!-- hand gelenk -->
+        <!--ProjectionAngle name="RHandFlexExt"
+             Axis="RRAD-RULN"
+             FirstVector="RWJC-REJC"
+             SecondVector="RMCD-RMCP"
+             unsigned="false"
+             includes="dynamic"/>              
+
+        <ProjectionAngle name="RHandRadUln"
+             Axis="-(RWJC-REJC)*(RRAD-RULN)"
+             FirstVector="RWJC-REJC"
+             SecondVector="RMCD-RMCP"
+             unsigned="false"
+             includes="dynamic"/-->
+
+    </SubModel>
+             
+    
+    
+    <!-- _______________________________________________________LINKE SEITE -->  
+    <SubModel name="LeftSide"
+              includes="left">
+                
+        <!-- ___________________________________Ellenbogen-Scharniergelenk -->
+        
+        <!-- Bestimmung einer groben Scharniergelenksachse ohne jede Calibration -->
+        <Point name="LWJC">LULN+0.2*(LRAD-LULN)</Point>        
+          
+        <CoordinateSystem name="LElbow"
+              Position="LWJC*1.0"
+              FirstAxis="normalize(LWJC-LELB)"
+              DefiningVector="normalize(LWJC-LELBW)"/>   
+  
+        <Point name="LLEP"
+               coordinateSystem="LElbow"
+               calibrateIncludes="static_calibrate">LELBW+normalize(LELBW-LELB)*50.0</Point>
+        <Point name="LMEP"
+               coordinateSystem="LElbow"
+               calibrateIncludes="static_calibrate">LELB-normalize(LELBW-LELB)*50.0</Point>
+        <Point name="LEJC0">(LLEP+LMEP)/2.0</Point>
+        <Vector name="LElbowHingeSimpleAxis">normalize(LLEP-LMEP)</Vector>
+                
+        <AoRGamage2002 name="LElbowHinge"
+               coordinateSystem="LElbow"
+               ReferencePoint="LEJC0"
+               SignAxis="LElbowHingeSimpleAxis"
+               startEventType="LHS"
+               endEventType="LTO"
+               calibrateIncludes="dynamic_calibrate_left_ellbow"
+               includes="static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic_calibrate_left_shoulder,dynamic,static">LHUMS</AoRGamage2002>         
+        
+        <Point name="LEJC"
+               includes="static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic_calibrate_left_shoulder,static,dynamic">LElbowHingeOrigin</Point>
+                 
+       
+        <Point name="LElbowAxisHead"
+               includes="static_calibrate_shoulder2,dynamic_calibrate_left_shoulder,dynamic">LElbowHingeOrigin+100*LElbowHingeAxis</Point>
+
+        <!--Because there is sometimes a wrong direction for this axis. Why? No idea -->
+        <Point name="LElbowHingeAxisC"
+               includes="static_calibrate_shoulder2,dynamic_calibrate_left_shoulder,dynamic">LElbowHingeAxis*1</Point>
+
+                             
+        <!-- ________________________________________________________Schultergelenkszentrum bestimmen -->
+        <!-- The orientation of the axis is important to compute the corrected shoulder position-->
+        <CoordinateSystem name="R_LThorax"
+              Position="CLAV"
+              FirstAxis="-MedioLateralAxisISB"
+              Line="AntPostAxisISB"
+              orientation="xyz"
+              excludes="static_calibrate,static_calibrate_ellbow,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow"/>
+
+               
+        <CoordinateSystem name="LClavicle"
+              Position="(LSHO+LSHO)/2.0"
+              FirstAxis="normalize(LSHO-CLAV)"
+              Line="normalize(LongitudinalAxisISB)"
+              orientation="xyz"
+              includes="static_calibrate_shoulder,static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic_calibrate_left_shoulder,dynamic,static"/>
+              
+
+        <!-- first estimation of elevation angle for phase definitions -->
+        <DirectedCosinAngle name="LHumAbdukClav"
+             SecondVector="-z(LClavicle)"
+             FirstVector="normalize(LHUMS-LSHO)"
+             includes="dynamic_calibrate_left_shoulder"/>
+        <TDP name="LHumAbdukAngleMin" 
+             method="min"
+             process="post"
+             calibrateIncludes="dynamic_calibrate_left_shoulder"
+             includes="dynamic_calibrate_left_shoulder">LHumAbdukClavAngle</TDP>
+         
+        <Phase name="LAbduk"                                                         
+             process="post"
+             calibrateIncludes="dynamic_calibrate_left_shoulder"
+             includes="dummy">(LHumAbdukClavAngle &lt; (FuncionalTrialAbdukROM + 10.0 + LHumAbdukAngleMin)) &amp;&amp; (LHumAbdukClavAngle &gt; (10.0 + LHumAbdukAngleMin))
+        </Phase>
+  
+  
+        <CoRGamage2002 name="LGHJCGamage"
+             coordinateSystem="LClavicle"
+             phase="LAbduk"
+             biasCompensation="true"
+             biasCompensationIterations="5"
+             calibrateIncludes="dynamic_calibrate_left_shoulder"
+             includes="static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic,static">LHUMS</CoRGamage2002>
+
+         <!-- Schultergelenkszentrum - Berechnung nach Rab -->
+         <Point name="LGHJCRab"
+                coordinateSystem="LClavicle"
+                includes="static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic,static"
+                calibrateIncludes="static_calibrate_shoulder">LSHO-vec(0.0,0.0,1.0)*RabShoulderDist</Point>
+
+              
+        <!-- orig -->
+        <CoordinateSystem name="LHumerus"
+              Position="LHUMS"
+              FirstAxis="normalize(LHUMS-LEJC)"
+              Line="normalize(LElbowHingeAxisC)"
+              orientation="xyz"
+              includes="static_calibrate_shoulder2,dynamic"/>
+              
+        <!-- zusätzliche Humerusmarker -->
+        <CoordinateSystem name="LHumerusA"
+              Position="LHUMS"
+              FirstAxis="normalize(LHUMA-LHUMP)"
+              Line="normalize(LEJC-LHUMS)"
+              orientation="xyz"
+              includes="static_calibrate_shoulder2,static_calibrate_shoulder3,dynamic,static"/>
+        
+        <!-- Projektion von LGHJC auf die Elbow axis -->
+        <Point name="LEJCA"
+              coordinateSystem="LElbow"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">PocL(LEJC, normalize(LElbowHingeAxis),LGHJCGamageOrigin)</Point>
+      
+
+        <!--Point name="LGHJC"
+              coordinateSystem="LHumerus"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">LGHJCGamageOrigin</Point-->
+
+        <!--Point name="LGHJCA"
+              coordinateSystem="LHumerusA"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">LGHJCGamageOrigin</Point>
+        <DirectedCosinAngle name="LShoulderGirdleDepEleOffsetA"
+             SecondVector="normalize(LGHJCA-CLAV)"
+             FirstVector="normalize(LSHO-CLAV)"
+             includes="dynamic"/-->
+       
+        <!-- Projektion von LHUM auf die Achse REJC-RGHJC und an dem unzuverlässigen
+             Koordinatensystem (HUMS, LHUMA, LHUMP, LEJC) festgemacht  -->
+        <Point name="LHUMC"
+              coordinateSystem="LHumerusA"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">PocL(LEJCA, normalize(LGHJCGamageOrigin - LEJCA),LHUMS)</Point>
+        <!-- mit REJC statt REJCA -->
+        <!--Point name="LHUMC2"
+              coordinateSystem="LHumerusA"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">PocL(LEJC, normalize(LGHJCGamageOrigin - LEJC),LHUMS)</Point-->
+    
+        <!-- proximale Humerus length, also von HUMC bis GHJC -->
+        <Real name="LHumLengthProx"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">length(LGHJCGamageOrigin - LHUMC)</Real>
+        <!--Real name="LHumLengthProx2"
+              calibrateIncludes="static_calibrate_shoulder2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">length(LGHJCGamageOrigin - LHUMC2)</Real-->
+       
+        <!-- an HUMC, LEJCA, elbowaxis und Oberarmlänge festgemacht-->
+        <Point name="LGHJC"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">LHUMC+normalize(LHUMC - LEJCA)*LHumLengthProx</Point>
+        <!--Point name="LGHJC2"
+              excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder">LHUMC2+normalize(LHUMC2 - LEJC)*LHumLengthProx2</Point-->
+    
+              
+        
+        <!--  Schoulder -->
+        
+       
+        <!-- Öffnungswinkel --> 
+        
+        <!-- Shoulder Elevation -->
+        <Angle name="LShoulderEleDepDirCos"
+               FirstVector="-LongitudinalAxisISB"
+               SecondVector="LEJC-LGHJC"
+               includes="dynamic"/>
+        <Angle name="LShoulderEleDepHDCalDirCos"
+               FirstVector="-LongitudinalAxisHDCal"
+               SecondVector="LEJC-LGHJC"
+               includes="dynamic"/>
+        
+        <!-- Shoulder Abduktion -->
+        <Angle name="LShoulderAbdAddJointB0"
+               FirstVector="MedioLateralAxisISB"
+               SecondVector="LEJC-LGHJC"
+               includes="dynamic"/>
+        <Real name="LShoulderAbdAddDirCosAngle"
+             includes="dynamic">LShoulderAbdAddJointB0Angle-90.0</Real>
+        <Angle name="LShoulderAbdAddJointHDCal"
+               FirstVector="MedioLateralAxisHDCal"
+               SecondVector="LEJC-LGHJC"
+               includes="dynamic"/>
+        <Real name="LShoulderAbdAddHDCalDirCosAngle"
+             includes="dynamic">LShoulderAbdAddJointHDCalAngle-90.0</Real>
+        
+        <Angle name="LGlenohumeralEleDepHDCalDirCos"
+               FirstVector="normalize(LEJC-LGHJC)"
+               SecondVector="normalize(-AntPostAxisHDCal*(LGHJC-CLAV))"
+               includes="dynamic"/>
+        <Angle name="LGlenohumeralEleDepDirCos"
+               FirstVector="normalize(LEJC-LGHJC)"
+               SecondVector="normalize(-AntPostAxisISB*(LGHJC-CLAV))"
+               includes="dynamic"/>
+        
+        <!-- AnteRetroversion -->
+        <Angle name="LShoulderAnteRetroJointISB"
+               FirstVector="-AntPostAxisISB"
+               SecondVector="LEJC-LGHJC"
+               includes="dynamic"/>
+        <Real name="LShoulderAnteRetroDirCosAngle"
+             includes="dynamic">LShoulderAnteRetroJointISBAngle-90.0</Real>
+        <Angle name="LShoulderAnteRetroJointHDCal"
+               FirstVector="-AntPostAxisHDCal"
+               SecondVector="LEJC-LGHJC"
+               includes="dynamic"/>
+        <Real name="LShoulderAnteRetroHDCalDirCosAngle"
+             includes="dynamic">LShoulderAnteRetroJointHDCalAngle-90.0</Real>
+         
+        <!-- Projektionswinkel --> 
+        
+        <!-- Abduktion -->
+        <ProjectionAngle name="LShoulderAbdAddProj"
+             Axis="AntPostAxisISB"
+             FirstVector="-LongitudinalAxisHDCal"
+             SecondVector="(LEJC-LGHJC)"
+             includes="dynamic"
+             unsigned="false"/>
+        <ProjectionAngle name="LShoulderAbdAddHDCalProj"
+               Axis="AntPostAxisHDCal"
+               FirstVector="-LongitudinalAxisHDCal"
+               SecondVector="LEJC-LGHJC"
+               includes="dynamic"
+               unsigned="false"/>
+        
+        <!-- Horizontal abduction/adduction oder Horizontal Ante/Retroversion -->
+        <!-- TODO umstellen: 0 soll vorne sein -->
+        <!--ProjectionAngle name="LShoulderHorAbdAddProj"
+             Axis="-LongitudinalAxisISB"
+             JointCenter="LGHJC"
+             LeverArmPoint1="LGHJC-MedioLateralAxisISB*500.0"
+             LeverArmPoint2="(LEJC+LEJC)/2.0"
+             unsigned="false"
+             includes="dynamic"/-->              
+             
+        <!-- Ante/Retroversion --> 
+        <ProjectionAngle name="LShoulderAnteRetroProj"
+             Axis="MedioLateralAxisISB"
+             FirstVector="-LongitudinalAxisISB"
+             SecondVector="LEJC-LGHJC"
+             unsigned="false"
+             includes="dynamic"/>
+        <ProjectionAngle name="LShoulderAnteRetroHDCalProj"
+             Axis="MedioLateralAxisHDCal"
+             FirstVector="-LongitudinalAxisHDCal"
+             SecondVector="LEJC-LGHJC"
+             unsigned="false"
+             includes="dynamic"/>  
+        
+        <Event name="LMaxShoulderEle" phase="LCycle" method="max"
+               includes="dynamic_shoulder_ele" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+     
+        <Event name="LAbduk0" phase="LCycle" method="value" value="0.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk10" phase="LCycle" method="value" value="10.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk20" phase="LCycle" method="value" value="20.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk30" phase="LCycle" method="value" value="30.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk40" phase="LCycle" method="value" value="40.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk50" phase="LCycle" method="value" value="50.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk60" phase="LCycle" method="value" value="60.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk70" phase="LCycle" method="value" value="70.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk80" phase="LCycle" method="value" value="80.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk90" phase="LCycle" method="value" value="90.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk100" phase="LCycle" method="value" value="100.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk110" phase="LCycle" method="value" value="110.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk120" phase="LCycle" method="value" value="120.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk130" phase="LCycle" method="value" value="130.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk140" phase="LCycle" method="value" value="140.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk150" phase="LCycle" method="value" value="150.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk160" phase="LCycle" method="value" value="160.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk170" phase="LCycle" method="value" value="170.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+        <Event name="LAbduk180" phase="LCycle" method="value" value="180.0"
+               includes="dynamic_abduk_events" process="post">LShoulderEleDepHDCalDirCosAngle*1.0</Event>
+             
+        
+        <!-- Iro/Aro -->
+        
+        <ProjectionAngle name="LShoulderIroAroJoint0"
+             Axis="-(LEJC-LGHJC)"
+             FirstVector="LongitudinalAxisISB*(LEJC-LGHJC)"
+             SecondVector="((LEJC-LGHJC)*(LWJC-LEJC))*(LEJC-LGHJC)"
+             includes="dynamic"/>
+        <Real name="LShoulderIroAroAngleGlobe"
+             includes="dynamic">180.0-LShoulderIroAroJoint0Angle</Real>
+        <ProjectionAngle name="LShoulderIroAroJointHdCal"
+             Axis="-(LEJC-LGHJC)"
+             FirstVector="LongitudinalAxisHDCal*(LEJC-LGHJC)"
+             SecondVector="((LEJC-LGHJC)*(LWJC-LEJC))*(LEJC-LGHJC)"
+             includes="dynamic"/>
+        <Real name="LShoulderIroAroHDCalAngleGlobe"
+             includes="dynamic">180.0-LShoulderIroAroJointHdCalAngle</Real>
+
+        <!-- Parting convention -->
+
+        <!-- Implementierung mit linkshändigem Koordinatensystem
+             AntPostAxisISB zeigt nach vorne
+             unklar ob das alles so stimmt, 3d-Visu nötig um
+             das zu überprüfen -->
+        <CoordinateSystem name="LParting"
+                 Position="LGHJC"
+                 FirstAxis="AntPostAxisISB"
+                 DefiningVector="-MedioLateralAxisISB"
+                 orientation="xzy"
+                 forceRightHanded="false"
+                 includes="dynamic"/>
+        <ConjunctRotation name="LShoulderConjunctRotation"
+                   coordinateSystem="LParting"
+                   RadiusVector="normalize(LEJC-LGHJC)"
+                   PointingVector="normalize(LEJC-LGHJC)*LElbowHingeAxis"
+                   includes="dynamic"/>
+        <!-- unklar, warum hier das Vorzeichen geändert werden muss -->
+        <Real name="LShoulderIroAroAngle"
+              includes="dynamic">-LShoulderConjunctRotationAngle</Real>
+        <CoordinateSystem name="LPartingHDCal"
+                 Position="LGHJC"
+                 FirstAxis="AntPostAxisHDCal"
+                 DefiningVector="-MedioLateralAxisHDCal"
+                 orientation="xzy"
+                 forceRightHanded="false"
+                 includes="dynamic"/>
+        <ConjunctRotation name="LShoulderConjunctRotationHDCal"
+                   coordinateSystem="LPartingHDCal"
+                   RadiusVector="normalize(LEJC-LGHJC)"
+                   PointingVector="normalize(LEJC-LGHJC)*LElbowHingeAxis"
+                   includes="dynamic"/>
+        <!-- unklar, warum hier das Vorzeichen geändert werden muss -->
+        <Real name="LShoulderIroAroHDCalAngle"
+              includes="dynamic">-LShoulderConjunctRotationHDCalAngle</Real>
+
+        <Event name="LMaxShoulderIroAro" phase="LCycle" method="max"
+               includes="dynamic_shoulder_ele" process="post">LShoulderIroAroAngle*1.0</Event>
+        <Event name="LMinShoulderIroAro" phase="LCycle" method="min"
+               includes="dynamic_shoulder_ele" process="post">LShoulderIroAroAngle*1.0</Event>
+     
+     
+        <!--  Shouldergirdle movements -->
+        
+        <!-- Depression/Elevation -->
+        
+        <DirectedCosinAngle name="LShoulderGirdleEleDepOffset"
+             SecondVector="normalize(LGHJC-CLAV)"
+             FirstVector="normalize(LSHO-CLAV)"
+             calibrateIncludes="static_calibrate_shoulder3"
+             excludes="static_calibrate,static_calibrate_ellbow,static_calibrate_shoulder,dynamic_calibrate_left_ellbow,dynamic_calibrate_right_ellbow,dynamic_calibrate_left_shoulder,dynamic_calibrate_right_shoulder,static_calibrate_shoulder2"/>
+             
+        <!-- am Thorax festgemacht -->
+        <DirectedCosinAngle name="LShoulderGirdleEleDepA"
+             FirstVector="-LongitudinalAxisISB"
+             SecondVector="normalize(LGHJC-CLAV)"
+             includes="dynamic,static"/>
+        <Real name="LShoulderGirdleEleDepAngle"
+             includes="dynamic,static">LShoulderGirdleEleDepAAngle-90.0+LShoulderGirdleEleDepOffsetAngleAverage</Real>
+                
+        <!-- am Throax und Becken festgemacht und kalibriert als Öffnungswinkel -->
+        <DirectedCosinAngle name="LShoulderGirdleEleDepC"
+             SecondVector="normalize(LGHJC-CLAV)"
+             FirstVector="-LongitudinalAxisHDCal"
+             includes="dynamic"/>
+        <Real name="LShoulderGirdleEleDepHDCalAngle"
+             includes="dynamic">LShoulderGirdleEleDepCAngle-90.0+LShoulderGirdleEleDepOffsetAngleAverage</Real>  
+             
+        <Event name="LMaxShoulderGirdleEleDep" phase="LCycle" method="max"
+               includes="dynamic_shoulder_ele" process="post">LShoulderGirdleEleDepHDCalAngle*1.0</Event>
+        <Event name="LMinShoulderGirdleEleDep" phase="LCycle" method="min"
+               includes="dynamic_shoulder_ele" process="post">LShoulderGirdleEleDepHDCalAngle*1.0</Event>
+    
+        <!-- Protraktion/Retraktion -->
+        
+        <ProjectionAngle name="LShoulderGirdleProRetracProj0"
+             Axis="-LongitudinalAxisISB"
+             FirstVector="-MedioLateralAxisISB"
+             SecondVector="normalize(LGHJC-CLAV)"
+             unsigned="false"
+             includes="dynamic"/>    
+        <Real name="LShoulderGirdleProRetracProjAngle"
+             includes="dynamic">LShoulderGirdleProRetracProj0Angle+30.0</Real>  
+             
+        
+        <!-- am Thorax + Becken festgemacht, mit Kalibration, Projektionswinkel -->
+        <ProjectionAngle name="LShoulderGirdleProRetracB"
+             Axis="-LongitudinalAxisHDCal"
+             FirstVector="-MedioLateralAxisHDCal"
+             SecondVector="normalize(LGHJC-CLAV)"
+             unsigned="false"
+             includes="dynamic"/>    
+        <Real name="LShoulderGirdleProRetracHDCalProjAngle"
+             includes="dynamic">LShoulderGirdleProRetracBAngle+30.0</Real>    
+             
+        
+        <!-- elbow flexion/extension -->
+        <ProjectionAngle name="LElbowFlexExt"
+             Axis="-LElbowHingeAxisC"
+             FirstVector="(LEJC-LGHJC)"
+             SecondVector="(LWJC-LEJC)"
+             unsigned="false"
+             includes="dynamic"/>
+
+        <!-- Wrist supination/pronation-->
+        <ProjectionAngle name="LProSupiProj"
+             Axis="(LWJC-LEJC)"
+             FirstVector="-LElbowHingeAxisC*(LWJC-LEJC)"
+             SecondVector="normalize(LRAD-LULN)"
+             unsigned="false"
+             includes="dynamic"/>
+   
+        <!-- hand gelenk -->
+        <!--ProjectionAngle name="LHandFlexExt"
+             Axis="-(LRAD-LULN)"
+             FirstVector="LWJC-LEJC"
+             SecondVector="LMCD-LMCP"
+             unsigned="false"
+             includes="dynamic"/-->              
+
+        <!--ProjectionAngle name="LHandRadUln"
+             Axis="-(LWJC-LEJC)*(LRAD-LULN)"
+             FirstVector="LWJC-LEJC"
+             SecondVector="LMCD-LMCP"
+             unsigned="false"
+             includes="dynamic"/-->
+
+    </SubModel>
+</CalcModel>

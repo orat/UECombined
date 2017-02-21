@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LabelSet name="Winkel">
+    
+     <Labels fileSuffix="ux" baseFile="true">
+
+        <Label name="T"/>
+        
+        <!-- Winkel -->
+
+        <!--Label name="HeadTiltProjAngle"/>
+        <Label name="RHeadObliquityProjAngle"/>
+        <Label name="LHeadObliquityProjAngle"/-->
+
+        <Label name="TrunkTiltAngle"/>
+        <Label name="RTrunkObliquityAngle"/>
+        <Label name="LTrunkObliquityAngle"/>
+        <!--Label name="TrunkRotationAngle"/-->
+         
+        <!--Label name="TrunkRotationHDCalAngle"/-->
+        
+        <!-- Humeruswinkel -->
+        
+        <!-- als Öffnungswinkel -->
+        <Label name="RShoulderAbdAddDirCosAngle" optional="true"/>
+        <Label name="LShoulderAbdAddDirCosAngle" optional="true"/>
+        
+        
+        <Label name="RShoulderEleDepDirCosAngle" optional="true"/>
+        <Label name="LShoulderEleDepDirCosAngle" optional="true"/>
+        
+        
+        <Label name="RShoulderAnteRetroDirCosAngle" optional="true"/>
+        <Label name="LShoulderAnteRetroDirCosAngle" optional="true"/>
+       
+         
+        <!-- als Projektionswinkel -->
+        <Label name="RShoulderAnteRetroProjAngle" optional="true"/>
+        <Label name="LShoulderAnteRetroProjAngle" optional="true"/>
+        
+        
+        <Label name="RShoulderAbdAddProjAngle" optional="true"/>
+        <Label name="LShoulderAbdAddProjAngle" optional="true"/>
+
+          
+        
+        <!-- iro/aro -->
+        <Label name="RShoulderIroAroAngle" optional="true"/>
+        <Label name="LShoulderIroAroAngle" optional="true"/>
+        
+       
+        <Label name="RShoulderIroAroAngleGlobe" optional="true"/>
+        <Label name="LShoulderIroAroAngleGlobe" optional="true"/>
+
+        <!-- Schultergürtelwinkel -->
+        
+        <!-- SG EleDepression -->   
+        
+        <Label name="RShoulderGirdleEleDepAngle" optional="true"/>
+        <Label name="LShoulderGirdleEleDepAngle" optional="true"/>
+
+        
+        
+        <!-- SG ProRetraction -->
+        
+        <Label name="RShoulderGirdleProRetracProjAngle" optional="true"/>
+        <Label name="LShoulderGirdleProRetracProjAngle" optional="true"/>
+        
+         
+        
+        <!-- glenohumerale Winkel -->
+    
+        <Label name="RGlenohumeralEleDepDirCosAngle" optional="true"/>
+        <Label name="LGlenohumeralEleDepDirCosAngle" optional="true"/>
+        
+         
+        <!-- Unterarm -->
+        
+        <Label name="RElbowFlexExtAngle" differentiations="1" optional="true"/>
+        <Label name="LElbowFlexExtAngle" differentiations="1" optional="true"/>
+
+        <Label name="RProSupiProjAngle" optional="true"/>
+        <Label name="LProSupiProjAngle" optional="true"/>
+        
+        
+        <!--Label name="RHandFlexExtAngle" optional="true"/>
+        <Label name="LHandFlexExtAngle" optional="true"/>
+        
+        <Label name="RHandRadUlnAngle" optional="true"/>
+        <Label name="LHandRadUlnAngle" optional="true"/-->
+
+
+        <!-- Marker -->
+
+        <Label name="LSHO"/>
+        <Label name="RSHO"/>
+        
+        <Label name="LHUMS"/>
+        <Label name="LHUMA"/>
+        <Label name="LHUMP"/>
+      
+        <Label name="LELB"/>
+        <Label name="LELBW"/>
+        <Label name="LULN"/>
+        <Label name="LRAD"/>
+        
+        <Label name="RHUMS"/>
+        <Label name="RHUMA"/>
+        <Label name="RHUMP"/>
+        
+        <Label name="RELB"/>
+        <Label name="RELBW"/>
+        <Label name="RULN"/>
+        <Label name="RRAD"/>
+        
+        <Label name="C7"/>
+        <Label name="RCLAV" optional="true"/>
+        <Label name="LCLAV" optional="true"/>
+        <Label name="CLAV"/>
+        <Label name="T10"/>
+        <Label name="STRN"/>
+
+        <Label name="SACR" optional="true"/>
+        <Label name="RASI" optional="true"/>
+        <Label name="LASI" optional="true"/>
+        
+        <!--Label name="LMCD" optional="true"/>
+        <Label name="LMCP" optional="true"/>
+        <Label name="RMCD" optional="true"/>
+        <Label name="RMCP" optional="true"/-->
+
+
+        <!-- Gelenkzentren -->
+
+        <Label name="RGHJC" optional="true"/>
+        <Label name="LGHJC" optional="true"/>
+        
+        <Label name="RGHJCRab" optional="true"/>
+        <Label name="LGHJCRab" optional="true"/>
+        
+        <Label name="REJC" optional="true"/>
+        <Label name="LEJC" optional="true"/>
+       
+        <Label name="RHUMC" optional="true"/>
+        <Label name="LHUMC" optional="true"/>
+        
+        <Label name="RHUMC2" optional="true"/>
+        <Label name="LHUMC2" optional="true"/>
+        
+        <Label name="PELC" optional="true"/>
+        
+        <Label name="RWJC" optional="true"/>
+        <Label name="LWJC" optional="true"/>
+        
+        
+        
+        <!-- Achsen -->
+
+        
+        <Label name="LElbowAxisHead" optional="true"/>
+        <Label name="RElbowAxisHead" optional="true"/>
+
+       
+        <!-- Koordinatensysteme -->
+        <Label name="LParting" optional="true"/>
+        <Label name="RParting" optional="true"/>
+        <Label name="LPartingPosition" optional="true"/>
+        <Label name="RPartingPosition" optional="true"/>
+        
+        <!-- EMG -->
+
+        <!--Label name="RTrapez" optional="true"/>
+        <Label name="RPecMaj" optional="true"/>
+        <Label name="RDelPos" optional="true"/>
+        <Label name="RDelAnt" optional="true"/>
+        <Label name="RTriBra" optional="true"/>
+        <Label name="RBicBra" optional="true"/>
+
+        <Label name="LTrapez" optional="true"/>
+        <Label name="LPecMaj" optional="true"/>
+        <Label name="LDelPos" optional="true"/>
+        <Label name="LDelAnt" optional="true"/>
+        <Label name="LTriBra" optional="true"/>
+        <Label name="LBicBra" optional="true"/-->
+
+    </Labels>
+    
+    <LabelsMap>
+        
+        
+        <!--Label from="RHumerusIroAroJointAngle" to="RHumerusIroAroAngle"/>
+        <Label from="LHumerusIroAroJointAngle" to="LHumerusIroAroAngle"/>
+
+        <Label from="RHumerusIroAroJointAngleGlobe" to="RHumerusIroAroGlobeAngle"/>
+        <Label from="LHumerusIroAroJointAngleGlobe" to="LHumerusIroAroGlobeAngle"/-->
+       
+    </LabelsMap>
+  
+        
+</LabelSet>
