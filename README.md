@@ -8,7 +8,8 @@ It´s complete project description in the sense of the Nimue platform (http://ni
 ------------------------
 
 **Added**
-  
+   * Switch "static_calibrate_shoulder2" added to the the element "LGHJC" to make this point available for 3d-view of the static calibration trial.
+   
 **Removed**
    * The calculation of R/LGHJCA is excluded.
    
